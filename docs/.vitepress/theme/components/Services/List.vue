@@ -1100,6 +1100,13 @@ const services = [
         category: 'Development'
     },
     {
+        name: 'Mage AI',
+        slug: 'mage-ai',
+        icon: '/docs/images/services/mage-ai.svg',
+        description: 'Build, run, and manage data pipelines for integrating and transforming data.',
+        category: 'Automation'
+    },
+    {
         name: 'Martin',
         slug: 'martin',
         icon: '/docs/images/services/martin-logo.png',
