@@ -5,7 +5,7 @@ description: "Build, run, and manage data pipelines for integrating and transfor
 
 <ZoomableImage src="/docs/images/services/mage-ai.svg" alt="Mage AI Dashboard" />
 
-## What Is Mage AI?
+## What is Mage AI?
 
 Mage AI (Mage OSS) is a self-hosted development environment designed to help
 teams create production-grade data pipelines with confidence.
