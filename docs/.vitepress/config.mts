@@ -430,9 +430,16 @@ export default defineConfig({
                       { text: 'Basic Auth', link: '/knowledge-base/proxy/traefik/basic-auth' },
                       { text: 'Custom SSL Certificates', link: '/knowledge-base/proxy/traefik/custom-ssl-certs' },
                       { text: 'Dashboard', link: '/knowledge-base/proxy/traefik/dashboard' },
+                      {
+                        text: 'Custom Middlewares',
+                        link: '/knowledge-base/proxy/traefik/custom-middlewares',
+                        collapsed: true,
+                        items: [
+                          { text: 'Redirects', link: '/knowledge-base/proxy/traefik/redirects' },
+                        ]
+                      },
                       { text: 'Dynamic Configurations', link: '/knowledge-base/proxy/traefik/dynamic-config' },
                       { text: 'Load Balancing', link: '/knowledge-base/proxy/traefik/load-balancing' },
-                      { text: 'Redirects', link: '/knowledge-base/proxy/traefik/redirects' },
                       { text: 'Wildcard SSL Certificates', link: '/knowledge-base/proxy/traefik/wildcard-certs' },
                       { text: 'Protect Services with Authentik', link: '/knowledge-base/proxy/traefik/protect-services-with-authentik' }
                     ]
