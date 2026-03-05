@@ -1326,7 +1326,8 @@ const services = [
         slug: 'minio',
         icon: '/docs/images/services/minio-logo.svg',
         description: 'A high-performance, distributed object storage system.',
-        category: 'Storage'
+        category: 'Storage',
+        disabled: true
     },
     {
         name: 'Mixpost',
