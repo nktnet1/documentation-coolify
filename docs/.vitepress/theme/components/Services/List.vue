@@ -1764,7 +1764,7 @@ const services = [
         slug: 'satisfactory',
         // No icon available on the codebase yet.
         description: 'Game server for Satisfactory open-world factory building game with a dash of exploration and combat.',
-        category: 'Search'
+        category: 'Gaming'
     },
     {
         name: 'SearXNG',
