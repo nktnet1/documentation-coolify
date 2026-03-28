@@ -428,7 +428,8 @@ const services = [
         slug: 'booklore',
         icon: '/docs/images/services/booklore-logo.svg',
         description: 'Open-source library management system for your digital book collection.',
-        category: 'Media'
+        category: 'Media',
+        disabled: true
     },
     {
         name: 'Browserless',

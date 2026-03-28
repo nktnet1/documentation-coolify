@@ -287,7 +287,6 @@ Complete directory of all one-click services available in Coolify, organized by 
 ## Media
 
 - [Audiobookshelf](/services/audiobookshelf) - Self-hosted audiobook and podcast server
-- [Booklore](/services/booklore) - Open-source library management system for your digital book collection
 - [Calibre-web](/services/calibre-web) - Web app for browsing, reading and downloading eBooks from a Calibre database
 - [Calibre Web Automated with Downloader](/services/calibre-web-automated-with-downloader) - Intuitive web interface for searching and requesting book downloads with Calibre-Web-Automated
 - [Cap](/services/cap) - Open source alternative to Loom for screen recording and sharing
