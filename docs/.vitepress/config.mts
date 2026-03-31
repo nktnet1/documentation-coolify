@@ -408,6 +408,7 @@ export default defineConfig({
                   { text: 'Introduction', link: '/knowledge-base/s3/introduction' },
                   { text: 'AWS', link: '/knowledge-base/s3/aws' },
                   { text: 'R2', link: '/knowledge-base/s3/r2' },
+                  { text: 'Supabase', link: '/knowledge-base/s3/supabase' },
                 ]
               },
               {
