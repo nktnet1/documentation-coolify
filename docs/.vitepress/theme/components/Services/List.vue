@@ -432,6 +432,13 @@ const services = [
         disabled: true
     },
     {
+        name: 'Grimmory',
+        slug: 'grimmory',
+        icon: '/docs/images/services/grimmory.svg',
+        description: 'A self-hosted ebook library manager and reader, successor to Booklore.',
+        category: 'Media'
+    },
+    {
         name: 'Browserless',
         slug: 'browserless',
         icon: '/docs/images/services/browserless-logo.svg',
