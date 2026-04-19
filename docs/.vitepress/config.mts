@@ -10,6 +10,7 @@ import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 import { groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 import tailwindcss from '@tailwindcss/vite'
 import { loadEnv } from 'vitepress'
+import traefikGrammar from './languages/traefik-labels.tmLanguage.json' with { type: 'json' }
 const env = loadEnv('', process.cwd())
 const sidebar = useSidebar({ spec })
 
@@ -652,6 +653,7 @@ export default defineConfig({
       light: 'github-light',
       dark: 'github-dark',
     },
+    languages: [{ ...traefikGrammar, id: 'traefik', name: 'traefik' }],
     // Configure Shiki with SSH language
     async shikiSetup(shiki) {
       await shiki.loadLanguage('ssh-config')
