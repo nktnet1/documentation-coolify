@@ -1,26 +1,46 @@
 ---
 title: Node.js Multi-Core Scaling
-description: Make a single Node.js container use every CPU core on the host with PM2 cluster mode, using either Dockerfile or Nixpacks builds on Coolify.
+description: Scale a Node.js, Bun, or Deno application across all available CPU cores using PM2 cluster mode or SO_REUSEPORT, with Dockerfile and Nixpacks examples for Coolify.
 ---
 
 # Node.js Multi-Core Scaling
 
-A plain Node.js HTTP server runs its event loop on a single core, so `node server.js` in a Coolify container will only ever keep one CPU busy. This is a Node.js runtime characteristic — not a Coolify limit. Coolify containers have no default CPU cap, so the host's other cores are available; you just need to tell Node (or Bun) to use them.
+## The Problem
 
-This guide shows how to make one container use every core using **PM2 cluster mode** (Node.js) or **Bun's `reusePort`** — with examples for both the Dockerfile and Nixpacks build packs.
+JavaScript runtimes execute their event loop on a **single thread per process**. One `node app.js` (or `bun`/`deno`) process saturates **one CPU core**, regardless of host capacity — whether it's serving HTTP, processing queues, running cron jobs, or doing CPU-bound work.
 
-## Why a Plain Node Server Uses One CPU
+This applies to every major JS runtime:
 
-- V8's event loop is single-threaded **per process**.
-- libuv's thread pool (4 threads by default) offloads some I/O work, but your JavaScript still runs on a single core.
-- To use more than one core you need either multiple processes inside the container, or a runtime that supports multi-process listeners (like Bun with `reusePort`).
-
-## Options at a Glance
-
-| Approach | Code Change | Notes |
+| Runtime | Engine | Single-threaded event loop |
 | --- | --- | --- |
-| PM2 cluster mode | None | Easiest; wraps your existing start command |
-| Bun `reusePort` | One-line app change | Native multi-process HTTP in Bun |
+| Node.js | V8 | Yes |
+| Bun | JavaScriptCore | Yes |
+| Deno | V8 | Yes |
+
+It's a runtime characteristic, not a platform limit — the same constraint applies on bare metal, Docker, Kubernetes, or any PaaS.
+
+::: info Coolify Containers Have No CPU Cap
+By default, Coolify does not limit container CPU, so all host cores are available — you only need to tell your runtime to use them.
+:::
+
+## The Fix
+
+Run **multiple worker processes** inside the container. Each runtime has its preferred mechanism:
+
+| Runtime | Approach | Code Change | Notes |
+| --- | --- | --- | --- |
+| Node.js | **PM2 cluster mode** | None | Easiest; wraps your existing start command |
+| Node.js | `node:cluster` module | App-level | Built-in, no extra dependency |
+| Bun | `Bun.serve({ reusePort: true })` | One-line app change | Kernel load-balances via `SO_REUSEPORT` |
+| Deno | `Deno.serve({ reusePort: true })` | One-line app change | Same kernel mechanism as Bun |
+
+This guide covers **PM2 cluster mode** (Node.js) and **`reusePort`** (Bun, Deno), with examples for the [Dockerfile](/applications/build-packs/dockerfile) and [Nixpacks](/applications/build-packs/nixpacks) build packs.
+
+## Technical Background
+
+- V8's (and JavaScriptCore's) event loop is single-threaded **per process**.
+- libuv's thread pool (4 threads by default in Node) offloads some I/O work, but your JavaScript still runs on a single core.
+- To use more than one core you need either multiple processes inside the container, or a runtime that supports multi-process listeners (Bun and Deno via `reusePort`).
 
 ## Dockerfile Example (PM2 Cluster Mode)
 
@@ -43,15 +63,15 @@ Key points:
 
 - `pm2-runtime -i max` forks one worker per available CPU core and keeps PM2 in the foreground (required because Docker's PID 1 must not exit).
 - Replace `dist/index.js` with your actual entry file.
-- In Coolify, set **Ports Exposes** to `3000` (or whatever port your app listens on).
+- Expose the port your app listens on (`3000` here) in your platform's networking settings — in Coolify, this is the **Ports Exposes** field.
 
 ## Nixpacks Example
 
 Use this when your app is built with the [Nixpacks build pack](/applications/build-packs/nixpacks).
 
-### Option A — Environment Variable in the Coolify UI
+### Option A — Set `NIXPACKS_START_CMD` as an Environment Variable
 
-Open your application → **Environment Variables** and add:
+Set the following environment variable on your application (in Coolify: open your application → **Environment Variables**):
 
 ```
 NIXPACKS_START_CMD=pm2-runtime -i max dist/index.js
@@ -69,7 +89,7 @@ nixPkgs = ["nodejs", "pm2"]
 cmd = "pm2-runtime -i max dist/index.js"
 ```
 
-This keeps the multi-core configuration in version control and works for both local and Coolify builds.
+This keeps the multi-core configuration in version control and works across local and remote builds.
 
 ## Bun Alternative (One-Line Multi-Core)
 
@@ -119,6 +139,44 @@ Notes:
 - Each Bun process is independent — there's no primary/worker IPC, so use Redis or a database for shared state.
 - Simpler than PM2 but has no built-in auto-restart per worker; pair with Docker's `restart: unless-stopped` (Coolify's default) for crash recovery of the parent shell.
 
+## Deno Alternative (One-Line Multi-Core)
+
+Deno's `Deno.serve` accepts the same `reusePort` flag, so you can spawn N processes that all bind the same port and let the kernel distribute connections.
+
+### App Code
+
+```ts
+Deno.serve({ port: 3000, reusePort: true }, (_req) => {
+  return new Response("Hello from Deno");
+});
+```
+
+### Dockerfile
+
+```dockerfile
+FROM denoland/deno:alpine
+
+WORKDIR /app
+COPY . .
+RUN deno cache server.ts
+
+EXPOSE 3000
+# Spawn one Deno process per available core.
+CMD ["sh", "-c", "for i in $(seq 1 $(nproc)); do deno run --allow-net server.ts & done; wait"]
+```
+
+### Nixpacks (`nixpacks.toml`)
+
+```toml
+[phases.setup]
+nixPkgs = ["deno"]
+
+[start]
+cmd = "sh -c 'for i in $(seq 1 $(nproc)); do deno run --allow-net server.ts & done; wait'"
+```
+
+Same caveats as Bun apply: no IPC between processes, no built-in per-worker restart.
+
 ## Caveats
 
 ::: warning In-Process State Does Not Scale
@@ -132,10 +190,10 @@ Workers do **not** share in-process memory. Sessions, in-memory caches, rate-lim
 
 ## Verifying Multi-Core Use
 
-After deploying, SSH to the Coolify server and check inside the running container:
+After deploying, SSH to the host running the container and inspect the processes:
 
 ```bash
 docker exec -it <container> top
 ```
 
-You should see multiple `node` (or `bun`) processes. Hit the app under load (for example with `autocannon -c 200 http://<host>:3000/`) and confirm that `htop`/`top` shows load spread across all host cores, not pegged on one.
+You should see multiple `node`, `bun`, or `deno` processes. Hit the app under load (for example with `autocannon -c 200 http://<host>:3000/`) and confirm that `htop`/`top` shows load spread across all host cores, not pegged on one.
