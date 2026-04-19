@@ -146,6 +146,12 @@ You may need to include a `nixpacks.toml` file in your repository for these chan
 
 Nixpacks supports specifying build configurations in a nixpacks.toml or nixpacks.json file. If one of these files is present in the root of your repository, it will be automatically used. For more details, refer to the [Nixpacks documentation](https://nixpacks.com/docs/configuration/file?utm_source=coolify.io).
 
+---
+
+### Node.js Multi-Core Scaling
+
+A plain Node.js process only uses one CPU core. To make a Node.js (or Bun) app use every core on the host from a single Nixpacks build, see the [Node.js Multi-Core Scaling](/knowledge-base/nodejs-multi-core-scaling) guide.
+
 ## Known Issues
 
 ### Outdated Packages/Dependencies

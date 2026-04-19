@@ -366,6 +366,7 @@ export default defineConfig({
                   { text: 'Drain Logs', link: '/knowledge-base/drain-logs' },
                   { text: 'Rolling Updates', link: '/knowledge-base/rolling-updates' },
                   { text: 'Health Checks', link: '/knowledge-base/health-checks' },
+                  { text: 'Node.js Multi-Core Scaling', link: '/knowledge-base/nodejs-multi-core-scaling' },
                   { text: 'Cron Syntax', link: '/knowledge-base/cron-syntax' },
                 ]
               },

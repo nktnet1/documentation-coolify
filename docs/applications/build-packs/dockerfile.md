@@ -97,6 +97,10 @@ The `SOURCE_COMMIT` variable contains the Git commit hash of your source code. B
 Enabling "Include Source Commit in Build" will cause Docker's build cache to be invalidated on every commit, since the commit hash changes each time. Only enable this if your build process requires the commit hash.
 :::
 
+### Node.js Multi-Core Scaling
+
+A plain Node.js process only uses one CPU core. To make a Node.js (or Bun) app use every core on the host from a single Dockerfile build, see the [Node.js Multi-Core Scaling](/knowledge-base/nodejs-multi-core-scaling) guide.
+
 ## Known Issues and Solutions
 
 ::: details 1. Visiting the Application Domain Shows "No Available Server"
