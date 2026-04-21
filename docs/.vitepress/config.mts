@@ -300,6 +300,10 @@ export default defineConfig({
               { text: 'DDoS Protection', link: '/integrations/cloudflare/ddos-protection' },
             ]
           },
+          {
+            text: 'Crowdsec',
+            link: 'https://www.crowdsec.net/blog/securing-automated-app-deployment-crowdsec-and-coolify'
+          }
         ],
       },
       {
