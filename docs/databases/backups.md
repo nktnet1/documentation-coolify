@@ -27,7 +27,7 @@ const VALID_CRON_STRINGS = [
 Coolify creates a full backup of your PostgreSQL databases. You can specify which database to backup, with a comma separated list.
 
 ::: info Tip
-Coolify own database is also backed up using this method.
+Coolify's own database is also backed up using this method.
 :::
 
 ### Backup command

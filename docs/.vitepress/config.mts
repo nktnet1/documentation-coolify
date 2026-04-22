@@ -10,6 +10,7 @@ import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 import { groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 import tailwindcss from '@tailwindcss/vite'
 import { loadEnv } from 'vitepress'
+import traefikGrammar from './languages/traefik-labels.tmLanguage.json' with { type: 'json' }
 const env = loadEnv('', process.cwd())
 const sidebar = useSidebar({ spec })
 
@@ -299,6 +300,10 @@ export default defineConfig({
               { text: 'DDoS Protection', link: '/integrations/cloudflare/ddos-protection' },
             ]
           },
+          {
+            text: 'Crowdsec',
+            link: 'https://www.crowdsec.net/blog/securing-automated-app-deployment-crowdsec-and-coolify'
+          }
         ],
       },
       {
@@ -445,6 +450,7 @@ export default defineConfig({
                       },
                       { text: 'Dynamic Configurations', link: '/knowledge-base/proxy/traefik/dynamic-config' },
                       { text: 'Load Balancing', link: '/knowledge-base/proxy/traefik/load-balancing' },
+                      { text: 'DNS Challenge', link: '/knowledge-base/proxy/traefik/dns-challenge' },
                       { text: 'Wildcard SSL Certificates', link: '/knowledge-base/proxy/traefik/wildcard-certs' },
                       { text: 'Protect Services with Authentik', link: '/knowledge-base/proxy/traefik/protect-services-with-authentik' }
                     ]
@@ -455,6 +461,7 @@ export default defineConfig({
                     items: [
                       { text: 'Overview', link: '/knowledge-base/proxy/caddy/overview' },
                       { text: 'Basic Auth', link: '/knowledge-base/proxy/caddy/basic-auth' },
+                      { text: 'DNS Challenge', link: '/knowledge-base/proxy/caddy/dns-challenge' },
                     ]
                   },
                 ]
@@ -651,6 +658,7 @@ export default defineConfig({
       light: 'github-light',
       dark: 'github-dark',
     },
+    languages: [{ ...traefikGrammar, id: 'traefik', name: 'traefik' }],
     // Configure Shiki with SSH language
     async shikiSetup(shiki) {
       await shiki.loadLanguage('ssh-config')
