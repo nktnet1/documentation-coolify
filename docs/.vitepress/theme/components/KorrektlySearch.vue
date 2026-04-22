@@ -322,8 +322,8 @@ const truncate = (text: string, length: number) => {
           >
             <!-- Search Header -->
             <div class="p-4 border-b border-[var(--vp-c-divider)]">
-              <div class="relative flex items-center">
-                <svg class="absolute left-3 w-5 h-5 text-[var(--vp-c-text-2)] pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <div class="flex items-center gap-3 px-4 py-3 bg-[var(--vp-c-bg-soft)] rounded-lg focus-within:bg-[var(--vp-c-bg-elv)] transition-colors">
+                <svg class="flex-shrink-0 w-5 h-5 text-[var(--vp-c-text-2)] pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <circle cx="11" cy="11" r="8"></circle>
                   <path d="m21 21-4.35-4.35"></path>
                 </svg>
@@ -332,11 +332,11 @@ const truncate = (text: string, length: number) => {
                   v-model="searchQuery"
                   type="text"
                   placeholder="Search documentation... (⌘K or Ctrl+K)"
-                  class="w-full pl-11 pr-10 py-3 text-base bg-[var(--vp-c-bg-soft)] rounded-lg border-none outline-none text-[var(--vp-c-text-1)] placeholder:text-[var(--vp-c-text-3)] focus:bg-[var(--vp-c-bg-elv)] transition-colors"
+                  class="flex-1 min-w-0 bg-transparent border-none outline-none text-base text-[var(--vp-c-text-1)] placeholder:text-[var(--vp-c-text-3)]"
                 />
                 <button
                   v-if="searchQuery"
-                  class="absolute right-3 w-6 h-6 flex items-center justify-center rounded bg-[var(--vp-c-bg-soft)] text-[var(--vp-c-text-2)] hover:bg-[var(--vp-c-bg-elv)] hover:text-[var(--vp-c-text-1)] transition-all text-xl leading-none"
+                  class="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded bg-[var(--vp-c-bg-soft)] text-[var(--vp-c-text-2)] hover:bg-[var(--vp-c-bg-elv)] hover:text-[var(--vp-c-text-1)] transition-all text-xl leading-none"
                   @click="clearSearch"
                   title="Clear search"
                 >
