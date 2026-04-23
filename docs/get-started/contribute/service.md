@@ -7,6 +7,10 @@ description: Add new service templates to Coolify using Docker Compose with magi
 
 Services in Coolify are templates made from normal [docker-compose](https://docs.docker.com/reference/compose-file/) files with some added Coolify magic.
 
+::: danger IMPORTANT
+The service’s Git repository must have at least 1,000 stars to be added to Coolify as a one click service.
+:::
+
 ::: info
 See [Coolify's docker-compose specs](/knowledge-base/docker/compose#coolify-s-magic-environment-variables) to learn more about Coolify's magic and how to benefit from generated variables and storage handling. Please use this magic when submitting your PR to make the merging process smoother.
 :::
