@@ -302,6 +302,7 @@ Complete directory of all one-click services available in Coolify, organized by 
 - [Navidrome](/services/navidrome) - Modern music server and streamer compatible with Subsonic/Airsonic
 - [Overseerr](/services/overseerr) - A request management and media discovery tool built to work with your existing Plex ecosystem
 - [Plex](/services/plex) - Media server software
+- [Imgcompress](/services/imgcompress) - Image tool for compression, format conversion, and AI background removal
 - [Prowlarr](/services/prowlarr) - A free and open source BitTorrent client
 - [qBittorrent](/services/qbittorrent) - Free and open-source BitTorrent client
 - [Radarr](/services/radarr) - A Media server software

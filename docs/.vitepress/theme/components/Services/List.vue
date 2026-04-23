@@ -1064,6 +1064,13 @@ const services = [
         category: 'Media'
     },
     {
+        name: 'Imgcompress',
+        slug: 'imgcompress',
+        icon: '/docs/images/services/imgcompress-logo.webp',
+        description: 'Image tool for compression, format conversion, and AI background removal',
+        category: 'Media'
+    },
+    {
         name: 'Infisical',
         slug: 'infisical',
         icon: '/docs/images/services/infisical-logo.svg',
