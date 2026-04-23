@@ -5,11 +5,14 @@ description: "Run Imgcompress on Coolify for self-hosted image compression, form
 
 # Imgcompress
 
-<ZoomableImage src="https://raw.githubusercontent.com/karimz1/imgcompress/refs/heads/main/images/web-ui/web-ui-upload-configure.webp" alt="Imgcompress web UI" />
+<ZoomableImage src="/docs/images/services/imgcompress-logo.webp" alt="Imgcompress logo" height="1" />
+
 
 ## What is Imgcompress?
 
 Imgcompress is a self-hosted image processing toolbox that handles compression, format conversion, and AI background removal in a single web interface. It supports over **70 input formats** (including PSD, HEIC, and RAW) and can output common formats or generate PDFs, all without sending files to external services.
+
+<ZoomableImage src="/docs/images/services/imgcompress-ui.webp" alt="Imgcompress web UI" />
 
 Key capabilities:
 
