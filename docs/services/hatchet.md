@@ -1,6 +1,10 @@
 ---
 title: "Hatchet"
-description: "Hatchet allows you to run background tasks at scale with a high-throughput, low-latency computing service built on an open-source, fault-tolerant queue."
+description: "Platform for running background tasks and durable workflows built on Postgres."
+og:
+  description: "Hatchet allows you to run background tasks at scale with a high-throughput, low-latency computing service built on an open-source, fault-tolerant queue."
+category: "Development"
+icon: "/docs/images/services/hatchet-logo.svg"
 ---
 
 # Hatchet

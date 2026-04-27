@@ -1,6 +1,10 @@
 ---
 title: Readeck
-description: "Save articles on Coolify with Readeck for read-later service, bookmarking, full-text search, and distraction-free reading experience."
+description: "Web article reader and bookmark manager."
+og:
+  description: "Save articles on Coolify with Readeck for read-later service, bookmarking, full-text search, and distraction-free reading experience."
+category: "Productivity"
+icon: "/docs/images/services/readeck-logo.svg"
 ---
 
 # Readeck

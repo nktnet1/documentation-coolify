@@ -1,6 +1,10 @@
 ---
 title: "TriliumNext"
-description: "Organize notes on Coolify with TriliumNext for hierarchical note-taking, scripting, encryption, and powerful knowledge management features."
+description: "Build your personal knowledge base with TriliumNext Notes."
+og:
+  description: "Organize notes on Coolify with TriliumNext for hierarchical note-taking, scripting, encryption, and powerful knowledge management features."
+category: "Productivity"
+icon: "/docs/images/services/triliumnext-logo.svg"
 ---
 
 # TriliumNext

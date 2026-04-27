@@ -1,6 +1,10 @@
 ---
 title: "Pi-hole"
-description: "Block ads on Coolify with Pi-hole network-wide ad blocking, DNS filtering, tracking protection, and dashboard for home network privacy."
+description: "Network-wide ad blocker that acts as a DNS sinkhole."
+og:
+  description: "Block ads on Coolify with Pi-hole network-wide ad blocking, DNS filtering, tracking protection, and dashboard for home network privacy."
+category: "Security"
+icon: "/docs/images/services/pihole-logo.svg"
 ---
 
 # Pi-hole

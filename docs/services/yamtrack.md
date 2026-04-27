@@ -1,6 +1,10 @@
 ---
 title: "Yamtrack"
-description: "Track time on Coolify with YAMTrack for project time logging, invoicing, reports, and freelancer productivity management tool."
+description: "Self-hosted music scrobble database."
+og:
+  description: "Track time on Coolify with YAMTrack for project time logging, invoicing, reports, and freelancer productivity management tool."
+category: "Media"
+icon: "/docs/images/services/yamtrack-logo.svg"
 ---
 
 <ZoomableImage src="/docs/images/services/yamtrack.webp" alt="Yamtrack Logo logo" />

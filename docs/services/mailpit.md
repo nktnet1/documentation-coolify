@@ -1,6 +1,10 @@
 ---
 title: "Mailpit"
-description: "Run Mailpit SMTP testing on Coolify for email testing, preview, debugging with web UI for development environments without sending real emails."
+description: "Self-hosted email and SMTP testing tool."
+og:
+  description: "Run Mailpit SMTP testing on Coolify for email testing, preview, debugging with web UI for development environments without sending real emails."
+category: "Development"
+icon: "/docs/images/services/mailpit-logo.svg"
 ---
 
 # What is Mailpit?

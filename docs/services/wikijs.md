@@ -1,6 +1,10 @@
 ---
 title: Wikijs
-description: "Deploy Wiki.js on Coolify for modern wiki with markdown, Git sync, powerful search, and beautiful documentation platform interface."
+description: "Modern and powerful wiki software built on Node.js."
+og:
+  description: "Deploy Wiki.js on Coolify for modern wiki with markdown, Git sync, powerful search, and beautiful documentation platform interface."
+category: "Documentation"
+icon: "/docs/images/services/wikijs-logo.svg"
 ---
 
 # Wikijs

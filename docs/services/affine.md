@@ -1,6 +1,10 @@
 ---
 title: "Affine"
-description: "Deploy AFFiNE workspace on Coolify combining docs, whiteboards, and databases for seamless collaboration and creative project management."
+description: "Open-source knowledge base and workspace combining docs, whiteboards, and databases."
+og:
+  description: "Deploy AFFiNE workspace on Coolify combining docs, whiteboards, and databases for seamless collaboration and creative project management."
+category: "Productivity"
+icon: "/docs/images/services/affine-logo.webp"
 ---
 
 <ZoomableImage src="/docs/images/services/affine.webp" alt="Affine Logo logo" />

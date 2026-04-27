@@ -1,6 +1,10 @@
 ---
 title: "Mosquitto"
-description: "Host Eclipse Mosquitto on Coolify for MQTT message broker supporting IoT device communication, pub/sub messaging, and lightweight protocols."
+description: "Open-source MQTT broker."
+og:
+  description: "Host Eclipse Mosquitto on Coolify for MQTT message broker supporting IoT device communication, pub/sub messaging, and lightweight protocols."
+category: "IoT"
+icon: "/docs/images/services/mosquitto-logo.svg"
 ---
 
 ![Mosquitto](https://raw.githubusercontent.com/eclipse-mosquitto/mosquitto/refs/heads/master/logo/mosquitto-text-below.svg)

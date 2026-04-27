@@ -1,6 +1,10 @@
 ---
 title: "Authentik"
-description: "Run Authentik identity provider on Coolify with SSO, LDAP, OAuth2, SAML support for unified authentication and user management across apps."
+description: "An open-source Identity Provider, focused on flexibility and versatility."
+og:
+  description: "Run Authentik identity provider on Coolify with SSO, LDAP, OAuth2, SAML support for unified authentication and user management across apps."
+category: "Security"
+icon: "/docs/images/services/authentik-logo.png"
 ---
 
 ![Authentik](https://goauthentik.io/img/icon_top_brand_colour.svg)

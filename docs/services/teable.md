@@ -1,6 +1,10 @@
 ---
 title: Teable
-description: "Build databases on Coolify with Teable as Airtable alternative combining spreadsheet interface with database power and automation workflows."
+description: "No-code database built on PostgreSQL."
+og:
+  description: "Build databases on Coolify with Teable as Airtable alternative combining spreadsheet interface with database power and automation workflows."
+category: "Database"
+icon: "/docs/images/services/teable-logo.png"
 ---
 
 # Teable

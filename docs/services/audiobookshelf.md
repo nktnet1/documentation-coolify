@@ -1,6 +1,10 @@
 ---
 title: Audiobookshelf
-description: "Deploy Audiobookshelf on Coolify for self-hosted audiobook and podcast server with mobile apps, progress tracking, and streaming support."
+description: "Self-hosted audiobook and podcast server."
+og:
+  description: "Deploy Audiobookshelf on Coolify for self-hosted audiobook and podcast server with mobile apps, progress tracking, and streaming support."
+category: "Media"
+icon: "/docs/images/services/audiobookshelf-logo.svg"
 ---
 
 # Audiobookshelf

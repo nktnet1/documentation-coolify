@@ -1,6 +1,10 @@
 ---
 title: "Siyuan"
-description: "A privacy-first, self-hosted, fully open source personal knowledge management software for organizing notes with block-based editing and bidirectional links."
+description: "A privacy-first, self-hosted, fully open source personal knowledge management software, written in typescript and golang."
+og:
+  description: "A privacy-first, self-hosted, fully open source personal knowledge management software for organizing notes with block-based editing and bidirectional links."
+category: "Productivity"
+icon: "/docs/images/services/siyuan.svg"
 ---
 
 # Siyuan

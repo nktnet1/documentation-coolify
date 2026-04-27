@@ -1,6 +1,10 @@
 ---
 title: "LimeSurvey"
-description: "Create surveys on Coolify with LimeSurvey featuring questionnaire design, data collection, analysis, and professional survey research tools."
+description: "The most popular FOSS online survey tool on the web."
+og:
+  description: "Create surveys on Coolify with LimeSurvey featuring questionnaire design, data collection, analysis, and professional survey research tools."
+category: "Business"
+icon: "/docs/images/services/limesurvey-logo.svg"
 ---
 
 <ZoomableImage src="/docs/images/services/limesurvey.webp" alt="Limesurvey Logo logo" />

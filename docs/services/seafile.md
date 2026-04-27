@@ -1,6 +1,10 @@
 ---
 title: "Seafile"
-description: "Sync files on Coolify with Seafile for secure cloud storage, team collaboration, file versioning, and enterprise-grade document management."
+description: "High-performance file syncing and sharing with knowledge management features."
+og:
+  description: "Sync files on Coolify with Seafile for secure cloud storage, team collaboration, file versioning, and enterprise-grade document management."
+category: "Storage"
+icon: "/docs/images/services/seafile-logo.svg"
 ---
 
 <ZoomableImage src="/docs/images/services/seafile.webp" alt="Seafile Logo logo" />

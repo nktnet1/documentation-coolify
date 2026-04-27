@@ -1,6 +1,10 @@
 ---
 title: "Umami"
-description: "Track analytics on Coolify with Umami for privacy-focused website analytics, visitor insights, and cookieless web traffic monitoring."
+description: "A lightweight, open-source web analytics tool that prioritizes user privacy by not using cookies."
+og:
+  description: "Track analytics on Coolify with Umami for privacy-focused website analytics, visitor insights, and cookieless web traffic monitoring."
+category: "Analytics"
+icon: "/docs/images/services/umami-logo.svg"
 ---
 
 ![Umami](https://raw.githubusercontent.com/umami-software/umami/refs/heads/master/public/mstile-150x150.png)

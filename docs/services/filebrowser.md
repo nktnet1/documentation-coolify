@@ -1,6 +1,10 @@
 ---
 title: "Filebrowser"
-description: "Run File Browser on Coolify for web-based file management with uploads, sharing, search, and access control for self-hosted cloud storage."
+description: "A file manager for the web."
+og:
+  description: "Run File Browser on Coolify for web-based file management with uploads, sharing, search, and access control for self-hosted cloud storage."
+category: "File Management"
+icon: "/docs/images/services/filebrowser-logo.svg"
 ---
 
 ![Filebrowser](https://raw.githubusercontent.com/filebrowser/logo/master/banner.png)

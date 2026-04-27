@@ -1,6 +1,10 @@
 ---
 title: Strapi
-description: "Build APIs on Coolify with Strapi headless CMS for content management, REST/GraphQL APIs, admin panel, and customizable backend platform."
+description: "Open-source headless CMS."
+og:
+  description: "Build APIs on Coolify with Strapi headless CMS for content management, REST/GraphQL APIs, admin panel, and customizable backend platform."
+category: "CMS"
+icon: "/docs/images/services/strapi-logo.svg"
 ---
 
 # Strapi

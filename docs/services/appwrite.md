@@ -1,6 +1,10 @@
 ---
 title: Appwrite
-description: "Deploy Appwrite BaaS on Coolify for authentication, databases, storage, serverless functions, and real-time APIs for web and mobile apps."
+description: "A backend-as-a-service platform that simplifies the web & mobile app development."
+og:
+  description: "Deploy Appwrite BaaS on Coolify for authentication, databases, storage, serverless functions, and real-time APIs for web and mobile apps."
+category: "Development"
+icon: "/docs/images/services/appwrite-logo.svg"
 # compose:
 #   services:
 #     appwrite:

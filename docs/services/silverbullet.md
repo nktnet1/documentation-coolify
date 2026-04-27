@@ -1,6 +1,10 @@
 ---
 title: "SilverBullet"
-description: "An open source personal productivity platform built on Markdown, turbo charged with the scripting power of Lua"
+description: "An open source personal productivity platform built on Markdown."
+og:
+  description: "An open source personal productivity platform built on Markdown, turbo charged with the scripting power of Lua"
+category: "Productivity"
+icon: "/docs/images/services/silverbullet.png"
 ---
 
 <ZoomableImage src="/docs/images/services/silverbullet.png" alt="SilverBullet logo" />

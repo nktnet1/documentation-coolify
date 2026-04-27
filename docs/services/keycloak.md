@@ -1,6 +1,10 @@
 ---
 title: Keycloak
-description: "Deploy Keycloak on Coolify for identity and access management with SSO, OAuth2, SAML, user federation, and centralized authentication."
+description: "Open-source identity and access management solution."
+og:
+  description: "Deploy Keycloak on Coolify for identity and access management with SSO, OAuth2, SAML, user federation, and centralized authentication."
+category: "Security"
+icon: "/docs/images/services/keycloak-logo.svg"
 ---
 
 # Keycloak

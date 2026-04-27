@@ -1,6 +1,10 @@
 ---
 title: Soketi
-description: "Deploy Soketi WebSocket server on Coolify for real-time messaging, Pusher-compatible protocol, and scalable WebSocket broadcasting."
+description: "Open-source WebSocket server."
+og:
+  description: "Deploy Soketi WebSocket server on Coolify for real-time messaging, Pusher-compatible protocol, and scalable WebSocket broadcasting."
+category: "Development"
+icon: "/docs/images/services/soketi-logo.jpeg"
 ---
 
 # Soketi

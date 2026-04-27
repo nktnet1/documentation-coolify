@@ -1,6 +1,10 @@
 ---
 title: "NextCloud"
-description: "Deploy Nextcloud on Coolify for self-hosted cloud storage, file sync, calendar, contacts, office collaboration, and Google Drive alternative."
+description: "A safe home for all your data."
+og:
+  description: "Deploy Nextcloud on Coolify for self-hosted cloud storage, file sync, calendar, contacts, office collaboration, and Google Drive alternative."
+category: "Storage"
+icon: "/docs/images/services/nextcloud-logo.svg"
 ---
 
 ![NextCloud](https://nextcloud.com/c/uploads/2022/11/logo_nextcloud_white.svg)

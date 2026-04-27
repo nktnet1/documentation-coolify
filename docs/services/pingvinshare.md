@@ -1,6 +1,10 @@
 ---
 title: "PingvinShare"
-description: "Share files on Coolify with PingvinShare for temporary file sharing, expiring links, password protection, and self-hosted file transfer."
+description: "Self-hosted file sharing platform that combines lightness and beauty."
+og:
+  description: "Share files on Coolify with PingvinShare for temporary file sharing, expiring links, password protection, and self-hosted file transfer."
+category: "File Sharing"
+icon: "/docs/images/services/pingvinshare-logo.svg"
 ---
 
 # PingvinShare

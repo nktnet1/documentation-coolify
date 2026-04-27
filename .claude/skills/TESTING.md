@@ -35,12 +35,12 @@ For each skill, verify Claude follows the documented steps.
 
 #### adding-service-documentation
 
-- [ ] Extracts metadata from YAML template
+- [ ] Extracts metadata from upstream YAML template
 - [ ] Downloads logo locally (doesn't use external URL)
-- [ ] Creates markdown file with correct frontmatter
-- [ ] Updates List.vue with new entry
-- [ ] Inserts alphabetically in List.vue
-- [ ] Uses correct image path format
+- [ ] Names the logo so the icon resolver finds it (`<slug>-logo.<ext>` or similar)
+- [ ] Creates markdown file with required frontmatter (`title`, `description`, `category`)
+- [ ] Does NOT hand-edit `List.vue`, `services.json`, or `all.md`
+- [ ] Runs `bun run generate:services` (or relies on the pre-`dev`/`build` hook) and commits the regenerated `services.json` and `all.md`
 
 #### adding-documentation-pages
 
@@ -52,18 +52,19 @@ For each skill, verify Claude follows the documented steps.
 
 #### renaming-services
 
-- [ ] Renames markdown file correctly
-- [ ] Updates slug in List.vue
-- [ ] Adds nginx redirect for old URL
+- [ ] Renames the markdown file via `git mv`
+- [ ] Renames the logo asset (or pins it via `icon:` in frontmatter)
+- [ ] Adds a 301 redirect in `nginx/redirects.conf`
 - [ ] Searches for and updates internal links
-- [ ] Updates logo filename if needed
+- [ ] Runs `bun run generate:services` and commits the regenerated `services.json` and `all.md`
 
 #### disabling-services
 
-- [ ] Adds `disabled: true` to List.vue entry
-- [ ] Adds warning callout to markdown file
+- [ ] Sets `disabled: true` in the service's frontmatter
+- [ ] Adds a warning callout (using one of the recognized titles) at the top of the body
 - [ ] Does NOT delete the documentation file
 - [ ] Keeps redirects intact
+- [ ] Runs `bun run generate:services` and commits the regenerated `services.json` and `all.md`
 
 ### 3. Edge Cases
 
@@ -85,7 +86,7 @@ Verify Claude correctly navigates to reference files when needed:
 |------|-------------|
 | Need frontmatter format | `_shared/FRONTMATTER.md` |
 | Need image guidelines | `_shared/IMAGES.md` or skill-specific `IMAGES.md` |
-| Need List.vue structure | `adding-service-documentation/CATALOG.md` |
+| Need to know how the listing is generated | `adding-service-documentation/CATALOG.md` |
 | Need page template | Skill-specific `TEMPLATES.md` |
 
 ## Recording Test Results
@@ -110,9 +111,9 @@ When testing, record:
 **Steps Observed**:
 1. ✅ Found YAML template in templates/compose/
 2. ✅ Extracted metadata correctly
-3. ✅ Downloaded logo to correct path
-4. ✅ Created markdown with frontmatter
-5. ✅ Updated List.vue alphabetically
+3. ✅ Downloaded logo to correct path with resolver-friendly name
+4. ✅ Created markdown with `title`, `description`, `category` frontmatter
+5. ✅ Ran `bun run generate:services` and committed regenerated `services.json` and `all.md`
 6. ✅ Used correct image path format
 
 **Result**: Pass

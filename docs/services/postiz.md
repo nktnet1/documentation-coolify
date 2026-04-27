@@ -1,6 +1,10 @@
 ---
 title: Postiz
-description: "Schedule social media on Coolify with Postiz for content planning, multi-platform posting, analytics, and social media management automation."
+description: "Social media scheduling and analytics tool."
+og:
+  description: "Schedule social media on Coolify with Postiz for content planning, multi-platform posting, analytics, and social media management automation."
+category: "Social Media"
+icon: "/docs/images/services/postiz-logo.png"
 ---
 
 # Postiz

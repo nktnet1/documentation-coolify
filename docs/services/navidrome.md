@@ -1,6 +1,10 @@
 ---
 title: "Navidrome"
-description: "Stream music on Coolify with Navidrome personal server supporting Subsonic API, web player, mobile apps, and self-hosted music library."
+description: "Modern music server and streamer compatible with Subsonic/Airsonic."
+og:
+  description: "Stream music on Coolify with Navidrome personal server supporting Subsonic API, web player, mobile apps, and self-hosted music library."
+category: "Media"
+icon: "/docs/images/services/navidrome-logo.svg"
 ---
 
 <ZoomableImage src="/docs/images/services/navidrome.webp" alt="Navidrome Logo logo" />

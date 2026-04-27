@@ -1,6 +1,10 @@
 ---
 title: "Glance"
-description: "Host Glance dashboard on Coolify for quick server overview, system monitoring, service status, and at-a-glance infrastructure health display."
+description: "All-in-one Home Server Dashboard."
+og:
+  description: "Host Glance dashboard on Coolify for quick server overview, system monitoring, service status, and at-a-glance infrastructure health display."
+category: "Administration"
+icon: "/docs/images/services/glance-logo.png"
 ---
 
 # Glance

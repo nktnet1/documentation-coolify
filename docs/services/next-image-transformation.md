@@ -1,6 +1,10 @@
 ---
 title: Next Image Transformation
-description: "Host Next.js image optimizer on Coolify for dynamic image resizing, format conversion, CDN caching, and web performance optimization."
+description: "Image transformation service for Next.js."
+og:
+  description: "Host Next.js image optimizer on Coolify for dynamic image resizing, format conversion, CDN caching, and web performance optimization."
+category: "Development"
+icon: "/docs/images/services/nextimage-logo.svg"
 ---
 
 # Next Image Transformation

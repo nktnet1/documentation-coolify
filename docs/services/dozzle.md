@@ -1,6 +1,10 @@
 ---
 title: "Dozzle"
-description: "Monitor Docker logs on Coolify with Dozzle real-time log viewer featuring search, filtering, multi-container support, and lightweight web interface."
+description: "Realtime log viewer for docker containers."
+og:
+  description: "Monitor Docker logs on Coolify with Dozzle real-time log viewer featuring search, filtering, multi-container support, and lightweight web interface."
+category: "Development"
+icon: "/docs/images/services/dozzle-logo.svg"
 ---
 
 ![Dozzle](https://dozzle.dev/logo.svg)

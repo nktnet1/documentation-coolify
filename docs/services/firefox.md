@@ -1,6 +1,10 @@
 ---
 title: Firefox
-description: "Run Firefox browser on Coolify in containerized environment for secure web browsing, testing, and isolated internet access via web interface."
+description: "Firefox browser in a container."
+og:
+  description: "Run Firefox browser on Coolify in containerized environment for secure web browsing, testing, and isolated internet access via web interface."
+category: "Browser"
+icon: "/docs/images/services/firefox-logo.png"
 ---
 
 # Firefox

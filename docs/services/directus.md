@@ -1,6 +1,10 @@
 ---
 title: "Directus"
-description: "Deploy Directus headless CMS on Coolify with SQL database wrapper, REST/GraphQL API, no-code data studio, and custom field types for any project."
+description: "An open-source headless CMS and API for custom databases."
+og:
+  description: "Deploy Directus headless CMS on Coolify with SQL database wrapper, REST/GraphQL API, no-code data studio, and custom field types for any project."
+category: "CMS"
+icon: "/docs/images/services/directus-logo.svg"
 ---
 
 ![directus](https://user-images.githubusercontent.com/522079/158864859-0fbeae62-9d7a-4619-b35e-f8fa5f68e0c8.png)

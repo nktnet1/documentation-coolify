@@ -1,6 +1,10 @@
 ---
 title: "Twenty"
-description: "An open-source CRM designed to fit your unique business needs."
+description: "Open-source CRM designed to fit your unique business needs."
+og:
+  description: "An open-source CRM designed to fit your unique business needs."
+category: "Business"
+icon: "/docs/images/services/twenty-logo.svg"
 ---
 
 # Twenty

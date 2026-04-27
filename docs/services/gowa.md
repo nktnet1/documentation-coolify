@@ -1,6 +1,10 @@
 ---
 title: "GoWa"
-description: "Host Gowa analytics on Coolify for website traffic tracking, visitor insights, and privacy-respecting web analytics without cookies or tracking."
+description: "Golang WhatsApp - Built with Go for efficient memory use."
+og:
+  description: "Host Gowa analytics on Coolify for website traffic tracking, visitor insights, and privacy-respecting web analytics without cookies or tracking."
+category: "Communication"
+icon: "/docs/images/services/gowa-logo.svg"
 ---
 
 # GoWa

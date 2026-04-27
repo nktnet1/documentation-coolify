@@ -1,6 +1,10 @@
 ---
 title: "Mage AI"
 description: "Build, run, and manage data pipelines for integrating and transforming data."
+og:
+  description: "Build, run, and manage data pipelines for integrating and transforming data."
+category: "Automation"
+icon: "/docs/images/services/mage-ai.svg"
 ---
 
 <ZoomableImage src="/docs/images/services/mage-ai.svg" alt="Mage AI Dashboard" />

@@ -1,6 +1,10 @@
 ---
 title: "Databasus"
 description: "A free, open source and self-hosted tool to backup PostgreSQL, MySQL and MongoDB with multiple storage backends."
+og:
+  description: "A free, open source and self-hosted tool to backup PostgreSQL, MySQL and MongoDB with multiple storage backends."
+category: "Backup"
+icon: "/docs/images/services/databasus-logo.webp"
 ---
 
 # Databasus

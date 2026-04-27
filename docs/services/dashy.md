@@ -1,6 +1,10 @@
 ---
 title: Dashy
-description: "Host Dashy dashboard on Coolify with customizable widgets, service health checks, themes, icons, and organized homepage for self-hosted services."
+description: "Customizable homepage dashboard for self-hosted services."
+og:
+  description: "Host Dashy dashboard on Coolify with customizable widgets, service health checks, themes, icons, and organized homepage for self-hosted services."
+category: "Administration"
+icon: "/docs/images/services/dashy-logo.png"
 ---
 
 # Dashy

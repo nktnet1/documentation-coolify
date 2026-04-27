@@ -1,6 +1,10 @@
 ---
 title: "SeaweedFS"
-description: "SeaweedFS is a simple and highly scalable distributed file system. Compatible with S3, with an admin web interface."
+description: "Simple and highly scalable distributed file system compatible with S3."
+og:
+  description: "SeaweedFS is a simple and highly scalable distributed file system. Compatible with S3, with an admin web interface."
+category: "Storage"
+icon: "/docs/images/services/seaweedfs-logo.svg"
 ---
 
 # SeaweedFS

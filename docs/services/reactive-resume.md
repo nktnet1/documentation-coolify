@@ -1,6 +1,10 @@
 ---
 title: "Reactive Resume"
-description: "Build resumes on Coolify with Reactive Resume for free resume builder, templates, PDF export, and professional CV creation tool."
+description: "A free and open source resume builder."
+og:
+  description: "Build resumes on Coolify with Reactive Resume for free resume builder, templates, PDF export, and professional CV creation tool."
+category: "Productivity"
+icon: "/docs/images/services/rxresume-logo.svg"
 ---
 
 <ZoomableImage src="/docs/images/services/rxresume-logo.svg" alt="Reactive Resume dashboard" />

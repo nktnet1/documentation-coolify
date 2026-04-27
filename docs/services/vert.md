@@ -1,6 +1,10 @@
 ---
 title: "Vert"
-description: "Deploy Vert.x on Coolify for reactive applications, microservices, event-driven architecture, and polyglot JVM framework development."
+description: "Self-hosted file converter."
+og:
+  description: "Deploy Vert.x on Coolify for reactive applications, microservices, event-driven architecture, and polyglot JVM framework development."
+category: "Utilities"
+icon: "/docs/images/services/vert-logo.png"
 ---
 
 <ZoomableImage src="/docs/images/services/vert.webp" alt="Vert Logo logo" />

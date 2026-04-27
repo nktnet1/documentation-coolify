@@ -1,6 +1,10 @@
 ---
 title: Wireguard Easy
-description: "Deploy WireGuard VPN on Coolify with WireGuard Easy for simple VPN setup, client management, and secure network tunneling interface."
+description: "Easy-to-use WireGuard VPN server."
+og:
+  description: "Deploy WireGuard VPN on Coolify with WireGuard Easy for simple VPN setup, client management, and secure network tunneling interface."
+category: "Security"
+icon: "/docs/images/services/wireguardeasy-logo.svg"
 ---
 
 # Wireguard Easy

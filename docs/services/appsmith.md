@@ -1,6 +1,10 @@
 ---
 title: "Appsmith"
-description: "Build internal tools on Coolify with Appsmith's low-code platform featuring drag-and-drop UI, database connectors, and custom business logic."
+description: "A low-code application platform for building internal tools."
+og:
+  description: "Build internal tools on Coolify with Appsmith's low-code platform featuring drag-and-drop UI, database connectors, and custom business logic."
+category: "Development"
+icon: "/docs/images/services/appsmith-logo.svg"
 ---
 
 # Appsmith

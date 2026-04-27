@@ -1,6 +1,10 @@
 ---
 title: "Onetime Secret"
-description: "Share secrets securely on Coolify with One-Time Secret for encrypted message sharing that self-destructs after single viewing."
+description: "Share secrets securely with self-destructing links that can only be viewed once."
+og:
+  description: "Share secrets securely on Coolify with One-Time Secret for encrypted message sharing that self-destructs after single viewing."
+category: "Security"
+icon: "/docs/images/services/onetimesecret-logo.svg"
 ---
 
 <ZoomableImage src="/docs/images/services/onetime-secret-logo.webp" alt="Onetime Secret Logo logo" />

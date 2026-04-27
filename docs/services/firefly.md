@@ -1,6 +1,10 @@
 ---
 title: "Firefly III"
-description: "Manage personal finances on Coolify with Firefly III featuring budgets, reports, recurring transactions, and multi-currency expense tracking."
+description: "A personal finances manager."
+og:
+  description: "Manage personal finances on Coolify with Firefly III featuring budgets, reports, recurring transactions, and multi-currency expense tracking."
+category: "Finance"
+icon: "/docs/images/services/firefly-iii-logo.svg"
 ---
 
 ![Firefly III](https://raw.githubusercontent.com/firefly-iii/firefly-iii/develop/.github/assets/img/logo-small.png)

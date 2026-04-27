@@ -1,6 +1,10 @@
 ---
 title: "DokuWiki"
-description: "Deploy DokuWiki on Coolify for flat-file wiki without database, version control, ACL permissions, and plugin extensibility for documentation."
+description: "A simple to use and highly versatile Open Source wiki software that doesn't require a database."
+og:
+  description: "Deploy DokuWiki on Coolify for flat-file wiki without database, version control, ACL permissions, and plugin extensibility for documentation."
+category: "Documentation"
+icon: "/docs/images/services/dokuwiki-logo.png"
 ---
 
 ![DokuWiki](https://www.dokuwiki.org/lib/tpl/dokuwiki/images/logo.png)

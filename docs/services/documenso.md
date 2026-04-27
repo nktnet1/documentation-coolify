@@ -1,6 +1,10 @@
 ---
 title: Documenso
-description: "Run Documenso document signing on Coolify as open-source DocuSign alternative with e-signatures, PDF workflows, and digital signature management."
+description: "Open-source DocuSign alternative for document signing."
+og:
+  description: "Run Documenso document signing on Coolify as open-source DocuSign alternative with e-signatures, PDF workflows, and digital signature management."
+category: "Business"
+icon: "/docs/images/services/documenso-logo.png"
 ---
 
 # Documenso

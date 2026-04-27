@@ -1,6 +1,10 @@
 ---
 title: Owncloud
-description: "Run ownCloud on Coolify for enterprise file sync, sharing, collaboration, encryption, and self-hosted cloud storage with desktop clients."
+description: "File synchronization and sharing platform."
+og:
+  description: "Run ownCloud on Coolify for enterprise file sync, sharing, collaboration, encryption, and self-hosted cloud storage with desktop clients."
+category: "Storage"
+icon: "/docs/images/services/owncloud-logo.svg"
 ---
 
 # Owncloud

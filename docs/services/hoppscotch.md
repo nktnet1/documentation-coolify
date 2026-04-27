@@ -1,6 +1,10 @@
 ---
 title: Hoppscotch
-description: "Run Hoppscotch API testing on Coolify as open-source Postman alternative with REST, GraphQL, WebSocket testing, and API development tools."
+description: "Open-source API development ecosystem."
+og:
+  description: "Run Hoppscotch API testing on Coolify as open-source Postman alternative with REST, GraphQL, WebSocket testing, and API development tools."
+category: "Development"
+icon: "/docs/images/services/hoppscotch-logo.png"
 ---
 
 # Hoppscotch

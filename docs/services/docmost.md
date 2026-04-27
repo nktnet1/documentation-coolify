@@ -1,6 +1,10 @@
 ---
 title: "Docmost"
-description: "Deploy Docmost wiki on Coolify for team documentation, knowledge management, real-time collaboration, and organized information sharing platform."
+description: "Open-source document collaboration platform."
+og:
+  description: "Deploy Docmost wiki on Coolify for team documentation, knowledge management, real-time collaboration, and organized information sharing platform."
+category: "Documentation"
+icon: "/docs/images/services/docmost-logo.png"
 ---
 
 # What is Docmost?

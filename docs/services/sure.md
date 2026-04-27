@@ -1,6 +1,10 @@
 ---
 title: Sure
-description: "Deploy Sure on Coolify, An all-in-one personal finance platform. Track, optimize, grow, and manage your money through every stage of life."
+description: "An all-in-one personal finance platform."
+og:
+  description: "Deploy Sure on Coolify, An all-in-one personal finance platform. Track, optimize, grow, and manage your money through every stage of life."
+category: "Finance"
+icon: "/docs/images/services/sure.png"
 ---
 
 # Sure

@@ -1,6 +1,10 @@
 ---
 title: "BabyBuddy"
-description: "Track baby care on Coolify with Baby Buddy featuring feeding, diaper changes, sleep schedules, growth charts, and caregiver coordination."
+description: "It helps parents track their baby's daily activities, growth, and health with ease."
+og:
+  description: "Track baby care on Coolify with Baby Buddy featuring feeding, diaper changes, sleep schedules, growth charts, and caregiver coordination."
+category: "Health"
+icon: "/docs/images/services/babybuddy-logo.png"
 ---
 
 ![BabyBuddy](https://raw.githubusercontent.com/babybuddy/babybuddy/master/babybuddy/static_src/logo/icon.png)

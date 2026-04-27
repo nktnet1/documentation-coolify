@@ -1,6 +1,10 @@
 ---
 title: Rallly
-description: "Schedule meetings on Coolify with Rallly for group polls, availability voting, and collaborative event planning without accounts required."
+description: "Open-source meeting scheduling tool."
+og:
+  description: "Schedule meetings on Coolify with Rallly for group polls, availability voting, and collaborative event planning without accounts required."
+category: "Productivity"
+icon: "/docs/images/services/rallly-logo.svg"
 ---
 
 # Rallly

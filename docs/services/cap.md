@@ -1,6 +1,10 @@
 ---
 title: "Cap"
-description: "Here you can find the documentation for hosting Cap with Coolify."
+description: "Cap is the open source alternative to Loom. Lightweight, powerful, and cross-platform. Record and share in seconds."
+og:
+  description: "Here you can find the documentation for hosting Cap with Coolify."
+category: "Media"
+icon: "/docs/images/services/cap.svg"
 ---
 
 <ZoomableImage src="/docs/images/services/cap.svg" />

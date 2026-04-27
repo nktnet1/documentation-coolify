@@ -1,6 +1,10 @@
 ---
 title: "Docuseal"
-description: "Host DocuSeal on Coolify for PDF form filling, e-signatures, document workflows, and digital signature collection for business process automation."
+description: "Open source DocuSign alternative."
+og:
+  description: "Host DocuSeal on Coolify for PDF form filling, e-signatures, document workflows, and digital signature collection for business process automation."
+category: "Business"
+icon: "/docs/images/services/docuseal-logo.png"
 ---
 
 ## What is Docuseal?

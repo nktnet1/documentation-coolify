@@ -1,6 +1,10 @@
 ---
 title: "Gramps Web"
-description: "Deploy Gramps Web genealogy system on Coolify for building your family tree."
+description: "The free, open-source genealogy system."
+og:
+  description: "Deploy Gramps Web genealogy system on Coolify for building your family tree."
+category: "Family"
+icon: "/docs/images/services/grampsweb-logo.svg"
 ---
 
 # Gramps Web

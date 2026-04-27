@@ -1,6 +1,10 @@
 ---
 title: Bookstack
-description: "Deploy BookStack wiki on Coolify for organized documentation with WYSIWYG editor, hierarchical structure, search, and team collaboration features."
+description: "Self-hosted wiki-style documentation platform."
+og:
+  description: "Deploy BookStack wiki on Coolify for organized documentation with WYSIWYG editor, hierarchical structure, search, and team collaboration features."
+category: "Documentation"
+icon: "/docs/images/services/bookstack-logo.png"
 ---
 
 # Bookstack

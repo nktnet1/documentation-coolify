@@ -1,6 +1,10 @@
 ---
 title: "Dashboard"
-description: "Deploy customizable dashboard on Coolify for application shortcuts, bookmarks, service monitoring, and centralized access to self-hosted tools."
+description: "A simple dashboard for your server."
+og:
+  description: "Deploy customizable dashboard on Coolify for application shortcuts, bookmarks, service monitoring, and centralized access to self-hosted tools."
+category: "Administration"
+icon: "/docs/images/services/dashboard-logo.svg"
 ---
 
 ::: warning SERVICE NOT AVAILABLE

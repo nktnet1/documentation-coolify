@@ -1,6 +1,10 @@
 ---
 title: "Grist"
-description: "Run Grist spreadsheet on Coolify combining spreadsheets and databases with relational data, forms, automation, and collaborative data management."
+description: "Modern relational spreadsheet combining flexibility and database robustness."
+og:
+  description: "Run Grist spreadsheet on Coolify combining spreadsheets and databases with relational data, forms, automation, and collaborative data management."
+category: "Productivity"
+icon: "/docs/images/services/grist-logo.svg"
 ---
 
 <ZoomableImage src="/docs/images/services/grist-logo.webp" alt="Grist Logo logo" />

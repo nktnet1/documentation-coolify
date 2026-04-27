@@ -1,6 +1,10 @@
 ---
 title: It Tools
-description: "Host IT Tools collection on Coolify with 80+ developer utilities for encoding, hashing, formatting, and text transformation in web interface."
+description: "Collection of handy online tools for developers."
+og:
+  description: "Host IT Tools collection on Coolify with 80+ developer utilities for encoding, hashing, formatting, and text transformation in web interface."
+category: "Development"
+icon: "/docs/images/services/ittools-logo.svg"
 ---
 
 # It Tools

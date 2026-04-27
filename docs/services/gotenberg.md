@@ -1,6 +1,10 @@
 ---
 title: "Gotenberg"
-description: "Run Gotenberg on Coolify for PDF generation from HTML, Markdown, Office files via Docker-based microservice with REST API for conversions."
+description: "A Docker-powered stateless API for PDF files."
+og:
+  description: "Run Gotenberg on Coolify for PDF generation from HTML, Markdown, Office files via Docker-based microservice with REST API for conversions."
+category: "Development"
+icon: "/docs/images/services/gotenberg-logo.png"
 ---
 
 ![Gotenberg](https://user-images.githubusercontent.com/8983173/130322857-185831e2-f041-46eb-a17f-0a69d066c4e5.png)

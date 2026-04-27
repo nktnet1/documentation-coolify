@@ -1,6 +1,10 @@
 ---
 title: "Sequin"
-description: "Stream database changes on Coolify with Sequin for CDC, event-driven architecture, webhooks, and real-time data synchronization workflows."
+description: "The fastest Postgres change data capture."
+og:
+  description: "Stream database changes on Coolify with Sequin for CDC, event-driven architecture, webhooks, and real-time data synchronization workflows."
+category: "Analytics"
+icon: "/docs/images/services/sequin-logo.svg"
 ---
 
 # Sequin

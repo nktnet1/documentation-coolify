@@ -1,6 +1,10 @@
 ---
 title: Pocket ID
-description: "Deploy Pocket ID on Coolify for simple OIDC provider with passwordless passkey authentication across your self-hosted services."
+description: "A simple OIDC provider for passwordless authentication with passkeys."
+og:
+  description: "Deploy Pocket ID on Coolify for simple OIDC provider with passwordless passkey authentication across your self-hosted services."
+category: "Security"
+icon: "/docs/images/services/pocketid-logo.webp"
 ---
 
 # Pocket ID

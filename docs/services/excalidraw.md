@@ -1,6 +1,10 @@
 ---
 title: "Excalidraw"
-description: "Run Excalidraw on Coolify for collaborative whiteboarding with hand-drawn diagrams, real-time collaboration, and export options for visual thinking."
+description: "Virtual whiteboard for sketching hand-drawn like diagrams."
+og:
+  description: "Run Excalidraw on Coolify for collaborative whiteboarding with hand-drawn diagrams, real-time collaboration, and export options for visual thinking."
+category: "Productivity"
+icon: "/docs/images/services/excalidraw-logo.svg"
 ---
 
 # Excalidraw

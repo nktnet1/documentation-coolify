@@ -1,6 +1,10 @@
 ---
 title: Joplin
-description: "Deploy Joplin notes on Coolify for markdown note-taking, to-do lists, synchronization, end-to-end encryption, and cross-platform organization."
+description: "Open-source note taking and to-do application."
+og:
+  description: "Deploy Joplin notes on Coolify for markdown note-taking, to-do lists, synchronization, end-to-end encryption, and cross-platform organization."
+category: "Productivity"
+icon: "/docs/images/services/joplin-logo.png"
 ---
 
 # Joplin

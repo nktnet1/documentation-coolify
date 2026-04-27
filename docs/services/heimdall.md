@@ -1,6 +1,10 @@
 ---
 title: "Heimdall"
-description: "Deploy Heimdall dashboard on Coolify for application launcher, bookmark manager, and organized access point to all your self-hosted services."
+description: "An elegant solution to organize all your web applications."
+og:
+  description: "Deploy Heimdall dashboard on Coolify for application launcher, bookmark manager, and organized access point to all your self-hosted services."
+category: "Administration"
+icon: "/docs/images/services/heimdall-logo.svg"
 ---
 
 ![Heimdall](https://camo.githubusercontent.com/0b7b7b9940d2234a4edc1af41c191c62b716baf21a0803a38b0cc9d5328db54e/68747470733a2f2f692e696d6775722e636f6d2f697556387733792e706e67)

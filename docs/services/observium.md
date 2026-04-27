@@ -1,6 +1,10 @@
 ---
 title: "Observium"
-description: "Monitor networks on Coolify with Observium for SNMP monitoring, device discovery, performance graphs, and infrastructure health tracking."
+description: "Low-maintenance auto-discovering network monitoring platform."
+og:
+  description: "Monitor networks on Coolify with Observium for SNMP monitoring, device discovery, performance graphs, and infrastructure health tracking."
+category: "Monitoring"
+icon: "/docs/images/services/observium-logo.webp"
 ---
 
 <ZoomableImage src="/docs/images/services/observium-logo.webp" alt="Observium Logo logo" />

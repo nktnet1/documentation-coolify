@@ -106,31 +106,56 @@ Always specify a port, as Caddy Proxy cannot automatically determine the service
 
 Once your service template is merged into Coolify, it will be important to also add documentation for it in the Coolify docs.
 In the [Coolify Docs Contribute section](/get-started/contribute/documentation) we explain how to contribute and run the documentation on your own PC.
+
+::: info HOW THE SERVICE LIST IS BUILT
+The services overview page and the [All Services](/services/all) directory are **generated automatically** from the frontmatter of each markdown file in `docs/services/`. You do **not** need to edit `List.vue` or `all.md` manually anymore. The generators run as part of `bun run dev`, `bun run build`, and `bun run preview`.
+
+- `scripts/generate-service-list.mjs` → writes `docs/.vitepress/theme/data/services.json` (consumed by the services overview component)
+- `scripts/generate-services-page.mjs` → writes `docs/services/all.md`
+- Both scripts share `scripts/services-data.mjs`, which parses each service's frontmatter and resolves its logo from `docs/public/images/services/`
+:::
+
 As soon as you have your local setup ready, follow these steps to add your new service:
 
-1. Add service logo under `/docs/public/images/services/`
+1. Add the service logo under `/docs/public/images/services/`
 
-2. Create documentation file
+   - Use the same base name as your service slug, e.g. `my-service.svg` or `my-service-logo.svg`. The icon resolver tries `<slug>-logo`, `<slug>_logo`, `<slug>logo`, then bare `<slug>`, then the same variants based on the title.
+   - Prefer SVG; otherwise WebP, then PNG. Avoid JPEG for logos.
 
-   Create `/docs/services/<service-name>.md` with frontmatter:
+2. Create the documentation file
+
+   Create `/docs/services/<service-slug>.md`. The slug must be lowercase and kebab-case, and must match the filename. Use this frontmatter:
 
    ```yaml
    ---
    title: "Service Name"
-   description: "Here you can find the documentation for hosting Service Name with Coolify."
+   description: "Short description that appears on the service card and search results."
+   og:
+     description: "SEO/social-card description (optional, longer than `description`)."
+   category: "Analytics"
+   icon: "/docs/images/services/service-name-logo.svg"
    ---
    ```
 
-3. Write documentation
+   | Field | Required | Notes |
+   |---|---|---|
+   | `title` | yes | Display name shown on the card |
+   | `description` | yes | Used as the card description and in `all.md` |
+   | `category` | yes | Determines the heading the service appears under in `all.md` and the filter in the overview |
+   | `icon` | optional | Only set if auto-resolution can't find your logo |
+   | `og.description` | optional | Longer description used for social/SEO meta tags |
+   | `disabled` | optional | Set to `true` to hide the service from the listing while keeping the page reachable by direct URL |
+
+3. Write the documentation
 
    Start writing your documentation under the frontmatter. Use the following template as a starting point:
 
    ```markdown
-   # [Service Name]
+   # Service Name
 
-   <ZoomableImage src="/docs/images/services/service.svg" alt="/ dashboard" />
+   ![Service Name](/docs/images/services/service-name-logo.svg)
 
-   ## What is [Service Name]?
+   ## What is Service Name?
 
    Brief description and use cases.
 
@@ -140,24 +165,20 @@ As soon as you have your local setup ready, follow these steps to add your new s
    - [GitHub](https://github.com/example/repo?utm_source=coolify.io)
    ```
 
-4. Add Service to the Services Overview
+   Use `<ZoomableImage>` only for screenshots that benefit from a zoomable view, not for the logo.
 
-   - Add the new service to the service list under `docs\.vitepress\theme\components\Services\List.vue` following the existing format:
+4. Regenerate the listings (optional — happens automatically on `dev`/`build`)
 
-   ```js
-    {
-        name: 'Service Name',
-        slug: 'service-name', # Match the filename of your documentation file
-        icon: '/docs/images/services/service.svg', # Path to your logo
-        description: 'Brief description of the service.',
-        category: 'Analytics' # Choose an appropriate category
-    },
+   ```bash
+   bun run generate:services
    ```
 
-5. Submit Pull Request
+   This refreshes `docs/.vitepress/theme/data/services.json` and `docs/services/all.md`. Commit both regenerated files alongside your new service page.
+
+5. Submit a Pull Request
 
    - Target the `next` branch
-   - Test documentation renders correctly with `bun run dev`
+   - Verify the service renders correctly with `bun run dev`, including the listing card, the filter category, and the entry in `/services/all`
 
 # Request a new service
 

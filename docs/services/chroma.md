@@ -1,6 +1,10 @@
 ---
 title: "Chroma"
-description: "Deploy Chroma vector database on Coolify for AI embeddings storage, semantic search, and retrieval-augmented generation in machine learning apps."
+description: "Open-source, AI-native vector database for building applications with embeddings."
+og:
+  description: "Deploy Chroma vector database on Coolify for AI embeddings storage, semantic search, and retrieval-augmented generation in machine learning apps."
+category: "AI"
+icon: "/docs/images/services/chroma-logo.svg"
 ---
 
 # Chroma

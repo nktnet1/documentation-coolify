@@ -1,6 +1,10 @@
 ---
 title: "Stirling PDF"
-description: "Process PDFs on Coolify with Stirling-PDF for merging, splitting, compression, conversion, OCR, and 50+ PDF manipulation operations."
+description: "Powerful PDF manipulation tool."
+og:
+  description: "Process PDFs on Coolify with Stirling-PDF for merging, splitting, compression, conversion, OCR, and 50+ PDF manipulation operations."
+category: "Documentation"
+icon: "/docs/images/services/stirling-pdf-logo.png"
 ---
 
 ![Stirling PDF](https://raw.githubusercontent.com/Stirling-Tools/Stirling-PDF/main/docs/stirling.png)

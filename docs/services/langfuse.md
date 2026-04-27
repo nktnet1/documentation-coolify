@@ -1,6 +1,10 @@
 ---
 title: "Langfuse"
-description: "Host Langfuse LLM observability on Coolify for prompt management, tracing, debugging, and analytics for LangChain and OpenAI applications."
+description: "Open source LLM engineering platform."
+og:
+  description: "Host Langfuse LLM observability on Coolify for prompt management, tracing, debugging, and analytics for LangChain and OpenAI applications."
+category: "AI"
+icon: "/docs/images/services/langfuse-logo.svg"
 ---
 
 # What is Langfuse?

@@ -1,6 +1,10 @@
 ---
 title: "CodiMD"
-description: "Deploy CodiMD collaborative markdown editor on Coolify with real-time collaboration, presentations, diagrams, and knowledge sharing for teams."
+description: "Realtime collaborative markdown notes on all platforms."
+og:
+  description: "Deploy CodiMD collaborative markdown editor on Coolify with real-time collaboration, presentations, diagrams, and knowledge sharing for teams."
+category: "Productivity"
+icon: "/docs/images/services/codimd-logo.png"
 ---
 
 <ZoomableImage src="/docs/images/services/codimd-logo.webp" alt="Codimd Logo logo" />

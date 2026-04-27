@@ -1,6 +1,10 @@
 ---
 title: "Ghost"
-description: "Deploy Ghost publishing platform on Coolify for professional blogs, newsletters, memberships, and content monetization with modern editor."
+description: "A professional publishing platform."
+og:
+  description: "Deploy Ghost publishing platform on Coolify for professional blogs, newsletters, memberships, and content monetization with modern editor."
+category: "CMS"
+icon: "/docs/images/services/ghost-logo.svg"
 ---
 
 ![Ghost](https://user-images.githubusercontent.com/353959/169805900-66be5b89-0859-4816-8da9-528ed7534704.png)

@@ -1,6 +1,10 @@
 ---
 title: "Chaskiq"
-description: "Run Chaskiq customer engagement platform on Coolify with live chat, email campaigns, knowledge base, and conversational marketing automation."
+description: "Open source customer engagement platform."
+og:
+  description: "Run Chaskiq customer engagement platform on Coolify with live chat, email campaigns, knowledge base, and conversational marketing automation."
+category: "Business"
+icon: "/docs/images/services/chaskiq-logo.png"
 ---
 
 ![Chaskiq](https://user-images.githubusercontent.com/11976/81771025-eaefe780-94af-11ea-881b-ad7910536fee.png)

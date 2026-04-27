@@ -1,6 +1,10 @@
 ---
 title: "Argilla"
-description: "Host Argilla on Coolify for collaborative AI dataset creation, annotation, labeling, and feedback collection for machine learning projects."
+description: "An open-source platform for building, training, and evaluating conversational AI models."
+og:
+  description: "Host Argilla on Coolify for collaborative AI dataset creation, annotation, labeling, and feedback collection for machine learning projects."
+category: "AI"
+icon: "/docs/images/services/argilla-logo.svg"
 ---
 
 <ZoomableImage src="/docs/images/services/argilla.svg" alt="Argilla dashboard" />

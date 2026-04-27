@@ -1,6 +1,10 @@
 ---
 title: "Cloudreve"
 description: "A self-hosted file management and sharing system."
+og:
+  description: "A self-hosted file management and sharing system."
+category: "Storage"
+icon: "/docs/images/services/cloudreve-logo.svg"
 ---
 
 # Cloudreve

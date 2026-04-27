@@ -1,6 +1,10 @@
 ---
 title: "Windmill"
-description: "Build workflows on Coolify with Windmill for scripts, flows, UIs, and developer-centric workflow automation with TypeScript/Python."
+description: "Open-source developer platform."
+og:
+  description: "Build workflows on Coolify with Windmill for scripts, flows, UIs, and developer-centric workflow automation with TypeScript/Python."
+category: "Development"
+icon: "/docs/images/services/windmill-logo.svg"
 ---
 
 ![Windmill](https://raw.githubusercontent.com/windmill-labs/windmill/main/imgs/windmill-banner.png)

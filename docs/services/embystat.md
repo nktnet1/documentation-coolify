@@ -1,6 +1,10 @@
 ---
 title: "Emby Stat"
-description: "Track Emby server usage on Coolify with EmbyStat featuring media statistics, playback analytics, user metrics, and library health monitoring."
+description: "A simple and easy-to-use Emby statistics dashboard."
+og:
+  description: "Track Emby server usage on Coolify with EmbyStat featuring media statistics, playback analytics, user metrics, and library health monitoring."
+category: "Media"
+icon: "/docs/images/services/embystat-logo.svg"
 ---
 
 ![Emby Stat](https://raw.githubusercontent.com/mregni/EmbyStat/develop/branding/logo-color.png)

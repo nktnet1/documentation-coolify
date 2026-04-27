@@ -1,6 +1,10 @@
 ---
-title: Imgcompress
-description: "Run Imgcompress on Coolify for self-hosted image compression, format conversion across 70+ formats, and AI-powered background removal without uploading to third-party services."
+title: "Imgcompress"
+description: "Image tool for compression, format conversion, and AI background removal"
+og:
+  description: "Run Imgcompress on Coolify for self-hosted image compression, format conversion across 70+ formats, and AI-powered background removal without uploading to third-party services."
+category: "Media"
+icon: "/docs/images/services/imgcompress-logo.webp"
 ---
 
 # Imgcompress

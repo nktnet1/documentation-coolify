@@ -1,6 +1,10 @@
 ---
 title: "Moodle"
-description: "Deploy Moodle LMS on Coolify for online learning, course management, assignments, quizzes, and educational platform with extensive plugins."
+description: "Open-source learning platform."
+og:
+  description: "Deploy Moodle LMS on Coolify for online learning, course management, assignments, quizzes, and educational platform with extensive plugins."
+category: "Education"
+icon: "/docs/images/services/moodle-logo.png"
 ---
 
 ![Moodle](https://raw.githubusercontent.com/moodle/moodle/main/.github/moodlelogo.svg)

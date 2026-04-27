@@ -1,6 +1,10 @@
 ---
 title: "MetaMCP"
-description: "Here you can find the documentation for hosting MetaMCP with Coolify."
+description: "MCP Aggregator, Orchestrator, Middleware, Gateway in one application."
+og:
+  description: "Here you can find the documentation for hosting MetaMCP with Coolify."
+category: "AI"
+icon: "/docs/images/services/metamcp.png"
 ---
 
 <ZoomableImage src="/docs/images/services/metamcp.png" />

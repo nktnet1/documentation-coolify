@@ -1,6 +1,10 @@
 ---
 title: "Shlink"
-description: "Shorten URLs on Coolify with Shlink for branded short links, QR codes, analytics, and self-hosted URL shortener with REST API."
+description: "The open source URL shortener."
+og:
+  description: "Shorten URLs on Coolify with Shlink for branded short links, QR codes, analytics, and self-hosted URL shortener with REST API."
+category: "Development"
+icon: "/docs/images/services/shlink-logo.svg"
 ---
 
 ![Shlink](https://raw.githubusercontent.com/shlinkio/shlink.io/main/public/images/shlink-hero.png)

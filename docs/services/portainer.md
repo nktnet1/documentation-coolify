@@ -1,6 +1,10 @@
 ---
 title: Portainer
-description: "Manage Docker on Coolify with Portainer for container management, stack deployment, registry access, and web-based Docker administration."
+description: "Container management platform."
+og:
+  description: "Manage Docker on Coolify with Portainer for container management, stack deployment, registry access, and web-based Docker administration."
+category: "Development"
+icon: "/docs/images/services/portainer-logo.png"
 ---
 
 # Portainer

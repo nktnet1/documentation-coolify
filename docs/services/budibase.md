@@ -1,6 +1,10 @@
 ---
 title: Budibase
-description: "Build internal apps on Coolify with Budibase low-code platform featuring database integration, workflow automation, and custom business applications."
+description: "Low-code platform for building internal tools and business apps."
+og:
+  description: "Build internal apps on Coolify with Budibase low-code platform featuring database integration, workflow automation, and custom business applications."
+category: "Development"
+icon: "/docs/images/services/budibase-logo.svg"
 ---
 
 # Budibase

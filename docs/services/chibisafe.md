@@ -1,6 +1,10 @@
 ---
 title: "Chibisafe"
 description: "A beautiful and performant vault to save all your files in the cloud."
+og:
+  description: "A beautiful and performant vault to save all your files in the cloud."
+category: "File Management"
+icon: "/docs/images/services/chibisafe-logo.svg"
 ---
 
 # Chibisafe

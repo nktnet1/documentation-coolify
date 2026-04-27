@@ -1,6 +1,10 @@
 ---
 title: "Garage"
-description: "Garage is an S3-compatible distributed object storage service designed for self-hosting."
+description: "S3-compatible distributed object storage service designed for self-hosting."
+og:
+  description: "Garage is an S3-compatible distributed object storage service designed for self-hosting."
+category: "Storage"
+icon: "/docs/images/services/garage-logo.svg"
 ---
 
 # Garage

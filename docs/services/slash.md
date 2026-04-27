@@ -1,6 +1,10 @@
 ---
 title: "Slash"
-description: "Manage bookmarks on Coolify with Slash for self-hosted link shortener, collections, sharing, and personal URL management with tagging."
+description: "Open-source, self-hosted links and notes manager."
+og:
+  description: "Manage bookmarks on Coolify with Slash for self-hosted link shortener, collections, sharing, and personal URL management with tagging."
+category: "Productivity"
+icon: "/docs/images/services/slash-logo.svg"
 ---
 
 ## What is Slash?

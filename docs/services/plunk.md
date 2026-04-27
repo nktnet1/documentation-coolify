@@ -1,6 +1,10 @@
 ---
 title: "Plunk"
-description: "Send emails on Coolify with Plunk for transactional email API, templates, analytics, and developer-friendly email delivery service."
+description: "Self-hosted email marketing platform."
+og:
+  description: "Send emails on Coolify with Plunk for transactional email API, templates, analytics, and developer-friendly email delivery service."
+category: "Marketing"
+icon: "/docs/images/services/plunk-logo.svg"
 ---
 
 ![Plunk](https://raw.githubusercontent.com/useplunk/plunk/main/assets/card.png)

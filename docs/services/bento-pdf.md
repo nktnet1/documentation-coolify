@@ -1,6 +1,10 @@
 ---
 title: "BentoPDF"
 description: "Process PDFs entirely in your browser. No uploads. No servers. Complete privacy."
+og:
+  description: "Process PDFs entirely in your browser. No uploads. No servers. Complete privacy."
+category: "Productivity"
+icon: "/docs/images/services/bento-pdf.png"
 ---
 
 # BentoPDF

@@ -1,6 +1,10 @@
 ---
 title: Castopod
-description: "Deploy Castopod podcast hosting on Coolify with RSS feeds, analytics, social features, and fediverse integration for independent podcasters."
+description: "Open-source podcast hosting platform."
+og:
+  description: "Deploy Castopod podcast hosting on Coolify with RSS feeds, analytics, social features, and fediverse integration for independent podcasters."
+category: "Media"
+icon: "/docs/images/services/castopod-logo.svg"
 ---
 
 # Castopod

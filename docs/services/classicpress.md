@@ -1,6 +1,10 @@
 ---
 title: "ClassicPress"
-description: "Run ClassicPress CMS on Coolify as WordPress alternative with classic editor, no blocks, and focus on business websites and traditional publishing."
+description: "A business-focused CMS with a strong community."
+og:
+  description: "Run ClassicPress CMS on Coolify as WordPress alternative with classic editor, no blocks, and focus on business websites and traditional publishing."
+category: "CMS"
+icon: "/docs/images/services/classicpress-logo.svg"
 ---
 
 ![ClassicPress](https://raw.githubusercontent.com/ClassicPress/ClassicPress/develop/src/wp-admin/images/classicpress-logo.png)

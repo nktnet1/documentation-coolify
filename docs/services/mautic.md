@@ -1,6 +1,10 @@
 ---
 title: Mautic
-description: "Deploy Mautic open-source marketing automation platform on Coolify for email campaigns, lead nurturing, contact management, and privacy-focused marketing workflows."
+description: "Open-source marketing automation platform."
+og:
+  description: "Deploy Mautic open-source marketing automation platform on Coolify for email campaigns, lead nurturing, contact management, and privacy-focused marketing workflows."
+category: "Marketing"
+icon: "/docs/images/services/mautic-logo.svg"
 ---
 
 # Mautic

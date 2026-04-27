@@ -1,6 +1,10 @@
 ---
 title: "NewAPI"
 description: "The next-generation LLM gateway and AI asset management system supports multiple languages."
+og:
+  description: "The next-generation LLM gateway and AI asset management system supports multiple languages."
+category: "AI"
+icon: "/docs/images/services/newapi-logo.png"
 ---
 
 # NewAPI

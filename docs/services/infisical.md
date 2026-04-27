@@ -1,6 +1,10 @@
 ---
 title: "Infisical"
-description: "Deploy Infisical secrets management on Coolify for environment variables, API keys, secure sharing, and centralized secrets across development teams."
+description: "Open source secret management platform."
+og:
+  description: "Deploy Infisical secrets management on Coolify for environment variables, API keys, secure sharing, and centralized secrets across development teams."
+category: "Security"
+icon: "/docs/images/services/infisical-logo.svg"
 ---
 
 <ZoomableImage src="/docs/images/services/infisical-logo.svg" alt="Infisical dashboard" />

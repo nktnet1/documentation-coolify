@@ -1,6 +1,10 @@
 ---
 title: "Kuzzle"
-description: "Run Kuzzle backend on Coolify for real-time APIs, authentication, data storage, geofencing, and IoT platform with pub/sub messaging."
+description: "A powerful backend that enables you to build modern apps faster."
+og:
+  description: "Run Kuzzle backend on Coolify for real-time APIs, authentication, data storage, geofencing, and IoT platform with pub/sub messaging."
+category: "Development"
+icon: "/docs/images/services/kuzzle-logo.png"
 ---
 
 ![Kuzzle](https://user-images.githubusercontent.com/7868838/103797784-32337580-5049-11eb-8917-3fcf4487644c.png)

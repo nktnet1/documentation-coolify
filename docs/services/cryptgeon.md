@@ -1,6 +1,10 @@
 ---
 title: Cryptgeon
-description: "Share secrets securely on Coolify with Cryptgeon featuring self-destructing messages, end-to-end encryption, and no server-side storage."
+description: "Secure note sharing service with self-destructing messages."
+og:
+  description: "Share secrets securely on Coolify with Cryptgeon featuring self-destructing messages, end-to-end encryption, and no server-side storage."
+category: "Security"
+icon: "/docs/images/services/cryptgeon-logo.png"
 ---
 
 # Cryptgeon

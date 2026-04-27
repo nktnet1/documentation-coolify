@@ -53,10 +53,10 @@ export default defineConfig({
     // Extract values with fallback chain
     const baseTitle = pageData.frontmatter.title || pageData.title || 'Coolify Docs'
     const title = baseTitle === 'Coolify Docs' ? baseTitle : `${baseTitle} | Coolify`
-    const description = pageData.frontmatter.description || defaultDescription
+    const description = pageData.frontmatter.og?.description || pageData.frontmatter.description || defaultDescription
 
     // Handle image with relative to absolute URL conversion
-    const relativeImage = pageData.frontmatter.image
+    const relativeImage = pageData.frontmatter.og?.image || pageData.frontmatter.image
     const image = relativeImage
       ? `${baseUrl.replace(/\/$/, '')}${relativeImage.startsWith('/') ? relativeImage : '/' + relativeImage}`.replace(/\/docs\/docs\//, '/docs/')
       : defaultImage

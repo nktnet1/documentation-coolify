@@ -1,6 +1,10 @@
 ---
 title: "Bugsink"
-description: "Deploy Bugsink error tracking on Coolify for application monitoring, exception logging, stack traces, and debugging insights for development teams."
+description: "Self-hosted Error Tracking"
+og:
+  description: "Deploy Bugsink error tracking on Coolify for application monitoring, exception logging, stack traces, and debugging insights for development teams."
+category: "Development"
+icon: "/docs/images/services/bugsink-logo.webp"
 ---
 
 <ZoomableImage src="/docs/images/services/bugsink-logo.webp" alt="Bugsink Logo logo" />

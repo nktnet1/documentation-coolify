@@ -1,6 +1,10 @@
 ---
 title: "Meilisearch"
-description: "Deploy Meilisearch on Coolify for lightning-fast typo-tolerant search engine with instant results, filters, and developer-friendly REST API."
+description: "A powerful, fast, open-source, easy to use, and deploy search engine."
+og:
+  description: "Deploy Meilisearch on Coolify for lightning-fast typo-tolerant search engine with instant results, filters, and developer-friendly REST API."
+category: "Search"
+icon: "/docs/images/services/meilisearch-logo.svg"
 ---
 
 ![Meilisearch](https://github.com/meilisearch/meilisearch/raw/main/assets/meilisearch-logo-light.svg?sanitize=true#gh-light-mode-only)

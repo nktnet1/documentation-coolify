@@ -1,6 +1,10 @@
 ---
 title: "FileFlows"
-description: "Host FileFlows on Coolify for automated file processing, media conversion, organization workflows, and batch operations with visual flow builder."
+description: "A automatic file processing service."
+og:
+  description: "Host FileFlows on Coolify for automated file processing, media conversion, organization workflows, and batch operations with visual flow builder."
+category: "File Management"
+icon: "/docs/images/services/fileflows-logo.svg"
 ---
 
 <ZoomableImage src="/docs/images/services/fileflows-logo.svg" alt="Fileflows dashboard" />

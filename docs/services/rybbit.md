@@ -1,6 +1,10 @@
 ---
 title: "Rybbit"
-description: "Here you can find the documentation for hosting Rybbit with Coolify."
+description: "A lightweight, open-source web analytics tool that prioritizes user privacy by not using cookies."
+og:
+  description: "Here you can find the documentation for hosting Rybbit with Coolify."
+category: "Analytics"
+icon: "/docs/images/services/rybbit.svg"
 ---
 
 ![Rybbit](/public/images/services/rybbit.svg)

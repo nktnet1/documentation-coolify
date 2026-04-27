@@ -1,6 +1,10 @@
 ---
 title: Litequeen
-description: "Host LiteQueen lightweight CMS on Coolify for fast content management, blogging, and simple website administration with minimal resource usage."
+description: "Lightweight service management platform."
+og:
+  description: "Host LiteQueen lightweight CMS on Coolify for fast content management, blogging, and simple website administration with minimal resource usage."
+category: "Administration"
+icon: "/docs/images/services/litequeen-logo.svg"
 ---
 
 # Litequeen

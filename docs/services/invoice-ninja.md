@@ -1,6 +1,10 @@
 ---
 title: "Invoice Ninja"
-description: "Run Invoice Ninja on Coolify for invoicing, expense tracking, time billing, payment processing, and client management for freelancers."
+description: "Invoice management system."
+og:
+  description: "Run Invoice Ninja on Coolify for invoicing, expense tracking, time billing, payment processing, and client management for freelancers."
+category: "Business"
+icon: "/docs/images/services/invoiceninja-logo.png"
 ---
 
 # Invoice Ninja

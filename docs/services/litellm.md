@@ -1,6 +1,10 @@
 ---
 title: "Litellm"
-description: "Deploy LiteLLM proxy on Coolify for unified LLM API with 100+ models, load balancing, fallbacks, and standardized OpenAI-compatible interface."
+description: "Open source LLM Gateway to manage authentication, loadbalancing, and spend tracking across 100+ LLMs. All in the OpenAI format."
+og:
+  description: "Deploy LiteLLM proxy on Coolify for unified LLM API with 100+ models, load balancing, fallbacks, and standardized OpenAI-compatible interface."
+category: "AI"
+icon: "/docs/images/services/litellm-logo.svg"
 ---
 
 # What is Litellm?

@@ -1,6 +1,10 @@
 ---
 title: "Browserless"
-description: "Run Browserless on Coolify for headless Chrome automation, web scraping, PDF generation, and screenshot services via simple REST API."
+description: "Headless Chrome as a service."
+og:
+  description: "Run Browserless on Coolify for headless Chrome automation, web scraping, PDF generation, and screenshot services via simple REST API."
+category: "Development"
+icon: "/docs/images/services/browserless-logo.svg"
 ---
 
 <ZoomableImage src="/docs/images/services/browserless.webp" alt="Browserless dashboard" />

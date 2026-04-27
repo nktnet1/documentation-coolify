@@ -1,6 +1,10 @@
 ---
 title: Jupyter Notebook Python
-description: "Run Jupyter Notebook on Coolify for interactive Python development, data science workflows, visualization, and collaborative computational notebooks."
+description: "Interactive computing environment for Python."
+og:
+  description: "Run Jupyter Notebook on Coolify for interactive Python development, data science workflows, visualization, and collaborative computational notebooks."
+category: "Development"
+icon: "/docs/images/services/jupyternotebook-logo.svg"
 ---
 
 # Jupyter Notebook Python

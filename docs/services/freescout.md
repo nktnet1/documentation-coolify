@@ -1,6 +1,10 @@
 ---
 title: Freescout
-description: "Deploy FreeScout helpdesk on Coolify as self-hosted HelpScout alternative with shared inbox, ticketing, and customer support email management."
+description: "Help desk and customer support application."
+og:
+  description: "Deploy FreeScout helpdesk on Coolify as self-hosted HelpScout alternative with shared inbox, ticketing, and customer support email management."
+category: "Business"
+icon: "/docs/images/services/freescout-logo.png"
 ---
 
 # Freescout

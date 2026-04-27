@@ -1,6 +1,10 @@
 ---
 title: Flowise
-description: "Build AI workflows on Coolify with Flowise drag-and-drop LLM interface for chatbots, agents, RAG applications, and custom AI tool integration."
+description: "Drag & drop UI to build your customized LLM flow."
+og:
+  description: "Build AI workflows on Coolify with Flowise drag-and-drop LLM interface for chatbots, agents, RAG applications, and custom AI tool integration."
+category: "AI"
+icon: "/docs/images/services/flowise-logo.svg"
 ---
 
 # Flowise

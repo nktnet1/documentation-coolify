@@ -1,6 +1,10 @@
 ---
 title: "Terraria Server"
-description: "Host your own Terraria game server on Coolify for multiplayer adventures, world creation, and customizable gameplay."
+description: "Docker multi-arch image for Terraria game server."
+og:
+  description: "Host your own Terraria game server on Coolify for multiplayer adventures, world creation, and customizable gameplay."
+category: "Gaming"
+icon: "/docs/images/services/terraria.svg"
 ---
 
 # Terraria Server

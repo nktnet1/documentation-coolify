@@ -1,10 +1,10 @@
 # Service Metadata Extraction
 
-This guide explains how to extract service information from Coolify's YAML templates.
+How to extract service information from Coolify's upstream YAML templates and map it to your service page's frontmatter.
 
 ## YAML Template Location
 
-Service templates are located in the Coolify repository at:
+Service templates live in the Coolify repository:
 
 ```
 https://github.com/coollabsio/coolify/tree/main/templates/compose
@@ -12,7 +12,7 @@ https://github.com/coollabsio/coolify/tree/main/templates/compose
 
 Files: `{service-name}.yaml`
 
-## Metadata Format
+## Upstream Metadata Format
 
 Each YAML template starts with metadata comments:
 
@@ -22,77 +22,38 @@ Each YAML template starts with metadata comments:
 # category: category-name
 # tags: tag1, tag2, tag3
 # logo: svgs/service-name.svg
-# ignore: false  # Optional: if true, skip documentation
+# ignore: false  # if true, skip documentation entirely
 
 services:
   service-name:
     image: ...
 ```
 
-## Metadata Fields
+## How Upstream Metadata Maps to Docs Frontmatter
 
-### documentation
+| Upstream YAML comment | Docs frontmatter / output |
+|---|---|
+| `documentation` | Used in the page body's `## Links` section as the official-website link |
+| `slogan` | Becomes the `description` in frontmatter (which becomes the card description and `all.md` entry) |
+| `category` | Becomes `category` in frontmatter; capitalize properly (e.g., `productivity` → `Productivity`) |
+| `tags` | Not used in docs frontmatter, but useful context for writing the page |
+| `logo` | Download to `docs/public/images/services/`. If you name it `<slug>-logo.<ext>`, you don't need an `icon` field — see [IMAGES.md](./IMAGES.md) for the resolver rules |
+| `ignore: true` | Do not create documentation for this service |
 
-The official website URL for the service.
-
-**Usage:** Include in the "Links" section of documentation
-
-```markdown
-- [The official website](https://example.com?utm_source=coolify.io)
-```
-
-### slogan
-
-A brief, one-line description of what the service does.
-
-**Usage:**
-
-- As the service description in List.vue
-- As the starting point for "What is..." section
-
-### category
-
-The service category for organization and filtering.
-
-**Common categories:**
-
-- AI, Analytics, Automation, Business
-- CMS, Communication, Development, Documentation
-- Media, Monitoring, Productivity, Security
-- Storage, and more
-
-**Usage:** Assign to the `category` field in List.vue
-
-### tags
-
-Comma-separated keywords for search and classification.
-
-**Usage:** Not directly used in documentation, but helpful for understanding the service
-
-### logo
-
-Path to the logo file in the Coolify repository.
-
-**Example:** `svgs/appsmith.svg`
-
-**Usage:**
-
-1. Download from GitHub: `https://raw.githubusercontent.com/coollabsio/coolify/main/public/svgs/appsmith.svg`
-2. Save to: `docs/public/images/services/appsmith-logo.svg`
-
-### ignore
-
-If set to `true`, do not create documentation for this service.
-
-**Example:**
+## Resulting Docs Frontmatter
 
 ```yaml
-# ignore: true
+---
+title: "Appsmith"                                    # filename + capitalization
+description: "A low-code application platform..."    # from slogan
+category: "Productivity"                             # from category, capitalized
+icon: "/docs/images/services/appsmith-logo.svg"      # optional if logo is named so the resolver finds it
+---
 ```
 
 ## Extraction Example
 
-**YAML template** (from Coolify repository `appsmith.yaml`):
+**Upstream YAML** (`appsmith.yaml`):
 
 ```yaml
 # documentation: https://appsmith.com
@@ -102,20 +63,41 @@ If set to `true`, do not create documentation for this service.
 # logo: svgs/appsmith.svg
 ```
 
-**Extracted metadata:**
+**Docs frontmatter:**
 
-- **Name:** Appsmith (from filename)
-- **Website:** https://appsmith.com
-- **Description:** "A low-code application platform for building internal tools."
-- **Category:** Productivity
-- **Logo:** Download from Coolify repo `svgs/appsmith.svg` → save as `appsmith-logo.svg`
+```yaml
+---
+title: "Appsmith"
+description: "A low-code application platform for building internal tools."
+og:
+  description: "Build internal tools on Coolify with Appsmith's low-code platform featuring drag-and-drop UI, database connectors, and custom business logic."
+category: "Productivity"
+icon: "/docs/images/services/appsmith-logo.svg"
+---
+```
 
-## GitHub Repository
+**Logo:** download `https://raw.githubusercontent.com/coollabsio/coolify/main/public/svgs/appsmith.svg` and save to `docs/public/images/services/appsmith-logo.svg`.
 
-If not specified in YAML, search for the GitHub repo using:
+## GitHub Repository Lookup
 
-- Service website footer/about page
+If the upstream YAML doesn't link the GitHub repo directly, find it via:
+
+- The service's website (footer or About page)
 - GitHub search: `https://github.com/search?q={service-name}`
-- Service documentation
+- The service's official documentation
 
-Most open-source services prominently link their GitHub repository.
+Most open-source services link their GitHub repository prominently.
+
+## Category Capitalization
+
+The upstream `category` is lowercase. The docs use **Title Case** consistently. Examples:
+
+| Upstream | Docs |
+|---|---|
+| `productivity` | `Productivity` |
+| `cms` | `CMS` |
+| `ai` | `AI` |
+| `business` | `Business` |
+| `file-management` | `File Management` |
+
+See [CATALOG.md](./CATALOG.md) for the complete list of categories already in use.

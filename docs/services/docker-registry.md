@@ -1,6 +1,10 @@
 ---
 title: "Docker Registry"
-description: "Host private Docker registry on Coolify for container image storage, distribution, versioning, and secure artifact management for DevOps teams."
+description: "A Docker registry to store and manage your Docker images."
+og:
+  description: "Host private Docker registry on Coolify for container image storage, distribution, versioning, and secure artifact management for DevOps teams."
+category: "Development"
+icon: "/docs/images/services/docker-registry-logo.png"
 ---
 
 ![Docker Registry](https://raw.githubusercontent.com/distribution/distribution/main/distribution-logo.svg)

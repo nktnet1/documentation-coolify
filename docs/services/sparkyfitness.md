@@ -1,6 +1,10 @@
 ---
 title: "SparkyFitness"
-description: "Self-hosted alternative to MyFitnessPal with AI-powered nutrition assistance. Track nutrition, exercise, body measurements, and manage your fitness data with complete privacy."
+description: "A comprehensive fitness app that helps users track nutrition, exercise, and body metrics."
+og:
+  description: "Self-hosted alternative to MyFitnessPal with AI-powered nutrition assistance. Track nutrition, exercise, body measurements, and manage your fitness data with complete privacy."
+category: "Health"
+icon: "/docs/images/services/sparkyfitness.webp"
 ---
 
 # SparkyFitness

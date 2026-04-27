@@ -1,6 +1,10 @@
 ---
 title: "Beszel"
-description: "Deploy Beszel lightweight server monitoring on Coolify with real-time metrics, Docker stats, and minimal resource usage for infrastructure tracking."
+description: "Lightweight server monitoring hub with historical data, docker stats, and alerts."
+og:
+  description: "Deploy Beszel lightweight server monitoring on Coolify with real-time metrics, Docker stats, and minimal resource usage for infrastructure tracking."
+category: "Monitoring"
+icon: "/docs/images/services/beszel-logo.svg"
 ---
 
 <ZoomableImage src="/docs/images/services/beszel-logo.webp" alt="Beszel Logo" />

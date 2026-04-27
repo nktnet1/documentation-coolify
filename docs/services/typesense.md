@@ -1,6 +1,10 @@
 ---
 title: "Typesense"
-description: "Search instantly on Coolify with Typesense for typo-tolerant search engine, faceting, filtering, and lightning-fast full-text search API."
+description: "Open source alternative to Algolia and easier-to-use alternative to ElasticSearch."
+og:
+  description: "Search instantly on Coolify with Typesense for typo-tolerant search engine, faceting, filtering, and lightning-fast full-text search API."
+category: "Search"
+icon: "/docs/images/services/typesense-logo.png"
 ---
 
 <ZoomableImage src="/docs/images/services/typesense.webp" alt="Typesense Logo logo" />

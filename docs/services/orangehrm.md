@@ -1,6 +1,10 @@
 ---
 title: "OrangeHRM"
-description: "Manage HR on Coolify with OrangeHRM for employee records, leave management, time tracking, recruitment, and human resource administration."
+description: "Free HR management system for businesses."
+og:
+  description: "Manage HR on Coolify with OrangeHRM for employee records, leave management, time tracking, recruitment, and human resource administration."
+category: "Business"
+icon: "/docs/images/services/orangehrm-logo.svg"
 ---
 
 <ZoomableImage src="/docs/images/services/orangehrm-logo.webp" alt="Orangehrm Logo logo" />

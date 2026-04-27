@@ -1,6 +1,10 @@
 ---
 title: "OpnForm"
-description: "Build beautiful forms and share them anywhere with OpnForm, an open-source form builder that's super fast and requires no coding knowledge."
+description: "Open-source form builder that lets you create beautiful forms and share them anywhere."
+og:
+  description: "Build beautiful forms and share them anywhere with OpnForm, an open-source form builder that's super fast and requires no coding knowledge."
+category: "Development"
+icon: "/docs/images/services/opnform.svg"
 ---
 
 # OpnForm

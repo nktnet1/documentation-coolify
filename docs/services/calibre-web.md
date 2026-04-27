@@ -1,6 +1,10 @@
 ---
 title: Calibre Web
-description: "Run Calibre Web on Coolify for ebook library management with OPDS feeds, reading interface, format conversion, and metadata editing features."
+description: "Web app for browsing, reading and downloading eBooks from a Calibre database."
+og:
+  description: "Run Calibre Web on Coolify for ebook library management with OPDS feeds, reading interface, format conversion, and metadata editing features."
+category: "Media"
+icon: "/docs/images/services/calibreweb-logo.svg"
 ---
 
 # Calibre Web

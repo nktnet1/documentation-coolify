@@ -1,6 +1,10 @@
 ---
 title: "Jellyfin"
-description: "Deploy Jellyfin media server on Coolify for streaming movies, TV shows, music with no licensing, transcoding, and mobile app support."
+description: "The Free Software Media System."
+og:
+  description: "Deploy Jellyfin media server on Coolify for streaming movies, TV shows, music with no licensing, transcoding, and mobile app support."
+category: "Media"
+icon: "/docs/images/services/jellyfin-logo.svg"
 ---
 
 ![Jellyfin](https://raw.githubusercontent.com/jellyfin/jellyfin-ux/master/branding/SVG/banner-logo-solid.svg?sanitize=true)

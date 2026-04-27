@@ -1,6 +1,10 @@
 ---
 title: "Soju"
-description: "Soju is a user-friendly IRC bouncer with a modern web interface."
+description: "User-friendly IRC bouncer with modern features."
+og:
+  description: "Soju is a user-friendly IRC bouncer with a modern web interface."
+category: "Communication"
+icon: "/docs/images/services/soju-logo.svg"
 ---
 
 # Soju

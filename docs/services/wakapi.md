@@ -1,6 +1,10 @@
 ---
 title: Wakapi
-description: "Track coding time on Coolify with Wakapi for WakaTime-compatible time tracking, statistics, and developer productivity analytics."
+description: "Open-source coding activity tracker."
+og:
+  description: "Track coding time on Coolify with Wakapi for WakaTime-compatible time tracking, statistics, and developer productivity analytics."
+category: "Development"
+icon: "/docs/images/services/wakapi-logo.svg"
 ---
 
 # Wakapi

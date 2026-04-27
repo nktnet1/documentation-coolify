@@ -1,6 +1,10 @@
 ---
 title: "MinIO"
-description: "Host MinIO object storage on Coolify as S3-compatible high-performance storage for backups, data lakes, and cloud-native application storage."
+description: "A high-performance, distributed object storage system."
+og:
+  description: "Host MinIO object storage on Coolify as S3-compatible high-performance storage for backups, data lakes, and cloud-native application storage."
+category: "Storage"
+icon: "/docs/images/services/minio-logo.svg"
 ---
 
 # MinIO Community Edition

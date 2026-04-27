@@ -1,6 +1,10 @@
 ---
 title: "AppFlowy"
-description: "Deploy AppFlowy on Coolify as an open-source alternative to Notion with AI-powered workspace, combining docs, wikis, and project management with full data control."
+description: "Open-source alternative to Notion with workspaces for docs, wikis, and project management."
+og:
+  description: "Deploy AppFlowy on Coolify as an open-source alternative to Notion with AI-powered workspace, combining docs, wikis, and project management with full data control."
+category: "Productivity"
+icon: "/docs/images/services/appflowy.svg"
 ---
 
 <ZoomableImage src="/docs/images/services/appflowy.svg" alt="AppFlowy logo" />

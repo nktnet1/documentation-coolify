@@ -1,6 +1,10 @@
 ---
 title: "Bluesky PDS"
-description: "Host a Bluesky Personal Data Server with Coolify"
+description: "Bluesky PDS (Personal Data Server) for decentralized social networking."
+og:
+  description: "Host a Bluesky Personal Data Server with Coolify"
+category: "Social Media"
+icon: "/docs/images/services/bluesky-logo.svg"
 ---
 
 # Bluesky PDS

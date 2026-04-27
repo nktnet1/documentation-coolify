@@ -1,6 +1,10 @@
 ---
 title: "Redmine"
-description: "Redmine is a flexible project management web application."
+description: "Flexible project management web application."
+og:
+  description: "Redmine is a flexible project management web application."
+category: "Project Management"
+icon: "/docs/images/services/redmine-logo.svg"
 ---
 
 # Redmine

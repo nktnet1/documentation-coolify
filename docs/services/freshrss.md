@@ -1,6 +1,10 @@
 ---
 title: Freshrss
-description: "Run FreshRSS reader on Coolify for RSS/Atom feed aggregation, article reading, mobile apps integration, and news consumption with privacy."
+description: "Free, self-hostable RSS feed aggregator."
+og:
+  description: "Run FreshRSS reader on Coolify for RSS/Atom feed aggregation, article reading, mobile apps integration, and news consumption with privacy."
+category: "RSS"
+icon: "/docs/images/services/freshrss-logo.png"
 ---
 
 # Freshrss

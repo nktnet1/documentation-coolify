@@ -1,6 +1,10 @@
 ---
 title: "Drizzle Gateway"
-description: "Deploy and host Drizzle Studio with Coolify to explore SQL databases in your Drizzle ORM project visually and efficiently."
+description: "Drizzle Studio for exploring SQL databases."
+og:
+  description: "Deploy and host Drizzle Studio with Coolify to explore SQL databases in your Drizzle ORM project visually and efficiently."
+category: "Development"
+icon: "/docs/images/services/drizzle-logo.jpeg"
 ---
 
 # Drizzle Gateway

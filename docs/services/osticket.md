@@ -1,6 +1,10 @@
 ---
 title: Osticket
-description: "Run osTicket helpdesk on Coolify for ticket management, customer support, email integration, and IT service desk automation workflows."
+description: "Open-source help desk ticketing system."
+og:
+  description: "Run osTicket helpdesk on Coolify for ticket management, customer support, email integration, and IT service desk automation workflows."
+category: "Business"
+icon: "/docs/images/services/osticket-logo.png"
 ---
 
 # Osticket

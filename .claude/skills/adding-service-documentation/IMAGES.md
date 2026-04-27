@@ -1,16 +1,16 @@
 # Service Logo Guidelines
 
-How to handle service logos and images.
+How to handle service logos. The icon shown on the service card is resolved from `docs/public/images/services/` by the generator — naming the asset correctly usually means you don't need to set `icon` in frontmatter at all.
 
 ## Logo Source
 
-Service logos are stored in the Coolify repository:
+Service logos live in the Coolify repository:
 
 ```
 https://github.com/coollabsio/coolify/tree/main/public/svgs
 ```
 
-The logo filename is specified in the YAML template:
+The logo filename is specified in the upstream YAML template:
 
 ```yaml
 # logo: svgs/appsmith.svg
@@ -21,9 +21,9 @@ The logo filename is specified in the YAML template:
 **IMPORTANT: Always download and store logos locally. Do NOT link to external URLs.**
 
 **Source:** Coolify GitHub repository `public/svgs/{logo-name}.svg`
-**Destination:** `docs/public/images/services/{service}-logo.{ext}`
+**Destination:** `docs/public/images/services/{filename-resolver-finds}`
 
-Download directly from GitHub raw URL:
+Download directly from the GitHub raw URL:
 
 ```
 https://raw.githubusercontent.com/coollabsio/coolify/main/public/svgs/{logo-name}.svg
@@ -31,228 +31,157 @@ https://raw.githubusercontent.com/coollabsio/coolify/main/public/svgs/{logo-name
 
 ### Why Download Locally?
 
-✅ **Benefits of local storage:**
-- **Full control:** No broken links if external source changes or moves
-- **Consistency:** Logos won't disappear or change unexpectedly
-- **Performance:** Faster loading from same domain (no external requests)
-- **Reliability:** Documentation works offline and in restricted networks
-- **Optimization:** Can compress and optimize images for docs
-- **Version control:** Track logo changes in git history
+- Full control: no broken links if external source changes
+- Performance: faster loading from the same domain
+- Reliability: docs work offline / behind restricted networks
+- Optimization: lets us compress and standardize formats
+- Versioning: tracks logo changes in git history
 
-❌ **Risks of external links:**
-- External URLs can break or change without notice
-- No control over image optimization or format
-- Slower page loads due to external requests
-- CORS or security issues in some environments
-- Documentation breaks if external service is down
+### Naming Convention (Important — Drives Auto-Resolution)
 
-### Naming Convention
+The icon resolver in `scripts/services-data.mjs` matches files by basename, case-insensitively, ignoring non-alphanumerics. For a service with slug `my-service` and title `My Service`, it tries these basenames in order:
 
-Format: `{service-name}-logo.{extension}`
+1. `my-service-logo`
+2. `my-service_logo`
+3. `my-servicelogo`
+4. `my-service`
+5. `my-service-logo` (from title, normalized)
+6. `my-service` (from title, normalized)
 
-**Examples:**
+Then a fuzzy prefix fallback (`myservicelogo*` or `myservice*`).
 
-- `appsmith-logo.svg`
-- `ghost-logo.webp`
-- `nextcloud-logo.png`
+**Recommended pattern:** `<slug>-logo.<ext>` — e.g. `my-service-logo.svg`. This always matches and is consistent across the repo.
 
-**Rules:**
+Acceptable alternatives that also resolve automatically: `<slug>.<ext>`, `<slug>_logo.<ext>`, `<slug>logo.<ext>`.
 
-- Use lowercase
-- Use hyphens for spaces
-- Keep original extension
-- Always include `-logo` suffix
+**Recognized extensions:** `.svg`, `.png`, `.webp`, `.jpg`, `.jpeg`.
+
+### When to Set `icon` Explicitly
+
+You only need to set `icon` in frontmatter when:
+
+- You have multiple logo files for one service and want to pin a specific one
+- The asset's basename can't be made to match the resolver candidates
+- The asset is shared with another service and lives outside the predictable name range
+
+```yaml
+---
+icon: "/docs/images/services/some-other-name.svg"
+---
+```
 
 ## File Format Preferences
 
-1. **SVG** - Best for vector logos (preferred)
-
-   - Scalable, small file size
-   - Perfect for logos and icons
-
-2. **WebP** - Best for raster images
-
-   - Modern format, great compression
-   - Supported by all modern browsers
-
-3. **PNG** - Acceptable alternative
-
-   - Good for logos with transparency
-   - Larger file size than WebP
-
-4. **JPEG** - Avoid for logos
-   - No transparency support
-   - Lossy compression affects quality
+1. **SVG** — preferred for vector logos: scalable, small, sharp at any size
+2. **WebP** — best for raster: modern format, great compression
+3. **PNG** — acceptable, especially for logos with transparency
+4. **JPEG** — avoid for logos (no transparency, lossy)
 
 ## Image Optimization
 
-### Before adding images:
+Before adding:
 
-1. **Compress** - Use tools like:
-
+1. **Compress**
    - [Squoosh](https://squoosh.app/) for WebP conversion
    - [SVGOMG](https://jakearchibald.github.io/svgomg/) for SVG optimization
-
-2. **Check size** - Keep under 100KB when possible
-
-   - SVG: Usually < 50KB
-   - WebP: Aim for < 100KB
-   - PNG: Compress if > 100KB
-
-3. **Verify dimensions** - Logos should be:
-   - Minimum 200px wide
-   - Square or landscape orientation
-   - High enough resolution for zoom
+2. **Check size** — aim for under 100KB
+   - SVG: usually < 50KB
+   - WebP: aim for < 100KB
+   - PNG: compress if > 100KB
+3. **Verify dimensions** — at least 200px wide; square or landscape
 
 ## Using Images in Documentation
 
 ### When to Use Each Syntax
 
 | Image Type | Syntax | Example |
-|------------|--------|---------|
+|---|---|---|
 | Logos (small) | Standard markdown | `![Appsmith](/docs/images/services/appsmith-logo.svg)` |
 | Screenshots | `<ZoomableImage>` | `<ZoomableImage src="/docs/images/services/dashboard.webp" />` |
 | Large images | `<ZoomableImage>` | `<ZoomableImage src="/docs/images/services/overview.webp" />` |
 
 ### For Service Logos
 
-Use standard markdown image syntax for logos:
-
 ```markdown
-![ServiceName](/docs/images/services/servicename-logo.svg)
+![ServiceName](/docs/images/services/service-name-logo.svg)
 ```
 
-**Important:**
-
 - Path starts with `/docs/` (not `/public/`)
-- Use exact filename including extension
+- Use the exact filename including extension
 - Include alt text for accessibility
 
-### For Screenshots and Large Images
-
-Use `<ZoomableImage>` for images users may want to zoom into:
+### For Screenshots
 
 ```vue
 <ZoomableImage src="/docs/images/services/appsmith-dashboard.webp" />
 ```
 
-**Use ZoomableImage for:**
+Use `<ZoomableImage>` for:
 
 - Dashboard screenshots
 - Configuration panels
 - UI walkthroughs
-- Any image with details users need to see closely
-
-**Screenshot guidelines:**
-
-- Save as WebP for best compression
-- Optimize/compress before adding
-- Use descriptive filenames
-- Keep reasonable dimensions (max 1920px wide)
+- Anything users may want to zoom
 
 ### For External Images
 
-**⚠️ Avoid external image links when possible. Only use temporarily.**
-
-```markdown
-![Appsmith](https://raw.githubusercontent.com/appsmithorg/appsmith/release/static/images/logo.png)
-```
-
-**Only acceptable for:**
-
-- **Temporary placeholder** while downloading/optimizing the proper logo
-
-**Action required:** Replace external links with downloaded versions before finalizing documentation.
+Avoid external image links. They are only acceptable as a *temporary placeholder* while you download and optimize the proper logo. Replace before merging.
 
 ## Path Reference
 
-All image paths in documentation use this structure:
+| File system | In markdown / Vue |
+|---|---|
+| `docs/public/images/services/logo.svg` | `/docs/images/services/logo.svg` |
 
-**File system location:**
+The `/public/` part is omitted because VitePress serves files from `public/` at the root `/docs/` path.
 
-```
-docs/public/images/services/logo.svg
-```
+## Body Image as Fallback
 
-**In markdown/Vue:**
+If frontmatter has no `icon` and no asset matches the resolver, the generator falls back to the first image referenced in the markdown body — `<ZoomableImage src="...">` or `![alt](...)`. The path must start with `/docs/images/services/` (or `/images/services/`, which is rewritten).
 
-```
-/docs/images/services/logo.svg
-```
+This is a safety net, not a recommended pattern. Prefer naming your logo so it resolves cleanly.
 
-**Note:** The `/public/` part is omitted in references because VitePress serves files from `public/` at the root `/docs/` path.
+## Troubleshooting
 
-## Services List (List.vue)
+### Logo not displaying
 
-When adding to the services array in `List.vue`:
-
-```javascript
-{
-    name: 'Appsmith',
-    slug: 'appsmith',
-    icon: '/docs/images/services/appsmith-logo.svg',  // Same path as docs
-    description: '...',
-    category: 'Development'
-}
-```
-
-## Troubleshooting Images
-
-### Image not displaying
-
-1. **Check file exists:**
-
+1. Check the file exists:
    ```bash
-   ls docs/public/images/services/{name}-logo.{ext}
+   ls docs/public/images/services/{slug}*
    ```
+2. Verify the path used in markdown/frontmatter starts with `/docs/images/services/` and doesn't include `/public/`.
+3. Confirm the extension matches the file (case-sensitive on some systems).
+4. Run `bun run generate:services` and inspect `services.json` for the `icon` field of your service.
 
-2. **Verify path in code:**
+### Card shows fallback / no logo
 
-   - Should start with `/docs/images/services/`
-   - Should NOT include `/public/`
+The resolver couldn't find a match. Either:
 
-3. **Check file extension matches:**
-   - If file is `.svg`, code must use `.svg`
-   - Case-sensitive on some systems
-
-### Image shows fallback icon
-
-This happens when the image fails to load. Check:
-
-1. Path is correct in `List.vue`
-2. File exists in `docs/public/images/services/`
-3. File is not corrupted
-4. Network can access the file
+- Rename the asset to `<slug>-logo.<ext>`, or
+- Set `icon: "/docs/images/services/<your-file>.<ext>"` in frontmatter
 
 ### Image quality issues
 
-- **Blurry:** Image too small, need higher resolution
-- **Pixelated:** Use SVG instead of raster, or larger PNG/WebP
-- **Large file size:** Compress with Squoosh or similar tool
-- **Wrong colors:** Check dark mode compatibility
+- **Blurry** — image too small; need higher resolution
+- **Pixelated** — use SVG, or a larger PNG/WebP
+- **Large file size** — compress with Squoosh or similar
+- **Wrong colors** — check both light and dark themes
 
 ## Best Practices
 
 ✅ **Do:**
 
-- **Download ALL logos locally** to `docs/public/images/services/`
+- Download all logos to `docs/public/images/services/`
+- Name files using the `<slug>-logo.<ext>` pattern
 - Use SVG for vector logos
 - Convert PNG to WebP for better compression
-- Optimize all images before adding
-- Use descriptive, consistent naming
-- Keep file sizes reasonable
-- Test images in both light and dark themes
-- Use standard markdown `![alt](path)` for logos
+- Use standard markdown `![alt](path)` for the logo
 - Use `<ZoomableImage>` for screenshots and large images
 
 ❌ **Don't:**
 
-- **Use external image URLs** (GitHub, CDNs, etc.) - always download locally
+- Link to external image URLs (GitHub, CDNs)
 - Use JPEG for logos
-- Add uncompressed images
-- Use inconsistent naming
-- Forget the `-logo` suffix
-- Use spaces or uppercase in filenames
-- Reference images with wrong extensions
-- Link to images that might break or change
-- Use `<ZoomableImage>` for small logos (unnecessary zoom)
+- Rely on the body-image fallback when a properly-named asset would work
+- Use `<ZoomableImage>` for small logos
+- Forget to include extensions in `icon` paths

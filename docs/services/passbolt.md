@@ -1,6 +1,10 @@
 ---
 title: "Passbolt"
-description: "Deploy Passbolt on Coolify for team password management with end-to-end encryption, sharing, access control, and collaborative credentials."
+description: "Open source password manager for teams."
+og:
+  description: "Deploy Passbolt on Coolify for team password management with end-to-end encryption, sharing, access control, and collaborative credentials."
+category: "Security"
+icon: "/docs/images/services/passbolt-logo.svg"
 ---
 
 <ZoomableImage src="/docs/images/services/passbolt.webp" alt="Passbolt Logo logo" />

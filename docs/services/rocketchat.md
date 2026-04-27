@@ -1,6 +1,10 @@
 ---
 title: "Rocket.Chat"
-description: "Deploy Rocket.Chat on Coolify for team communication, video conferencing, file sharing, and open-source Slack alternative with federation."
+description: "Open source team chat software."
+og:
+  description: "Deploy Rocket.Chat on Coolify for team communication, video conferencing, file sharing, and open-source Slack alternative with federation."
+category: "Communication"
+icon: "/docs/images/services/rocketchat-logo.svg"
 ---
 
 ![Rocket Chat](https://raw.githubusercontent.com/RocketChat/Rocket.Chat.Artwork/master/Logos/2020/png/logo-horizontal-red.png)

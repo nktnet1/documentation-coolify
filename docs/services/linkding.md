@@ -1,6 +1,10 @@
 ---
 title: "Linkding"
 description: "A self-hosted bookmark manager designed to be minimal, fast, and easy to set up."
+og:
+  description: "A self-hosted bookmark manager designed to be minimal, fast, and easy to set up."
+category: "Bookmarks"
+icon: "/docs/images/services/linkding-logo.svg"
 ---
 
 # Linkding

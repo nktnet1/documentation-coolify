@@ -1,6 +1,10 @@
 ---
 title: "LibreChat"
-description: "Deploy LibreChat on Coolify for unified AI chat interface supporting GPT-4, Claude, Gemini, and local models with conversation management."
+description: "Self-hosted, powerful, and privacy-focused chat UI for multiple AI models."
+og:
+  description: "Deploy LibreChat on Coolify for unified AI chat interface supporting GPT-4, Claude, Gemini, and local models with conversation management."
+category: "AI"
+icon: "/docs/images/services/librechat-logo.svg"
 ---
 
 # LibreChat

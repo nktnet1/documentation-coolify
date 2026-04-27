@@ -1,6 +1,10 @@
 ---
 title: Cloudbeaver
-description: "Deploy CloudBeaver on Coolify for web-based database management supporting PostgreSQL, MySQL, MongoDB with SQL editor and data visualization."
+description: "Universal database tool with web interface."
+og:
+  description: "Deploy CloudBeaver on Coolify for web-based database management supporting PostgreSQL, MySQL, MongoDB with SQL editor and data visualization."
+category: "Development"
+icon: "/docs/images/services/cloudbeaver-logo.png"
 ---
 
 # Cloudbeaver

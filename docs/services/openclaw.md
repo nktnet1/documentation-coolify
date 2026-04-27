@@ -1,6 +1,10 @@
 ---
 title: "OpenClaw"
-description: "Deploy OpenClaw AI-powered coding assistant on Coolify with multi-provider support, browser automation, and chat integrations."
+description: "AI-powered coding assistant with multi-provider support and browser automation."
+og:
+  description: "Deploy OpenClaw AI-powered coding assistant on Coolify with multi-provider support, browser automation, and chat integrations."
+category: "AI"
+icon: "/docs/images/services/openclaw-logo.svg"
 ---
 
 # OpenClaw

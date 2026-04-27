@@ -1,6 +1,10 @@
 ---
 title: LobeChat
-description: Here you can find the documentation for hosting LobeChat with Coolify.
+description: "Open-source, modern AI chat framework with multi-provider support and knowledge base management."
+og:
+  description: "Here you can find the documentation for hosting LobeChat with Coolify."
+category: "AI"
+icon: "/docs/images/services/lobechat-logo.webp"
 ---
 
 # LobeChat

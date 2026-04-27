@@ -1,6 +1,10 @@
 ---
 title: Redlib
-description: "Browse Reddit on Coolify with Redlib alternative frontend for privacy-focused Reddit browsing without tracking or JavaScript requirements."
+description: "Private front-end for Reddit."
+og:
+  description: "Browse Reddit on Coolify with Redlib alternative frontend for privacy-focused Reddit browsing without tracking or JavaScript requirements."
+category: "Social Media"
+icon: "/docs/images/services/redlib-logo.svg"
 ---
 
 # Redlib

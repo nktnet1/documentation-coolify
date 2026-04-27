@@ -1,6 +1,10 @@
 ---
 title: ActivePieces
-description: "Deploy ActivePieces workflow automation platform on Coolify with TypeScript-based extensible automation, visual builder, and 100+ integrations."
+description: "Open source no-code business automation."
+og:
+  description: "Deploy ActivePieces workflow automation platform on Coolify with TypeScript-based extensible automation, visual builder, and 100+ integrations."
+category: "Automation"
+icon: "/docs/images/services/activepieces-logo.png"
 # tabs:
 #   - title: Overview & Requirements
 #     content:

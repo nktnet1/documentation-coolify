@@ -1,6 +1,10 @@
 ---
 title: Librespeed
 description: "Deploy Librespeed on Coolify for self-hosted lightweight speed test."
+og:
+  description: "Deploy Librespeed on Coolify for self-hosted lightweight speed test."
+category: "Networking"
+icon: "/docs/images/services/librespeed.png"
 ---
 
 # Librespeed

@@ -1,6 +1,10 @@
 ---
 title: Immich
-description: "Host Immich photo management on Coolify for Google Photos alternative with mobile backup, ML-powered search, face recognition, and sharing."
+description: "Self-hosted photo and video backup solution."
+og:
+  description: "Host Immich photo management on Coolify for Google Photos alternative with mobile backup, ML-powered search, face recognition, and sharing."
+category: "Media"
+icon: "/docs/images/services/immich-logo.svg"
 ---
 
 # Immich

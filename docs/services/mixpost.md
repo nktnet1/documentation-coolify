@@ -1,6 +1,10 @@
 ---
 title: "Mixpost"
-description: "Run Mixpost social media on Coolify for scheduling, analytics, content calendar, and multi-platform social media management self-hosted solution."
+description: "Self-hosted social media management software (Buffer alternative)."
+og:
+  description: "Run Mixpost social media on Coolify for scheduling, analytics, content calendar, and multi-platform social media management self-hosted solution."
+category: "Social Media"
+icon: "/docs/images/services/mixpost-logo.svg"
 ---
 
 ![Mixpost](https://raw.githubusercontent.com/inovector/mixpost/main/art/logo.svg)

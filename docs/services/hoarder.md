@@ -1,6 +1,10 @@
 ---
 title: Hoarder
-description: "Host Hoarder bookmark manager on Coolify for saving links, organizing collections, tagging, and personal knowledge management with search."
+description: "Self-hosted bookmark manager with AI-powered tagging."
+og:
+  description: "Host Hoarder bookmark manager on Coolify for saving links, organizing collections, tagging, and personal knowledge management with search."
+category: "Bookmarks"
+icon: "/docs/images/services/hoarder-logo.png"
 ---
 
 ::: warning SERVICE NOT AVAILABLE
