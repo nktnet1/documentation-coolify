@@ -1,6 +1,10 @@
 ---
 title: "Nitropage"
-description: "Host NitroPage website builder on Coolify for drag-and-drop page creation, templates, and simple website development without coding skills."
+description: "Nitropage is an extensible, drag-and-drop website builder based on SolidStart, completely free and open source."
+og:
+  description: "Host NitroPage website builder on Coolify for drag-and-drop page creation, templates, and simple website development without coding skills."
+category: "Development"
+icon: "/docs/images/services/nitropage-logo.svg"
 ---
 
 <ZoomableImage src="/docs/images/services/nitropage-logo.svg" alt="Nitropage dashboard" />

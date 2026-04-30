@@ -1,6 +1,10 @@
 ---
 title: "Grimmory"
-description: "Here you can find the documentation for hosting Grimmory with Coolify."
+description: "A self-hosted ebook library manager and reader, successor to Booklore."
+og:
+  description: "Here you can find the documentation for hosting Grimmory with Coolify."
+category: "Media"
+icon: "/docs/images/services/grimmory.svg"
 ---
 
 # Grimmory

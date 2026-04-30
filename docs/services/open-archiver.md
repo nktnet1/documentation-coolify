@@ -1,6 +1,10 @@
 ---
 title: "Open Archiver"
-description: "A self-hosted, open-source email archiving solution with full-text search capability."
+description: "Self-hosted, open-source email archiving solution with full-text search."
+og:
+  description: "A self-hosted, open-source email archiving solution with full-text search capability."
+category: "Email"
+icon: "/docs/images/services/openarchiver-logo.svg"
 ---
 
 # Open Archiver

@@ -1,6 +1,10 @@
 ---
 title: "Cloudflared"
-description: "Run Cloudflare Tunnel on Coolify to expose local services securely without port forwarding using cloudflared for remote access and protection."
+description: "Cloudflare Tunnel client."
+og:
+  description: "Run Cloudflare Tunnel on Coolify to expose local services securely without port forwarding using cloudflared for remote access and protection."
+category: "Networking"
+icon: "/docs/images/services/cloudflared-logo.svg"
 ---
 
 ![Cloudflare](https://avatars.githubusercontent.com/u/314135?s=200&v=4)

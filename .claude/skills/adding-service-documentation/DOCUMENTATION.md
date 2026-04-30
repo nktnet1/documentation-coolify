@@ -1,69 +1,90 @@
 # Service Documentation Guide
 
-How to write service documentation pages.
+How to write a service documentation page. The frontmatter is now load-bearing — it's parsed by `scripts/services-data.mjs` to build the listing and the All Services directory.
 
 ## File Location
 
-Create markdown file at:
+Create the markdown file at:
+
 ```
 docs/services/{service-slug}.md
 ```
 
-**Naming convention:** lowercase, hyphenated
+**Naming convention:** lowercase, hyphenated (kebab-case)
+
 - ✅ `my-service.md`
 - ❌ `MyService.md`
 - ❌ `my_service.md`
+
+The slug is the filename without `.md`. It also becomes the URL path: `/services/my-service`.
 
 ## Required Structure
 
 ### Frontmatter (YAML)
 
-Every service page must start with frontmatter:
+The frontmatter is read by the generator. It must include `title`, `description`, and `category`.
 
 ```yaml
 ---
-title: "ServiceName"
-description: "Here you can find the documentation for hosting ServiceName with Coolify."
+title: "Service Name"
+description: "Short description used on the listing card and in all.md."
+og:
+  description: "Optional longer SEO/social-card description."
+category: "Analytics"
+icon: "/docs/images/services/service-name-logo.svg"
 ---
 ```
 
-**title:** Service name with proper capitalization
-**description:** SEO-friendly description (used in meta tags and search)
+| Field | Required | Used for |
+|---|---|---|
+| `title` | yes | Card title; `name` in `services.json`; link text in `all.md` |
+| `description` | yes | Card description; `all.md` entry; default `<meta name="description">` |
+| `category` | yes | Filter pill in the listing; `## Heading` in `all.md` |
+| `icon` | optional | Card thumbnail. Omit it and the resolver will find a matching file in `docs/public/images/services/` |
+| `og.description` | optional | Override for social-card and SEO description |
+| `disabled` | optional | `true` hides the service from the listing while keeping the page reachable |
 
-### Page Sections
+**Notes:**
+
+- Only top-level scalar keys are parsed by `services-data.mjs`. Nested keys like `og.description` are ignored by the generator (they're still picked up by VitePress for OG tags).
+- Quotes around values are optional and are stripped on parse.
+
+### Page Body
 
 #### 1. Title
+
 ```markdown
 # ServiceName
 ```
 
 #### 2. Logo (Required)
+
 ```markdown
-![ServiceName](/docs/images/services/service-logo.webp)
+![ServiceName](/docs/images/services/service-name-logo.svg)
 ```
 
-**Important:**
-- **Always download logo locally first** - never use external URLs
-- Use standard markdown `![alt](path)` for logos
-- Use `<ZoomableImage>` only for large images/screenshots users need to zoom
-- Path starts with `/docs/images/services/`
-- Extension must match actual file
-- Download from: `https://raw.githubusercontent.com/coollabsio/coolify/main/public/svgs/{logo}.svg`
+- Use standard markdown `![alt](path)` for the logo.
+- Use `<ZoomableImage>` only for screenshots or other large images users need to zoom into.
+- Path starts with `/docs/images/services/` (not `/public/`).
+- The body image also acts as a *fallback* for icon resolution if the resolver can't find a matching file in `docs/public/images/services/` and you didn't set `icon` in frontmatter.
 
 #### 3. What is ServiceName?
+
 ```markdown
 ## What is ServiceName?
 
-[2-4 paragraphs describing the service, features, and use cases]
+[2–4 paragraphs describing the service, features, and use cases]
 ```
 
 **Writing tips:**
+
 - Start with what the service does
 - Explain key features
 - Mention who it's for
 - Keep language simple and clear
 
 #### 4. Links (Required)
+
 ```markdown
 ## Links
 
@@ -71,44 +92,43 @@ description: "Here you can find the documentation for hosting ServiceName with C
 - [GitHub](https://github.com/org/repo?utm_source=coolify.io)
 ```
 
-**Important:** Always append `?utm_source=coolify.io` to external links
+Always append `?utm_source=coolify.io` to external links.
 
 ## Optional Sections
 
-Add these sections when relevant:
+Add when relevant:
 
 ### Features
+
 ```markdown
 ## Features
 
 - Feature 1: Description
 - Feature 2: Description
-- Feature 3: Description
 ```
 
 ### Why ServiceName
+
 ```markdown
 ## Why ServiceName
 
-Explain the benefits and unique selling points:
 - Benefit 1
 - Benefit 2
 ```
 
 ### Learning Resources
+
 ```markdown
 ## Learning Resources
 
 - [Documentation](https://docs.example.com?utm_source=coolify.io)
 - [Tutorials](https://example.com/tutorials?utm_source=coolify.io)
-- [Videos](https://youtube.com/@channel?utm_source=coolify.io)
 ```
 
 ### Configuration
+
 ```markdown
 ## Configuration
-
-Special setup instructions or environment variables:
 
 1. Configure X
 2. Set environment variable Y
@@ -116,50 +136,51 @@ Special setup instructions or environment variables:
 ```
 
 ### Need Help?
+
 ```markdown
 ## Need Help?
 
 - [Discord](https://discord.gg/invite?utm_source=coolify.io)
 - [Community Forum](https://forum.example.com?utm_source=coolify.io)
-- [support@example.com](mailto:support@example.com)
 ```
 
 ## Documentation Templates
 
-See [TEMPLATES.md](./TEMPLATES.md) for complete examples:
-- Minimal template (Ghost)
-- Comprehensive template (Appsmith)
+See [TEMPLATES.md](./TEMPLATES.md) for ready-to-use templates (minimal and comprehensive).
 
 ## Writing Style Guidelines
 
-1. **Clear and Simple:** Write for non-native English speakers
-2. **Concise:** Get to the point quickly
-3. **Helpful:** Focus on what users can accomplish
-4. **Accurate:** Verify information from official sources
-5. **Structured:** Use headings, lists, and short paragraphs
+1. **Clear and simple:** write for non-native English speakers
+2. **Concise:** get to the point quickly
+3. **Helpful:** focus on what users can accomplish
+4. **Accurate:** verify information from official sources
+5. **Structured:** use headings, lists, and short paragraphs
 
 ## Common Mistakes
 
 ❌ **Don't:**
-- **Use external image URLs** - always download logos locally first
+
+- Hand-edit `docs/services/all.md` or `docs/.vitepress/theme/data/services.json` — both are regenerated
+- Omit `category` from frontmatter — the service won't appear in `all.md`
+- Use external image URLs — always download logos locally first
 - Use relative paths for images
 - Omit UTM parameters from external links
-- Use overly technical jargon
-- Include installation instructions (Coolify handles this)
 - Use `<ZoomableImage>` for small logos (unnecessary zoom)
 
 ✅ **Do:**
-- **Download ALL logos to `docs/public/images/services/`** before using
-- Use standard markdown `![alt](path)` for logos
-- Use `<ZoomableImage>` for screenshots and large images
-- Start image paths with `/docs/images/services/`
-- Add `?utm_source=coolify.io` to all external links
-- Write in simple, clear language
-- Focus on what the service does and why to use it
+
+- Always include `title`, `description`, and `category` in frontmatter
+- Use kebab-case for the filename and the slug
+- Save logos to `docs/public/images/services/` with a name the resolver will find
+- Use standard markdown `![alt](path)` for the logo
+- Use `<ZoomableImage>` for screenshots only
+- Append `?utm_source=coolify.io` to all external links
+- Run `bun run generate:services` and commit the regenerated files
 
 ## Content Sources
 
 Where to find information:
+
 1. Service's official website
 2. GitHub README
 3. Official documentation

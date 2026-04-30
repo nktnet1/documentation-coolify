@@ -1,6 +1,10 @@
 ---
 title: "Glances"
-description: "Monitor system performance on Coolify with Glances showing CPU, memory, disk, network stats, and process monitoring via web interface."
+description: "Cross-platform system monitoring tool."
+og:
+  description: "Monitor system performance on Coolify with Glances showing CPU, memory, disk, network stats, and process monitoring via web interface."
+category: "Monitoring"
+icon: "/docs/images/services/glances-logo.png"
 ---
 
 ![Glances](https://raw.githubusercontent.com/nicolargo/glances/develop/docs/_static/glances-responsive-webdesign.png)

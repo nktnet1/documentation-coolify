@@ -1,6 +1,10 @@
 ---
 title: Libreoffice
-description: "Run LibreOffice Online on Coolify for collaborative document editing, spreadsheets, presentations with web-based office suite interface."
+description: "Free and open-source office suite."
+og:
+  description: "Run LibreOffice Online on Coolify for collaborative document editing, spreadsheets, presentations with web-based office suite interface."
+category: "Productivity"
+icon: "/docs/images/services/libreoffice-logo.svg"
 ---
 
 # Libreoffice

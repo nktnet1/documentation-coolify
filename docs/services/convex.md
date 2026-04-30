@@ -1,6 +1,10 @@
 ---
 title: Convex
-description: "Deploy Convex backend on Coolify with reactive database, serverless functions, real-time sync, and TypeScript-first development for modern apps."
+description: "Backend platform for web developers."
+og:
+  description: "Deploy Convex backend on Coolify with reactive database, serverless functions, real-time sync, and TypeScript-first development for modern apps."
+category: "Development"
+icon: "/docs/images/services/convex-logo.svg"
 ---
 
 # Convex

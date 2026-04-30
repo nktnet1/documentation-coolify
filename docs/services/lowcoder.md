@@ -1,6 +1,10 @@
 ---
 title: Lowcoder
-description: "Build internal tools on Coolify with Lowcoder low-code platform featuring drag-and-drop UI, database queries, and custom application development."
+description: "Open-source low-code platform for building internal tools."
+og:
+  description: "Build internal tools on Coolify with Lowcoder low-code platform featuring drag-and-drop UI, database queries, and custom application development."
+category: "Development"
+icon: "/docs/images/services/lowcoder-logo.svg"
 ---
 
 # Lowcoder

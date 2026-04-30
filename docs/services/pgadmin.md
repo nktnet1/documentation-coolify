@@ -1,6 +1,10 @@
 ---
 title: "pgAdmin"
-description: "Here you can find the documentation for hosting pgAdmin with Coolify."
+description: "A web-based database management tool for administering your PostgreSQL databases through a user-friendly interface."
+og:
+  description: "Here you can find the documentation for hosting pgAdmin with Coolify."
+category: "Development"
+icon: "/docs/images/services/pgadmin-logo.svg"
 ---
 
 # pgAdmin

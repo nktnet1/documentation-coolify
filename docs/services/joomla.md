@@ -1,6 +1,10 @@
 ---
 title: Joomla
-description: "Host Joomla CMS on Coolify for flexible content management, extensions, multilingual sites, and powerful website building with PHP framework."
+description: "Open-source content management system."
+og:
+  description: "Host Joomla CMS on Coolify for flexible content management, extensions, multilingual sites, and powerful website building with PHP framework."
+category: "CMS"
+icon: "/docs/images/services/joomla-logo.svg"
 ---
 
 # Joomla

@@ -1,6 +1,10 @@
 ---
 title: "Evolution API"
-description: "Deploy Evolution API on Coolify for WhatsApp Business integration, message automation, chatbot workflows, and customer communication management."
+description: "WhatsApp API service for automation."
+og:
+  description: "Deploy Evolution API on Coolify for WhatsApp Business integration, message automation, chatbot workflows, and customer communication management."
+category: "Automation"
+icon: "/docs/images/services/evolution-api-logo.svg"
 ---
 
 ## What is Evolution API?

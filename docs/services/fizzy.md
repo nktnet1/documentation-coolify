@@ -1,6 +1,10 @@
 ---
 title: "Fizzy"
-description: "Kanban tracking tool for issues and ideas by 37signals"
+description: "Kanban tracking tool for issues and ideas by 37signals."
+og:
+  description: "Kanban tracking tool for issues and ideas by 37signals"
+category: "Project Management"
+icon: "/docs/images/services/fizzy-logo.png"
 ---
 
 # Fizzy

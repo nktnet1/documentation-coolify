@@ -1,6 +1,10 @@
 ---
 title: Cockpit
-description: "Host Cockpit CMS on Coolify for headless content management with flexible data structures, REST API, GraphQL, and developer-friendly workflows."
+description: "Web-based server administration interface."
+og:
+  description: "Host Cockpit CMS on Coolify for headless content management with flexible data structures, REST API, GraphQL, and developer-friendly workflows."
+category: "Administration"
+icon: "/docs/images/services/cockpit-logo.svg"
 ---
 
 # Cockpit

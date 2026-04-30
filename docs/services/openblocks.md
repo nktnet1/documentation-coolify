@@ -1,6 +1,10 @@
 ---
 title: "OpenBlocks"
-description: "Build apps on Coolify with OpenBlocks low-code platform featuring drag-and-drop UI, database connectors, and rapid application development."
+description: "Open-source low code platform."
+og:
+  description: "Build apps on Coolify with OpenBlocks low-code platform featuring drag-and-drop UI, database connectors, and rapid application development."
+category: "Development"
+icon: "/docs/images/services/openblocks-logo.svg"
 ---
 
 ::: warning SERVICE NOT AVAILABLE

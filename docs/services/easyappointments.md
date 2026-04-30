@@ -1,6 +1,10 @@
 ---
 title: Easyappointments
-description: "Run Easy!Appointments on Coolify for online booking system with calendar sync, customer management, SMS notifications, and service scheduling."
+description: "Open-source appointment scheduler."
+og:
+  description: "Run Easy!Appointments on Coolify for online booking system with calendar sync, customer management, SMS notifications, and service scheduling."
+category: "Business"
+icon: "/docs/images/services/easyappointments-logo.png"
 ---
 
 # Easyappointments

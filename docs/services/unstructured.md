@@ -1,6 +1,10 @@
 ---
 title: "Unstructured"
-description: "Extract data on Coolify with Unstructured.io for document parsing, PDFs, images, HTML, and ML-ready data preprocessing pipelines."
+description: "Open-source platform and tools to ingest and process unstructured documents for Retrieval Augmented Generation (RAG) and model fine-tuning."
+og:
+  description: "Extract data on Coolify with Unstructured.io for document parsing, PDFs, images, HTML, and ML-ready data preprocessing pipelines."
+category: "AI"
+icon: "/docs/images/services/unstructured-logo.png"
 ---
 
 # What is Unstructured?

@@ -1,6 +1,10 @@
 ---
 title: Maybe
-description: "Manage finances with Maybe on Coolify for net worth tracking, investment portfolio, financial planning, and personal wealth management insights."
+description: "Personal finance and wealth management application."
+og:
+  description: "Manage finances with Maybe on Coolify for net worth tracking, investment portfolio, financial planning, and personal wealth management insights."
+category: "Finance"
+icon: "/docs/images/services/maybe-logo.svg"
 ---
 
 # Maybe

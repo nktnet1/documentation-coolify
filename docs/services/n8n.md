@@ -1,6 +1,10 @@
 ---
 title: "N8N"
-description: "Build workflows on Coolify with n8n automation platform connecting 400+ apps, APIs, databases for no-code/low-code task automation and integration."
+description: "Workflow automation tool."
+og:
+  description: "Build workflows on Coolify with n8n automation platform connecting 400+ apps, APIs, databases for no-code/low-code task automation and integration."
+category: "Automation"
+icon: "/docs/images/services/n8n-logo.png"
 ---
 
 ![N8N](https://user-images.githubusercontent.com/65276001/173571060-9f2f6d7b-bac0-43b6-bdb2-001da9694058.png)

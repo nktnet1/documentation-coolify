@@ -1,6 +1,10 @@
 ---
 title: "Weaviate"
-description: "Deploy Weaviate vector database on Coolify for AI-powered search, semantic understanding, ML model integration, and knowledge graphs."
+description: "Open source, AI-native vector database."
+og:
+  description: "Deploy Weaviate vector database on Coolify for AI-powered search, semantic understanding, ML model integration, and knowledge graphs."
+category: "AI"
+icon: "/docs/images/services/weaviate-logo.webp"
 ---
 
 <ZoomableImage src="/docs/images/services/weaviate-logo.webp" alt="Weaviate dashboard" />

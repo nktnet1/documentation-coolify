@@ -1,6 +1,10 @@
 ---
 title: "Ollama"
-description: "Run Ollama on Coolify for local LLM hosting supporting Llama, Mistral, Gemma, and custom models with REST API for AI applications."
+description: "A lightweight and efficient server for running large language models (LLMs) on your local machine or in the cloud."
+og:
+  description: "Run Ollama on Coolify for local LLM hosting supporting Llama, Mistral, Gemma, and custom models with REST API for AI applications."
+category: "AI"
+icon: "/docs/images/services/ollama-logo.svg"
 ---
 
 <ZoomableImage src="/docs/images/services/ollama-logo.webp" alt="Ollama dashboard" />

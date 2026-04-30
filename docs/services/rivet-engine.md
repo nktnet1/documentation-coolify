@@ -1,6 +1,10 @@
 ---
 title: Rivet Engine
-description: "Deploy Rivet Engine with Coolify for building and scaling stateful workloads with long-lived processes, durable state, and realtime capabilities."
+description: "Backend engine for running stateful actors at scale with automatic scaling and distributed state management."
+og:
+  description: "Deploy Rivet Engine with Coolify for building and scaling stateful workloads with long-lived processes, durable state, and realtime capabilities."
+category: "Development"
+icon: "/docs/images/services/rivet-logo.svg"
 ---
 
 # Rivet Engine

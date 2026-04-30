@@ -1,6 +1,10 @@
 ---
 title: "Pydio Cells"
-description: "Host Pydio Cells on Coolify for collaborative Document Sharing and Management."
+description: "File sharing platform for organizations."
+og:
+  description: "Host Pydio Cells on Coolify for collaborative Document Sharing and Management."
+category: "File Sharing"
+icon: "/docs/images/services/pydio.webp"
 ---
 
 <ZoomableImage src="/docs/images/services/pydio.webp" alt="Pydio" />

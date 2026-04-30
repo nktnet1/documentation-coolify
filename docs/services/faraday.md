@@ -1,6 +1,10 @@
 ---
 title: Faraday
-description: "Host Faraday security platform on Coolify for penetration testing management, vulnerability tracking, and collaborative security assessment workflows."
+description: "Collaborative penetration testing and vulnerability management platform."
+og:
+  description: "Host Faraday security platform on Coolify for penetration testing management, vulnerability tracking, and collaborative security assessment workflows."
+category: "Security"
+icon: "/docs/images/services/faraday-logo.png"
 ---
 
 # Faraday

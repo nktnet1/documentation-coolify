@@ -1,6 +1,10 @@
 ---
 title: "Minecraft"
-description: "Run Minecraft server on Coolify for multiplayer gaming, custom worlds, mods support, and community gameplay with dedicated server hosting."
+description: "Minecraft game server."
+og:
+  description: "Run Minecraft server on Coolify for multiplayer gaming, custom worlds, mods support, and community gameplay with dedicated server hosting."
+category: "Gaming"
+icon: "/docs/images/services/minecraft-logo.svg"
 ---
 
 # What is Minecraft?

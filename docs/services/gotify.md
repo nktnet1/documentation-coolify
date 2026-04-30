@@ -1,6 +1,10 @@
 ---
 title: "Gotify"
-description: "Deploy Gotify on Coolify for self-hosted push notifications, real-time messaging, REST API integration, and Android/iOS notification delivery."
+description: "Open-source push notifications for web and mobile apps."
+og:
+  description: "Deploy Gotify on Coolify for self-hosted push notifications, real-time messaging, REST API integration, and Android/iOS notification delivery."
+category: "Notifications"
+icon: "/docs/images/services/gotify-logo.svg"
 ---
 
 <ZoomableImage src="/docs/images/services/gotify-logo.svg" alt="Gotify" width="200" />

@@ -1,6 +1,10 @@
 ---
 title: Nodebb
-description: "Run NodeBB forum on Coolify for modern community discussions, real-time chat, plugins, themes, and social networking platform features."
+description: "Node.js based forum software."
+og:
+  description: "Run NodeBB forum on Coolify for modern community discussions, real-time chat, plugins, themes, and social networking platform features."
+category: "Forum"
+icon: "/docs/images/services/nodebb-logo.svg"
 ---
 
 # Nodebb

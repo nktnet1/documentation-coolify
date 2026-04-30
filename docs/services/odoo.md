@@ -1,6 +1,10 @@
 ---
 title: "Odoo"
-description: "Deploy Odoo ERP on Coolify for integrated business management with CRM, e-commerce, accounting, inventory, and 30+ modular applications."
+description: "Open source ERP and CRM."
+og:
+  description: "Deploy Odoo ERP on Coolify for integrated business management with CRM, e-commerce, accounting, inventory, and 30+ modular applications."
+category: "Business"
+icon: "/docs/images/services/odoo-logo.svg"
 ---
 
 # What is Odoo?

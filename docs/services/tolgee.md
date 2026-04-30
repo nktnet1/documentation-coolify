@@ -1,6 +1,10 @@
 ---
 title: "Tolgee"
-description: "Localize apps on Coolify with Tolgee for translation management, in-context editing, collaboration, and internationalization platform."
+description: "Open source localization platform."
+og:
+  description: "Localize apps on Coolify with Tolgee for translation management, in-context editing, collaboration, and internationalization platform."
+category: "Development"
+icon: "/docs/images/services/tolgee-logo.svg"
 ---
 
 # What is Tolgee?

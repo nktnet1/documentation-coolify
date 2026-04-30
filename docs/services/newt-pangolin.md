@@ -1,6 +1,10 @@
 ---
 title: "Newt-Pangolin"
-description: "Here you can find the documentation for hosting Newt with Coolify."
+description: "User space WireGuard tunnel client and TCP/UDP proxy for securely exposing private resources."
+og:
+  description: "Here you can find the documentation for hosting Newt with Coolify."
+category: "Networking"
+icon: "/docs/images/services/pangolin_newt.svg"
 ---
 
 ![Newt Pangolin](/public/images/services/pangolin_newt.svg)

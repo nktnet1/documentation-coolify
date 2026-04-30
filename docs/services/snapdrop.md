@@ -1,6 +1,10 @@
 ---
 title: "Snapdrop"
-description: "Transfer files on Coolify with Snapdrop for local network file sharing, AirDrop-style transfers, and instant peer-to-peer file exchange."
+description: "Local file sharing in your browser."
+og:
+  description: "Transfer files on Coolify with Snapdrop for local network file sharing, AirDrop-style transfers, and instant peer-to-peer file exchange."
+category: "File Sharing"
+icon: "/docs/images/services/snapdrop-logo.svg"
 ---
 
 # What is Snapdrop?

@@ -1,6 +1,10 @@
 ---
 title: "Metabase"
-description: "Run Metabase analytics on Coolify for business intelligence, SQL querying, dashboards, and self-service data visualization without coding."
+description: "The simplest, fastest way to share data and analytics inside your company."
+og:
+  description: "Run Metabase analytics on Coolify for business intelligence, SQL querying, dashboards, and self-service data visualization without coding."
+category: "Analytics"
+icon: "/docs/images/services/metabase-logo.svg"
 ---
 
 ![Metabase](https://github.com/metabase/metabase/raw/master/docs/images/metabase-product-screenshot.png)

@@ -1,6 +1,10 @@
 ---
 title: Homarr
-description: "Run Homarr dashboard on Coolify for service management, monitoring, quick access, widgets, and customizable homepage for self-hosted applications."
+description: "Customizable browser homepage and dashboard."
+og:
+  description: "Run Homarr dashboard on Coolify for service management, monitoring, quick access, widgets, and customizable homepage for self-hosted applications."
+category: "Administration"
+icon: "/docs/images/services/homarr-logo.svg"
 ---
 
 # Homarr

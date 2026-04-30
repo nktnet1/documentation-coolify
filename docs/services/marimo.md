@@ -1,6 +1,10 @@
 ---
 title: "Marimo"
-description: "Deploy Marimo reactive notebooks on Coolify for Python data science with interactive notebooks, reproducible execution, and git-friendly format."
+description: "Open-source reactive notebook for Python."
+og:
+  description: "Deploy Marimo reactive notebooks on Coolify for Python data science with interactive notebooks, reproducible execution, and git-friendly format."
+category: "Development"
+icon: "/docs/images/services/marimo.svg"
 ---
 
 <ZoomableImage src="/docs/images/services/marimo-logo.webp" alt="Marimo Logo logo" />

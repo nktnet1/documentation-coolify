@@ -1,6 +1,10 @@
 ---
 title: "GitLab"
-description: "Deploy GitLab on Coolify for complete DevOps platform with Git repos, CI/CD pipelines, issue tracking, and container registry integration."
+description: "DevOps lifecycle tool."
+og:
+  description: "Deploy GitLab on Coolify for complete DevOps platform with Git repos, CI/CD pipelines, issue tracking, and container registry integration."
+category: "Development"
+icon: "/docs/images/services/gitlab-logo.svg"
 ---
 
 ![Gitlab](https://raw.githubusercontent.com/gitlabhq/gitlabhq/refs/heads/master/public/apple-touch-icon.png)

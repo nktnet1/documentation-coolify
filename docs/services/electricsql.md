@@ -1,6 +1,10 @@
 ---
 title: "ElectricSQL"
-description: "Sync shape-based subsets of your Postgres data over HTTP."
+description: "Sync shape-based subsets of your Postgres data over HTTP"
+og:
+  description: "Sync shape-based subsets of your Postgres data over HTTP."
+category: "Database"
+icon: "/docs/images/services/electricsql.svg"
 ---
 
 # ElectricSQL

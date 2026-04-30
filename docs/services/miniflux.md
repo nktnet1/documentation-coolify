@@ -1,6 +1,10 @@
 ---
 title: "Miniflux"
-description: "Deploy Miniflux RSS reader on Coolify for minimalist feed aggregation, reading, filtering, and distraction-free news consumption with speed."
+description: "Minimalist and opinionated feed reader."
+og:
+  description: "Deploy Miniflux RSS reader on Coolify for minimalist feed aggregation, reading, filtering, and distraction-free news consumption with speed."
+category: "RSS"
+icon: "/docs/images/services/miniflux-logo.svg"
 ---
 
 # Miniflux

@@ -1,6 +1,10 @@
 ---
 title: "Sessy"
-description: "Email observability platform for monitoring and analyzing email systems."
+description: "Email observability platform for monitoring Amazon SES deliveries, bounces, and more."
+og:
+  description: "Email observability platform for monitoring and analyzing email systems."
+category: "Email"
+icon: "/docs/images/services/sessy-logo.svg"
 ---
 
 # Sessy

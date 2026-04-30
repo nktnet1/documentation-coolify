@@ -1,6 +1,10 @@
 ---
 title: "Outline"
-description: "Host Outline wiki on Coolify for team knowledge base, documentation, real-time collaboration, and beautifully organized information sharing."
+description: "Open-source collaboration tool."
+og:
+  description: "Host Outline wiki on Coolify for team knowledge base, documentation, real-time collaboration, and beautifully organized information sharing."
+category: "Productivity"
+icon: "/docs/images/services/outline-logo.svg"
 ---
 
 # What is Outline?

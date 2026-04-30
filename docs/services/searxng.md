@@ -1,6 +1,10 @@
 ---
 title: "SearXNG"
-description: "Search privately on Coolify with SearXNG metasearch engine aggregating results from 70+ sources without tracking or personalization."
+description: "Open source search engine."
+og:
+  description: "Search privately on Coolify with SearXNG metasearch engine aggregating results from 70+ sources without tracking or personalization."
+category: "Search"
+icon: "/docs/images/services/searxng-logo.svg"
 ---
 
 <ZoomableImage src="/docs/images/services/searxng-logo.svg" alt="Searxng dashboard" />

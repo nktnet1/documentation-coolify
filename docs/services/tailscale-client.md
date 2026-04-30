@@ -1,6 +1,10 @@
 ---
 title: "Tailscale Client"
-description: "Connect services securely with Tailscale on Coolify featuring WireGuard VPN, mesh networking, zero-config setup, and encrypted peer-to-peer connections."
+description: "Zero-config WireGuard VPN client for secure mesh networking and encrypted connections."
+og:
+  description: "Connect services securely with Tailscale on Coolify featuring WireGuard VPN, mesh networking, zero-config setup, and encrypted peer-to-peer connections."
+category: "Networking"
+icon: "/docs/images/services/tailscale-logo.svg"
 ---
 
 # Tailscale Client

@@ -1,22 +1,65 @@
 ---
 title: "Beszel"
-description: "Deploy Beszel lightweight server monitoring on Coolify with real-time metrics, Docker stats, and minimal resource usage for infrastructure tracking."
+description: "Lightweight server monitoring hub with historical data, docker stats, and alerts."
+og:
+  description: "Deploy Beszel lightweight server monitoring on Coolify with real-time metrics, Docker stats, and minimal resource usage for infrastructure tracking."
+category: "Monitoring"
+icon: "/docs/images/services/beszel-logo.svg"
 ---
 
-<ZoomableImage src="/docs/images/services/beszel.svg" alt="Beszel dashboard" />
+<ZoomableImage src="/docs/images/services/beszel-logo.webp" alt="Beszel Logo" />
 
 ## What is Beszel?
 
 Lightweight server monitoring hub with historical data, docker stats, and alerts.
 
+<ZoomableImage src="/docs/images/services/beszel-ui.webp" alt="Beszel UI" />
+
 ## Setup
 
-- Deploy Beszel using Coolify template
-- In the UI, `Add a new System`
-- Enter `beszel-agent` in Host/IP
-- Copy the public Key to `KEY` env variable and token to `TOKEN` variable in Beszel's project environment variables (These are obtained from Beszel UI when adding a new system)
-- Disable the gzip compression in the hub service settings. ( it's handled by Coolify automatically after the version v4.0.0-beta.452)
+### 1. Deploy Beszel
+Create a new resource on Coolify and search for `Beszel` and select the template `Beszel` (you can select `Beszel Agent` if you only want to deploy the agent)
+
+Then click the deploy button and wait for it to deploy.
+
+When you deploy Beszel with Agent for first time the beszel-agent will be unhealthy and be in restarting state, this is normal and expected because it needs some additional steps to setup which are explained below.
+
+
+<ZoomableImage src="/docs/images/services/beszel-setup-1.webp" alt="Beszel Setup 1" />
+
+### 2. Add System on Beszel dashboard
+Visit the Beszel URL and create your first admin account on the Beszel dashboard.
+
+After creating the account, click the "**Add a new System**" button in the top corner.
+
+
+<ZoomableImage src="/docs/images/services/beszel-setup-2.webp" alt="Beszel Setup 2" />
+
+<br />
+
+<ZoomableImage src="/docs/images/services/beszel-setup-3.webp" alt="Beszel Setup 3" />
+
+- Give a name for the Agent
+- Enter `beszel-agent` as the Host/IP if you are using the **Beszel** template; if you are using the **Beszel Agent** template, then enter the IP address of the server where the agent is deployed
+- Copy the value of `Public Key` and `Token`, then click on "Add system"
+
+### 3. Set KEY and TOKEN environment variables on Coolify
+Go to the **Environment Variables** on Coolify and enter the value for `KEY` and `TOKEN` variables. These are the Public Key and Token you copied from the Beszel dashboard in the previous step.
+
+<ZoomableImage src="/docs/images/services/beszel-setup-4.webp" alt="Beszel Setup 4" />
+
+### 4. Restart Beszel
+After you set the environment variables (previous step), restart Beszel by clicking the restart button.
+
+Once it’s restarted, the `beszel-agent` service will become healthy and the Beszel dashboard will start showing data.
+
+::: warning Head's up
+If you are using Coolify version below v4.0.0-beta.452, disable gzip compression in the hub service settings. 
+
+Go to the Beszel service in Coolify, click "settings", and uncheck the `gzip compression` option.
+:::
 
 ## Links
 
-- [GitHub](https://github.com/henrygd/beszel)
+- [Official Website](https://beszel.dev?utm_source=coolify.io)
+- [GitHub](https://github.com/henrygd/beszel?utm_source=coolify.io)

@@ -1,6 +1,10 @@
 ---
 title: "Once Campfire"
-description: "Here you can find the documentation for hosting Once Campfire with Coolify."
+description: "Web-based chat application."
+og:
+  description: "Here you can find the documentation for hosting Once Campfire with Coolify."
+category: "Communication"
+icon: "/docs/images/services/oncecampfire-logo.png"
 ---
 
 <ZoomableImage src="/docs/images/services/oncecampfire-logo.png" alt="Once Campfire dashboard" />

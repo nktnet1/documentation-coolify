@@ -1,6 +1,6 @@
 # Documentation Templates
 
-Ready-to-use templates for service documentation.
+Ready-to-use templates for service documentation. The frontmatter is load-bearing — the generator (`scripts/services-data.mjs`) reads `title`, `description`, `category`, optional `icon`, and optional `disabled` to build the listing.
 
 ## Minimal Template
 
@@ -11,12 +11,15 @@ Use for simple services without extensive features or documentation.
 ```markdown
 ---
 title: "ServiceName"
-description: "Deploy ServiceName on Coolify for [key benefit or use case]."
+description: "Short description for the listing card and all.md."
+og:
+  description: "Optional longer SEO/social-card description."
+category: "CMS"
 ---
 
 # ServiceName
 
-![ServiceName](/docs/images/services/servicename-logo.webp)
+![ServiceName](/docs/images/services/servicename-logo.svg)
 
 ## What is ServiceName?
 
@@ -36,12 +39,16 @@ description: "Deploy ServiceName on Coolify for [key benefit or use case]."
 ```markdown
 ---
 title: "Ghost"
-description: "Deploy Ghost publishing platform on Coolify for professional blogs, newsletters, memberships, and content monetization with modern editor."
+description: "A professional publishing platform."
+og:
+  description: "Deploy Ghost publishing platform on Coolify for professional blogs, newsletters, memberships, and content monetization with modern editor."
+category: "CMS"
+icon: "/docs/images/services/ghost-logo.svg"
 ---
 
 # Ghost
 
-![Ghost](https://user-images.githubusercontent.com/353959/169805900-66be5b89-0859-4816-8da9-528ed7534704.png)
+![Ghost](/docs/images/services/ghost-logo.svg)
 
 ## What is Ghost?
 
@@ -64,33 +71,34 @@ Use for complex services with many features, learning resources, or special conf
 ```markdown
 ---
 title: "ServiceName"
-description: "[Detailed description including key features and benefits]"
+description: "Short description for the listing card."
+og:
+  description: "Detailed SEO/social-card description including key features and benefits."
+category: "Development"
 ---
 
 # ServiceName
 
-![ServiceName](/docs/images/services/servicename-logo.webp)
+![ServiceName](/docs/images/services/servicename-logo.svg)
 
 ## What is ServiceName?
 
-[Detailed explanation of the service - 2-4 paragraphs]
+[Detailed explanation — 2-4 paragraphs]
 
-[First paragraph: What it is and its primary purpose]
+[First paragraph: what it is and its primary purpose]
 
-[Second paragraph: Core functionality and features]
+[Second paragraph: core functionality and features]
 
-[Third paragraph: Use cases and who it's for]
+[Third paragraph: use cases and who it's for]
 
 ## Why ServiceName?
 
-[Explain the unique benefits and advantages]
-
 ServiceName makes it easy to [key benefit]:
 
-- **Benefit 1:** Description of advantage
-- **Benefit 2:** Description of advantage
-- **Benefit 3:** Description of advantage
-- **Benefit 4:** Description of advantage
+- **Benefit 1:** Description
+- **Benefit 2:** Description
+- **Benefit 3:** Description
+- **Benefit 4:** Description
 
 ## Features
 
@@ -123,12 +131,16 @@ ServiceName makes it easy to [key benefit]:
 ```markdown
 ---
 title: "Appsmith"
-description: "Build internal tools on Coolify with Appsmith's low-code platform featuring drag-and-drop UI, database connectors, and custom business logic."
+description: "A low-code application platform for building internal tools."
+og:
+  description: "Build internal tools on Coolify with Appsmith's low-code platform featuring drag-and-drop UI, database connectors, and custom business logic."
+category: "Development"
+icon: "/docs/images/services/appsmith-logo.svg"
 ---
 
 # Appsmith
 
-![Appsmith](https://raw.githubusercontent.com/appsmithorg/appsmith/release/static/images/appsmith-in-100-seconds.png)
+![Appsmith](/docs/images/services/appsmith-logo.svg)
 
 ## What is Appsmith
 
@@ -170,23 +182,21 @@ Appsmith makes it easy to build a UI that talks to any datasource. You can creat
 
 ## Template Selection Guide
 
-Choose your template based on:
-
 ### Use Minimal Template when:
+
 - Service has limited documentation
-- Service is straightforward/self-explanatory
+- Service is straightforward / self-explanatory
 - Official docs cover everything users need
 - No special configuration required
-- Service has a simple purpose
 
 **Examples:** Ghost, Redis Insight, Miniflux
 
 ### Use Comprehensive Template when:
+
 - Service has complex features
 - Multiple use cases or workflows
 - Rich learning resources available
 - Community support channels exist
-- Benefits need explanation
 - Service is a platform (not just a tool)
 
 **Examples:** Appsmith, Authentik, Home Assistant, GitLab
@@ -195,13 +205,13 @@ Choose your template based on:
 
 ## Template Variables Reference
 
-When using templates, replace these placeholders:
+Replace these placeholders:
 
 | Variable | Description | Example |
-|----------|-------------|---------|
+|---|---|---|
 | `ServiceName` | Official service name | `Appsmith` |
 | `servicename` | Lowercase, no spaces | `appsmith` |
-| `service-name` | Lowercase, hyphenated | `app-smith` |
+| `service-name` | Lowercase, hyphenated | `home-assistant` |
 | `{key benefit}` | Primary value proposition | `building internal tools` |
 | `{official website}` | Service homepage URL | `https://appsmith.com` |
 | `{github org}` | GitHub organization | `appsmithorg` |
@@ -211,9 +221,7 @@ When using templates, replace these placeholders:
 
 ## Customization Tips
 
-### Adding Configuration Section
-
-For services requiring special setup:
+### Adding a Configuration Section
 
 ```markdown
 ## Configuration
@@ -228,16 +236,9 @@ For services requiring special setup:
 1. After deployment, navigate to the admin panel
 2. Create your first admin user
 3. Configure the database connection
-4. Set up authentication provider
-
-### Common Settings
-
-[Explain frequently-used configuration options]
 ```
 
-### Adding Troubleshooting Section
-
-For services with common issues:
+### Adding a Troubleshooting Section
 
 ```markdown
 ## Troubleshooting
@@ -247,14 +248,9 @@ Check that required environment variables are set correctly.
 
 ### Database connection failed
 Ensure the database service is running and accessible.
-
-### Can't login
-Try resetting the admin password using the CLI tool.
 ```
 
 ### Adding Screenshots
-
-For services where UI is important:
 
 ```markdown
 ## Screenshots
@@ -270,15 +266,16 @@ For services where UI is important:
 
 ## Quality Checklist
 
-Before submitting documentation:
+Before submitting:
 
-- [ ] Frontmatter includes title and description
-- [ ] Service name is consistently capitalized
+- [ ] Frontmatter includes `title`, `description`, and `category`
+- [ ] `category` matches an existing category (or is intentionally new)
+- [ ] Service name is consistently capitalized in `title` and the H1
+- [ ] Logo file exists in `docs/public/images/services/` with a name the resolver finds, **or** `icon` is set in frontmatter
 - [ ] Logo displays using standard markdown `![alt](path)` syntax
 - [ ] "What is..." section is clear and informative
 - [ ] All external links include `?utm_source=coolify.io`
 - [ ] GitHub and website links are correct
 - [ ] No typos or grammatical errors
-- [ ] Appropriate template chosen (minimal vs comprehensive)
-- [ ] All markdown syntax is valid
-- [ ] File saved as `{slug}.md` in `docs/services/`
+- [ ] Filename is `{slug}.md` in `docs/services/`, lowercase kebab-case
+- [ ] Ran `bun run generate:services`; `services.json` and `all.md` are committed alongside the new page

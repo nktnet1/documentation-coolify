@@ -1,6 +1,10 @@
 ---
 title: "Emby"
-description: "Host Emby media server on Coolify for streaming movies, TV shows, music, and photos with transcoding, mobile apps, and DVR capabilities."
+description: "A media server to organize, play, and stream audio and video to a variety of devices."
+og:
+  description: "Host Emby media server on Coolify for streaming movies, TV shows, music, and photos with transcoding, mobile apps, and DVR capabilities."
+category: "Media"
+icon: "/docs/images/services/emby-logo.png"
 ---
 
 ![Emby](https://emby.media/support/images/logo.png)

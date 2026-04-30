@@ -1,6 +1,10 @@
 ---
 title: "Zipline"
-description: "Share files on Coolify with Zipline for screenshot sharing, file uploads, URL shortening, and personal media hosting with embeds."
+description: "Next generation ShareX / File upload server"
+og:
+  description: "Share files on Coolify with Zipline for screenshot sharing, file uploads, URL shortening, and personal media hosting with embeds."
+category: "File Management"
+icon: "/docs/images/services/zipline-logo.svg"
 ---
 
 ![Zipline](https://raw.githubusercontent.com/diced/zipline/trunk/public/zipline_small.png)

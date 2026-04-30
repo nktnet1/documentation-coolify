@@ -31,6 +31,7 @@ RUN --mount=type=cache,target=/root/.bun \
 # Copy only necessary files for build
 COPY docs/ ./docs/
 COPY nginx/ ./nginx/
+COPY scripts/ ./scripts/
 COPY env.d.ts .
 COPY tsconfig*.json ./
 

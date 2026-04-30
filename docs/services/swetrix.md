@@ -1,6 +1,10 @@
 ---
 title: "Swetrix"
-description: "Swetrix is a privacy-friendly and cookieless European web analytics alternative to Google Analytics."
+description: "Privacy-friendly and cookieless European web analytics alternative to Google Analytics."
+og:
+  description: "Swetrix is a privacy-friendly and cookieless European web analytics alternative to Google Analytics."
+category: "Analytics"
+icon: "/docs/images/services/swetrix.svg"
 ---
 
 <ZoomableImage src="/docs/images/services/swetrix.svg" />

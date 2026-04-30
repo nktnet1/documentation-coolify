@@ -1,6 +1,10 @@
 ---
 title: "Grocy"
-description: "Manage household on Coolify with Grocy for grocery inventory, recipe management, chore tracking, and smart shopping lists for home organization."
+description: "A self-hosted groceries & household management solution for your home."
+og:
+  description: "Manage household on Coolify with Grocy for grocery inventory, recipe management, chore tracking, and smart shopping lists for home organization."
+category: "Home"
+icon: "/docs/images/services/grocy-logo.svg"
 ---
 
 ![Grocy](https://raw.githubusercontent.com/grocy/grocy/master/public/img/logo.svg?sanitize=true)

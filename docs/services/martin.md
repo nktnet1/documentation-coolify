@@ -1,6 +1,10 @@
 ---
 title: Martin
-description: "Host Martin tile server on Coolify for serving PostGIS vector tiles, MBTiles, PMTiles with high performance for web mapping applications."
+description: "PostGIS vector tile server."
+og:
+  description: "Host Martin tile server on Coolify for serving PostGIS vector tiles, MBTiles, PMTiles with high performance for web mapping applications."
+category: "Development"
+icon: "/docs/images/services/martin-logo.png"
 ---
 
 # Martin

@@ -1,6 +1,10 @@
 ---
 title: "OpenPanel"
-description: "Host OpenPanel analytics on Coolify for privacy-focused web analytics, event tracking, user insights without cookies or data collection."
+description: "Open source alternative to Mixpanel and Plausible for product analytics."
+og:
+  description: "Host OpenPanel analytics on Coolify for privacy-focused web analytics, event tracking, user insights without cookies or data collection."
+category: "Analytics"
+icon: "/docs/images/services/openpanel-logo.svg"
 ---
 
 # OpenPanel

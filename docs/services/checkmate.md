@@ -1,6 +1,10 @@
 ---
 title: Checkmate
-description: "Host Checkmate monitoring on Coolify for uptime checks, SSL certificate tracking, domain expiration alerts, and infrastructure health monitoring."
+description: "Website monitoring and uptime service."
+og:
+  description: "Host Checkmate monitoring on Coolify for uptime checks, SSL certificate tracking, domain expiration alerts, and infrastructure health monitoring."
+category: "Monitoring"
+icon: "/docs/images/services/checkmate-logo.png"
 ---
 
 # Checkmate

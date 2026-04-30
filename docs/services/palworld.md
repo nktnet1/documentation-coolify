@@ -1,6 +1,10 @@
 ---
 title: "Palworld"
-description: "Host Palworld dedicated server on Coolify for multiplayer survival gameplay with creature collection, base building, and cooperative adventures."
+description: "Dedicated server for Palworld multiplayer survival game with creature collection and base building."
+og:
+  description: "Host Palworld dedicated server on Coolify for multiplayer survival gameplay with creature collection, base building, and cooperative adventures."
+category: "Gaming"
+icon: "/docs/images/services/palworld-logo.webp"
 ---
 
 ## What is Palworld?

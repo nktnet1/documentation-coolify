@@ -1,6 +1,10 @@
 ---
 title: "Paymenter"
-description: "Host Paymenter billing on Coolify for web hosting invoicing, client management, automated provisioning, and service provider administration."
+description: "Open-Source Billing, Built for Hosting Providers."
+og:
+  description: "Host Paymenter billing on Coolify for web hosting invoicing, client management, automated provisioning, and service provider administration."
+category: "Business"
+icon: "/docs/images/services/paymenter-logo.svg"
 ---
 
 <ZoomableImage src="/docs/images/services/paymenter-logo.svg" alt="Paymenter dashboard" />

@@ -1,6 +1,6 @@
 ---
 name: renaming-services
-description: Renames a service documentation file and updates all references across docs/services/, List.vue, and nginx/redirects.conf. Use when renaming services, changing service slugs, fixing camelCase to kebab-case, or when service names change in the Coolify repository templates/compose/.
+description: Renames a service documentation file and updates all references. Use when renaming services, changing service slugs, fixing camelCase to kebab-case, or when service names change in the Coolify repository templates/compose/. Updates docs/services/, regenerates listings, and adds nginx redirects.
 allowed-tools: Read, Grep, Glob, Write, Edit, Bash
 ---
 
@@ -15,50 +15,63 @@ This skill guides you through renaming a service in the Coolify documentation, e
 - Consolidating duplicate service documentation
 - Correcting typos in service slugs
 
-## Critical: Four Locations Must Be Updated
+## Locations to Update
 
-When renaming a service, you **MUST** update all four locations:
+The slug used to live in three hand-edited places (the file, `List.vue`'s services array, and `all.md`). With the new generation pipeline, **the markdown filename is the slug**, and the listing + all.md are regenerated from it. So renaming now touches:
 
-1. **Documentation file** (`docs/services/`)
-2. **Services list** (`docs/.vitepress/theme/components/Services/List.vue`)
-3. **All services directory** (`docs/services/all.md`)
-4. **Nginx redirects** (`nginx/redirects.conf`)
+1. **The documentation file** (`docs/services/<old>.md` → `docs/services/<new>.md`) — the slug
+2. **The logo asset** (optional, `docs/public/images/services/`) — only if you want it renamed too
+3. **Nginx redirects** (`nginx/redirects.conf`) — to keep old URLs working
+4. **Internal links** (anywhere in `docs/` referencing the old slug)
 
-Failing to update all four will cause broken links or 404 errors.
+`docs/.vitepress/theme/components/Services/List.vue`, `docs/.vitepress/theme/data/services.json`, and `docs/services/all.md` are **regenerated** — do not hand-edit them.
 
 ## Step-by-Step Process
 
 ### 1. Rename the Documentation File
 
 ```bash
-# Rename the markdown file
 git mv docs/services/old-name.md docs/services/new-name.md
 ```
 
 **Naming rules:**
-- Use lowercase only
+
+- Lowercase only
 - Use hyphens for spaces (kebab-case)
 - Match the service name from `service-templates-latest.json`
-- Don't use camelCase even if the JSON does (e.g., `denoKV` → `denokv.md`)
+- Do not use camelCase even if the upstream JSON does (e.g., `denoKV` → `denokv.md`)
 
-### 2. Update the Services List
+### 2. Rename the Logo (If Needed)
 
-Edit `docs/.vitepress/theme/components/Services/List.vue`:
+The icon resolver matches the file's basename against `<slug>-logo`, `<slug>_logo`, `<slug>logo`, and bare `<slug>`. After renaming the markdown:
 
-```javascript
-// Find the service entry and update the slug
-{
-    name: 'Service Name',
-    slug: 'new-name',  // ← Change from 'old-name'
-    icon: '/docs/images/services/service-logo.svg',
-    description: 'Service description',
-    category: 'Category'
-},
+- If the logo was named after the **old** slug, rename it to match the new slug, **or** add an explicit `icon:` field in frontmatter pointing to the existing file.
+
+```bash
+git mv docs/public/images/services/old-name-logo.svg docs/public/images/services/new-name-logo.svg
 ```
 
-### 3. Add Nginx Redirects
+### 3. Update Frontmatter (If Needed)
 
-Add redirect rules to `nginx/redirects.conf`:
+The slug isn't in frontmatter — it's the filename. But check:
+
+- `icon:` — if you set it explicitly to a path that included the old slug, update it
+- `title:` — usually unchanged unless the rename also reflects a display-name change
+
+Example:
+
+```yaml
+---
+title: "New Service Name"          # update if the display name changed
+description: "..."
+category: "..."
+icon: "/docs/images/services/new-name-logo.svg"   # update if you set it explicitly
+---
+```
+
+### 4. Add an Nginx Redirect
+
+Edit `nginx/redirects.conf`:
 
 ```nginx
 # Redirect old service URL to new URL
@@ -68,57 +81,51 @@ location = /docs/services/old-name { return 301 /docs/services/new-name; }
 location = /knowledge-base/services/old-name { return 301 /docs/services/new-name; }
 ```
 
-**Important:** Keep redirects even for deleted pages to prevent 404 errors from search engines and bookmarks.
-
-### 4. Update All Services Directory
-
-Edit `docs/services/all.md` and update the service entry under its category:
-
-```markdown
-- [New Service Name](/services/new-name) - Service description
-```
+Keep redirects even for renamed/removed pages — they prevent 404s from search engines and bookmarks.
 
 ### 5. Update Internal Links
 
-Search for any internal links referencing the old name:
+Search for references to the old slug:
 
 ```bash
-# Search for references to the old service name
 grep -r "old-name" docs/
 ```
 
-Update any found references in other documentation files.
+Update any found references. Be careful: the regenerated `all.md` and `services.json` will already have the new slug after step 6 — focus on hand-written cross-links in other docs pages.
 
-### 6. Rename Logo File (If Needed)
-
-If the logo filename also needs updating:
+### 6. Regenerate the Listings
 
 ```bash
-# Rename the logo
-git mv docs/public/images/services/old-name-logo.svg docs/public/images/services/new-name-logo.svg
+bun run generate:services
 ```
 
-Then update the `icon` path in List.vue.
+This rewrites:
+
+- `docs/.vitepress/theme/data/services.json` (the entry now uses the new slug and, by extension, the new URL)
+- `docs/services/all.md` (the entry's link now points to `/services/new-name`)
+
+Commit both alongside the rename.
 
 ## Verification Checklist
 
 After renaming, verify:
 
 - [ ] New file exists: `docs/services/new-name.md`
-- [ ] Old file removed or redirected
-- [ ] List.vue `slug` matches new filename
-- [ ] List.vue `icon` path is correct
-- [ ] Entry updated in `docs/services/all.md`
+- [ ] Old file removed (via `git mv`)
+- [ ] Logo renamed or `icon:` frontmatter points to a real file
 - [ ] Redirect added to `nginx/redirects.conf`
-- [ ] No broken internal links (run `grep -r "old-name" docs/`)
-- [ ] Service appears correctly at http://localhost:5173/docs/services/new-name
-- [ ] Old URL redirects to new URL
+- [ ] No broken internal links: `grep -r "old-name" docs/` shows only intentional matches (e.g., the redirect itself)
+- [ ] Ran `bun run generate:services`
+- [ ] `services.json` and `all.md` use the new slug
+- [ ] Service appears at `http://localhost:5173/docs/services/new-name`
+- [ ] Old URL redirects to new URL (in production behind nginx)
+- [ ] Logo displays on the listing card
 
 ## Common Scenarios
 
 ### Fixing camelCase to kebab-case
 
-When the Coolify JSON uses camelCase but docs should use lowercase:
+Coolify's JSON sometimes uses camelCase, but docs slugs are always lowercase kebab-case:
 
 - `denoKV` → `denokv.md`
 - `homeAssistant` → `home-assistant.md`
@@ -129,23 +136,23 @@ When Coolify adds version-specific services:
 
 - `mautic.md` → `mautic5.md` (if JSON specifies `mautic5`)
 
-### Consolidating Names
+### Compound Names
 
-When compound names are required:
+When the upstream slug becomes more specific:
 
-- `ente.md` → `ente-photos.md` (if JSON specifies `ente-photos`)
+- `ente.md` → `ente-photos.md`
 
 ## Troubleshooting
 
 ### Service shows 404
 
-- Check if redirect is in `nginx/redirects.conf`
-- Verify slug in List.vue matches filename
-- Ensure markdown file exists
+- Check that the redirect is in `nginx/redirects.conf`
+- Verify the markdown file actually exists at the new path
+- Run `bun run generate:services` and confirm `services.json` has the new slug
 
 ### Old URL still works without redirect
 
-- Nginx config may need reload
+- Nginx config may need a reload
 - Check redirect syntax in `redirects.conf`
 
 ### Search engines still show old URL
@@ -153,7 +160,16 @@ When compound names are required:
 - Redirects are working correctly (301 tells search engines to update)
 - Takes time for search engines to re-crawl
 
+### Card shows wrong/no logo after rename
+
+- The logo file basename probably no longer matches resolver candidates for the new slug
+- Either rename the logo to `<new-slug>-logo.<ext>` or set `icon:` in frontmatter
+
+## What Changed
+
+This skill used to instruct you to update `slug` in `List.vue`'s services array and to hand-edit `docs/services/all.md`. Both files are now generated from the markdown filename and frontmatter. **Do not edit either by hand** — run `bun run generate:services` instead.
+
 ## Related Skills
 
-- `adding-service-documentation` - For creating new service docs
-- `disabling-services` - For hiding deprecated services
+- `adding-service-documentation` — for creating new service docs
+- `disabling-services` — for hiding deprecated services

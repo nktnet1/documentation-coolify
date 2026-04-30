@@ -1,6 +1,10 @@
 ---
 title: "Satisfactory"
-description: "Run Satisfactory server on Coolify for multiplayer gaming."
+description: "Game server for Satisfactory open-world factory building game with a dash of exploration and combat."
+og:
+  description: "Run Satisfactory server on Coolify for multiplayer gaming."
+category: "Gaming"
+icon: ""
 ---
 
 # What is Satisfactory?

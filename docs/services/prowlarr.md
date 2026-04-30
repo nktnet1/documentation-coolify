@@ -1,6 +1,10 @@
 ---
 title: "Prowlarr"
-description: "Manage indexers on Coolify with Prowlarr for centralized torrent and usenet indexer management integrated with Sonarr and Radarr."
+description: "A free and open source BitTorrent client."
+og:
+  description: "Manage indexers on Coolify with Prowlarr for centralized torrent and usenet indexer management integrated with Sonarr and Radarr."
+category: "Media"
+icon: "/docs/images/services/prowlarr-logo.svg"
 ---
 
 <ZoomableImage src="/docs/images/services/prowlarr.svg" alt="Prowlarr dashboard" />

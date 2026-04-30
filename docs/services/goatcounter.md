@@ -1,6 +1,10 @@
 ---
 title: "GoatCounter"
-description: "Here you can find the documentation for hosting GoatCounter with Coolify."
+description: "Web analytics platform offering easy to use and meaningful privacy-friendly web analytics."
+og:
+  description: "Here you can find the documentation for hosting GoatCounter with Coolify."
+category: "Analytics"
+icon: "/docs/images/services/goatcounter.svg"
 ---
 
 <ZoomableImage src="/docs/images/services/goatcounter.webp" alt="abstract purple head of a goat" />

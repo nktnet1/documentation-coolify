@@ -1,6 +1,10 @@
 ---
 title: Transmission
-description: "Download torrents on Coolify with Transmission for lightweight BitTorrent client, web interface, encryption, and remote control."
+description: "Fast, easy, and free BitTorrent client."
+og:
+  description: "Download torrents on Coolify with Transmission for lightweight BitTorrent client, web interface, encryption, and remote control."
+category: "Media"
+icon: "/docs/images/services/transmission-logo.svg"
 ---
 
 # Transmission

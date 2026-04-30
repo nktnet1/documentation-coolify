@@ -1,6 +1,10 @@
 ---
 title: "Memos"
-description: "Host Memos note-taking on Coolify for quick thoughts, lightweight journaling, tagging, and privacy-focused personal knowledge management."
+description: "Open-source, self-hosted memo hub with knowledge management."
+og:
+  description: "Host Memos note-taking on Coolify for quick thoughts, lightweight journaling, tagging, and privacy-focused personal knowledge management."
+category: "Productivity"
+icon: "/docs/images/services/memos-logo.png"
 ---
 
 <ZoomableImage src="/docs/images/services/memos.webp" alt="Memos Logo logo" />

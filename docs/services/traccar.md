@@ -1,6 +1,10 @@
 ---
 title: Traccar
-description: "Track GPS on Coolify with Traccar for vehicle tracking, geofencing, reports, notifications, and fleet management with 170+ protocols."
+description: "Open-source GPS tracking platform."
+og:
+  description: "Track GPS on Coolify with Traccar for vehicle tracking, geofencing, reports, notifications, and fleet management with 170+ protocols."
+category: "IoT"
+icon: "/docs/images/services/traccar-logo.png"
 ---
 
 # Traccar

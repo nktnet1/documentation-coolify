@@ -1,6 +1,10 @@
 ---
 title: "Prefect"
-description: "Orchestrate workflows on Coolify with Prefect for data pipelines, task scheduling, monitoring, and modern workflow automation platform."
+description: "Open source workflow management platform."
+og:
+  description: "Orchestrate workflows on Coolify with Prefect for data pipelines, task scheduling, monitoring, and modern workflow automation platform."
+category: "Development"
+icon: "/docs/images/services/prefect-logo.png"
 ---
 
 <ZoomableImage src="/docs/images/services/prefect.webp" alt="Prefect dashboard" />

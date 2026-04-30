@@ -1,6 +1,10 @@
 ---
 title: "Syncthing"
-description: "Sync files on Coolify with Syncthing for continuous file synchronization, P2P data replication, and decentralized backup across devices."
+description: "Open Source Continuous File Synchronization."
+og:
+  description: "Sync files on Coolify with Syncthing for continuous file synchronization, P2P data replication, and decentralized backup across devices."
+category: "File Management"
+icon: "/docs/images/services/syncthing-logo.svg"
 ---
 
 ![Syncthing](https://raw.githubusercontent.com/syncthing/syncthing/main/assets/logo-text-128.png)

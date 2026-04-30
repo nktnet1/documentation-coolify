@@ -1,6 +1,10 @@
 ---
 title: "Elasticsearch"
-description: "Here you can find the documentation for hosting Elasticsearch with Coolify."
+description: "Free and Open Source, Distributed, RESTful Search Engine."
+og:
+  description: "Here you can find the documentation for hosting Elasticsearch with Coolify."
+category: "Search"
+icon: "/docs/images/services/elasticsearch-logo.svg"
 ---
 
 # Elasticsearch

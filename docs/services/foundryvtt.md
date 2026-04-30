@@ -1,6 +1,10 @@
 ---
 title: Foundryvtt
-description: "Host Foundry VTT on Coolify for virtual tabletop RPG gaming with dynamic lighting, fog of war, character sheets, and immersive D&D sessions."
+description: "Virtual tabletop for tabletop role-playing games."
+og:
+  description: "Host Foundry VTT on Coolify for virtual tabletop RPG gaming with dynamic lighting, fog of war, character sheets, and immersive D&D sessions."
+category: "Gaming"
+icon: "/docs/images/services/foundryvtt-logo.png"
 ---
 
 # Foundryvtt

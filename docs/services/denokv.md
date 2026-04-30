@@ -1,6 +1,10 @@
 ---
 title: Denokv
-description: "Run Deno KV database on Coolify for edge-compatible key-value store with ACID transactions, real-time sync, and serverless architecture support."
+description: "Deno's built-in key-value database service."
+og:
+  description: "Run Deno KV database on Coolify for edge-compatible key-value store with ACID transactions, real-time sync, and serverless architecture support."
+category: "Development"
+icon: "/docs/images/services/denolookingup-logo.svg"
 ---
 
 # Denokv

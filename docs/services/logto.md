@@ -1,6 +1,10 @@
 ---
 title: "Logto"
-description: "Deploy Logto Auth0 alternative on Coolify with OIDC authentication, passwordless sign-in, RBAC, multi-tenancy, and customer identity management."
+description: "Logto is an Auth0 alternative designed for modern apps and SaaS products."
+og:
+  description: "Deploy Logto Auth0 alternative on Coolify with OIDC authentication, passwordless sign-in, RBAC, multi-tenancy, and customer identity management."
+category: "Security"
+icon: "/docs/images/services/logto-logo.svg"
 ---
 
 ![Logto](https://github.com/logto-io/logto/raw/master/logo.png)

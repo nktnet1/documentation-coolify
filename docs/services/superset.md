@@ -1,6 +1,10 @@
 ---
 title: "Superset"
-description: "Deploy Superset on Coolify for modern data exploration, interactive dashboards, SQL editor, and business intelligence visualization."
+description: "Open-source data visualization and exploration platform."
+og:
+  description: "Deploy Superset on Coolify for modern data exploration, interactive dashboards, SQL editor, and business intelligence visualization."
+category: "Analytics"
+icon: "/docs/images/services/superset-logo.svg"
 ---
 
 # Superset

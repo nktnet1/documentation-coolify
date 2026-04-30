@@ -1,6 +1,10 @@
 ---
 title: "Booklore"
-description: "Booklore is an open-source library management system for your digital book collection."
+description: "Open-source library management system for your digital book collection."
+og:
+  description: "Booklore is an open-source library management system for your digital book collection."
+category: "Media"
+icon: "/docs/images/services/booklore-logo.svg"
 ---
 
 # Booklore

@@ -1,6 +1,10 @@
 ---
 title: Mindsdb
-description: "Host MindsDB on Coolify for AI-powered database with ML predictions, AutoML, model deployment, and SQL-based machine learning integration."
+description: "Machine learning platform that brings AI to databases."
+og:
+  description: "Host MindsDB on Coolify for AI-powered database with ML predictions, AutoML, model deployment, and SQL-based machine learning integration."
+category: "AI"
+icon: "/docs/images/services/mindsdb-logo.svg"
 ---
 
 # Mindsdb

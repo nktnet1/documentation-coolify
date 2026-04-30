@@ -1,6 +1,10 @@
 ---
 title: "Home Assistant"
-description: "Run Home Assistant on Coolify—your open-source home automation platform with integrations for hundreds of devices."
+description: "Open-source home automation platform focused on local control and privacy."
+og:
+  description: "Run Home Assistant on Coolify—your open-source home automation platform with integrations for hundreds of devices."
+category: "Home"
+icon: "/docs/images/services/homeassistant-logo.svg"
 ---
 
 # Home Assistant

@@ -1,6 +1,10 @@
 ---
 title: "KaraKeep"
-description: "Host KaraKeep password manager on Coolify for secure credential storage, team sharing, encrypted vaults, and self-hosted password management."
+description: "Self-hostable bookmark-everything app with AI-based automatic tagging."
+og:
+  description: "Host KaraKeep password manager on Coolify for secure credential storage, team sharing, encrypted vaults, and self-hosted password management."
+category: "Productivity"
+icon: "/docs/images/services/karakeep-logo.svg"
 ---
 
 # KaraKeep

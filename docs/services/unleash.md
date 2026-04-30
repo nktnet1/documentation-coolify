@@ -1,6 +1,10 @@
 ---
 title: "Unleash"
-description: "Manage features on Coolify with Unleash for feature toggles, A/B testing, gradual rollouts, and enterprise feature flag management."
+description: "Open-source feature management platform."
+og:
+  description: "Manage features on Coolify with Unleash for feature toggles, A/B testing, gradual rollouts, and enterprise feature flag management."
+category: "Development"
+icon: "/docs/images/services/unleash-logo.svg"
 ---
 
 <ZoomableImage src="/docs/images/services/unleash.svg" alt="Unleash dashboard" />

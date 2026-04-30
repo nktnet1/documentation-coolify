@@ -1,6 +1,10 @@
 ---
 title: Cyberchef
-description: "Run CyberChef data analysis on Coolify for encoding, decoding, encryption, compression, and data transformation with 300+ operations."
+description: "Data analysis and manipulation tool for cybersecurity."
+og:
+  description: "Run CyberChef data analysis on Coolify for encoding, decoding, encryption, compression, and data transformation with 300+ operations."
+category: "Security"
+icon: "/docs/images/services/cyberchef-logo.jpeg"
 ---
 
 # Cyberchef

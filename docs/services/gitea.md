@@ -1,6 +1,10 @@
 ---
 title: "Gitea"
-description: "Host Gitea Git service on Coolify for lightweight repository hosting with pull requests, CI/CD integration, issues, and team collaboration."
+description: "A painless self-hosted Git service."
+og:
+  description: "Host Gitea Git service on Coolify for lightweight repository hosting with pull requests, CI/CD integration, issues, and team collaboration."
+category: "Development"
+icon: "/docs/images/services/gitea-logo.svg"
 ---
 
 ![Gitea](https://about.gitea.com/gitea-text.svg)

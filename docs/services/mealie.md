@@ -1,6 +1,10 @@
 ---
 title: Mealie
-description: "Deploy Mealie recipe manager on Coolify for meal planning, grocery lists, recipe organization, and household cooking management with nutrition."
+description: "Self-hosted recipe manager and meal planner."
+og:
+  description: "Deploy Mealie recipe manager on Coolify for meal planning, grocery lists, recipe organization, and household cooking management with nutrition."
+category: "Home"
+icon: "/docs/images/services/mealie-logo.png"
 ---
 
 # Mealie

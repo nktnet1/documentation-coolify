@@ -1,6 +1,10 @@
 ---
 title: Usesend
-description: "useSend is an open source alternative to Resend, Sendgrid, Mailgun and Postmark etc."
+description: "Open-source email recall service."
+og:
+  description: "useSend is an open source alternative to Resend, Sendgrid, Mailgun and Postmark etc."
+category: "Email"
+icon: "/docs/images/services/usesend-logo.svg"
 ---
 
 # Usesend

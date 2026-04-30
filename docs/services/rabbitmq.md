@@ -1,6 +1,10 @@
 ---
 title: "RabbitMQ"
-description: "Host RabbitMQ message broker on Coolify for reliable messaging, queuing, routing, and distributed system communication with AMQP protocol."
+description: "Open source message broker."
+og:
+  description: "Host RabbitMQ message broker on Coolify for reliable messaging, queuing, routing, and distributed system communication with AMQP protocol."
+category: "Development"
+icon: "/docs/images/services/rabbitmq-logo.svg"
 ---
 
 ![RabbitMQ](https://www.rabbitmq.com/img/rabbitmq-logo-with-name.svg)

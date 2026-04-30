@@ -1,6 +1,10 @@
 ---
 title: "Forgejo"
-description: "Deploy Forgejo Git hosting on Coolify as lightweight GitHub alternative with repositories, CI/CD, issues, pull requests, and collaboration tools."
+description: "A self-hosted Git service fork of Gitea."
+og:
+  description: "Deploy Forgejo Git hosting on Coolify as lightweight GitHub alternative with repositories, CI/CD, issues, pull requests, and collaboration tools."
+category: "Development"
+icon: "/docs/images/services/forgejo-logo.svg"
 ---
 
 ![forgejo](https://forgejo.org/images/forgejo-wordmark.svg)

@@ -1,6 +1,10 @@
 ---
 title: "Ente"
-description: "Here you can find the documentation for hosting Ente with Coolify."
+description: "A fully open-source, end-to-end encrypted platform for you to store data in the cloud without needing to trust the service provider."
+og:
+  description: "Here you can find the documentation for hosting Ente with Coolify."
+category: "Productivity"
+icon: "/docs/images/services/ente-logo.webp"
 ---
 
 # Ente

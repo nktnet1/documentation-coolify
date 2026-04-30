@@ -1,6 +1,10 @@
 ---
 title: "Grafana"
-description: "Deploy Grafana on Coolify for data visualization, monitoring dashboards, alerting, and metric analysis from multiple data sources and databases."
+description: "The open platform for beautiful analytics and monitoring."
+og:
+  description: "Deploy Grafana on Coolify for data visualization, monitoring dashboards, alerting, and metric analysis from multiple data sources and databases."
+category: "Monitoring"
+icon: "/docs/images/services/grafana-logo.svg"
 ---
 
 ![Grafana](https://github.com/grafana/grafana/raw/main/docs/logo-horizontal.png#gh-light-mode-only)

@@ -1,6 +1,10 @@
 ---
 title: Libretranslate
-description: "Host LibreTranslate on Coolify for self-hosted translation API supporting 40+ languages with privacy-focused machine translation service."
+description: "Free and open-source machine translation API."
+og:
+  description: "Host LibreTranslate on Coolify for self-hosted translation API supporting 40+ languages with privacy-focused machine translation service."
+category: "AI"
+icon: "/docs/images/services/libretranslate-logo.svg"
 ---
 
 # Libretranslate

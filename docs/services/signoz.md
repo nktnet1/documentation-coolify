@@ -1,6 +1,10 @@
 ---
 title: SigNoz
-description: "An observability platform native to OpenTelemetry with logs, traces and metrics."
+description: "Open source observability platform native to OpenTelemetry with logs, traces, and metrics."
+og:
+  description: "An observability platform native to OpenTelemetry with logs, traces and metrics."
+category: "Monitoring"
+icon: "/docs/images/services/signoz-logo.svg"
 ---
 
 # SigNoz

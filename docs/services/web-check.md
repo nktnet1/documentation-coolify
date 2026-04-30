@@ -1,6 +1,10 @@
 ---
 title: Web Check
-description: "Analyze websites on Coolify with Web-Check for SSL, DNS, headers, security, performance audits, and comprehensive site investigation."
+description: "All-in-one website analysis tool."
+og:
+  description: "Analyze websites on Coolify with Web-Check for SSL, DNS, headers, security, performance audits, and comprehensive site investigation."
+category: "Development"
+icon: "/docs/images/services/webcheck-logo.png"
 ---
 
 # Web Check

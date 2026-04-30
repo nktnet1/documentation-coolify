@@ -1,6 +1,10 @@
 ---
 title: Vvveb
-description: "Build websites on Coolify with VvvebJs drag-and-drop website builder, templates, and visual web design tool without coding required."
+description: "Powerful website builder with drag and drop functionality."
+og:
+  description: "Build websites on Coolify with VvvebJs drag-and-drop website builder, templates, and visual web design tool without coding required."
+category: "Development"
+icon: "/docs/images/services/vvveb-logo.png"
 ---
 
 # Vvveb

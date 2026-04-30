@@ -1,6 +1,10 @@
 ---
 title: Flipt
-description: "Host Flipt feature flags on Coolify for feature toggles, A/B testing, gradual rollouts, and environment-specific configuration management."
+description: "Open-source feature flag management platform."
+og:
+  description: "Host Flipt feature flags on Coolify for feature toggles, A/B testing, gradual rollouts, and environment-specific configuration management."
+category: "Development"
+icon: "/docs/images/services/flipt-logo.svg"
 ---
 
 # Flipt

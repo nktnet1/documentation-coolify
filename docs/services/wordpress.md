@@ -1,6 +1,10 @@
 ---
 title: "WordPress"
-description: "Run WordPress on Coolify for blogging, CMS, e-commerce with plugins, themes, and world's most popular website building platform."
+description: "Website and blogging platform."
+og:
+  description: "Run WordPress on Coolify for blogging, CMS, e-commerce with plugins, themes, and world's most popular website building platform."
+category: "CMS"
+icon: "/docs/images/services/wordpress-logo.svg"
 ---
 
 ![WordPress](https://raw.githubusercontent.com/logo/wordpress/caefc9aa315eafcf8687804564a11a9c5a77a561/images/logo.svg)

@@ -1,6 +1,10 @@
 ---
 title: "Sonatype Nexus"
-description: "Run Nexus Repository on Coolify for artifact management, Docker registry, npm, Maven, PyPI package hosting, and DevOps dependency storage."
+description: "A repository manager that allows you to store, manage, and distribute your software artifacts."
+og:
+  description: "Run Nexus Repository on Coolify for artifact management, Docker registry, npm, Maven, PyPI package hosting, and DevOps dependency storage."
+category: "Development"
+icon: "/docs/images/services/nexus-logo.png"
 ---
 
 <ZoomableImage src="/docs/images/services/nexus0.webp" alt="Nexus dashboard" />

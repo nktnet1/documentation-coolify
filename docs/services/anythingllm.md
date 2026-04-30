@@ -1,6 +1,10 @@
 ---
 title: AnythingLLM
-description: "Run AnythingLLM on Coolify for all-in-one AI application with RAG, AI agents, document chat, and multi-model support without infrastructure hassle."
+description: "An open-source LLM client that empowers developers to build and scale workflows quickly."
+og:
+  description: "Run AnythingLLM on Coolify for all-in-one AI application with RAG, AI agents, document chat, and multi-model support without infrastructure hassle."
+category: "AI"
+icon: "/docs/images/services/anythingllm-logo.svg"
 # tabs:
 #   - title: Overview & Requirements
 #     content:

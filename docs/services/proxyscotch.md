@@ -1,6 +1,10 @@
 ---
 title: Proxyscotch
-description: "Run your own CORS proxy on Coolify. Works both standalone & with Hoppscotch"
+description: "Tiny open-source CORS proxy made by Hoppscotch."
+og:
+  description: "Run your own CORS proxy on Coolify. Works both standalone & with Hoppscotch"
+category: "Development"
+icon: "/docs/images/services/proxyscotch.png"
 ---
 
 # Proxyscotch

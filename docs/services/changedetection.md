@@ -1,6 +1,10 @@
 ---
 title: "Change Detection"
-description: "Monitor website changes on Coolify with Change Detection featuring automatic tracking, alerts, visual diffs, and API endpoint monitoring."
+description: "Website change detection monitor and notifications."
+og:
+  description: "Monitor website changes on Coolify with Change Detection featuring automatic tracking, alerts, visual diffs, and API endpoint monitoring."
+category: "Monitoring"
+icon: "/docs/images/services/changedetection-logo.png"
 ---
 
 ![Change Detection](https://raw.githubusercontent.com/dgtlmoon/changedetection.io/master/docs/screenshot.png)

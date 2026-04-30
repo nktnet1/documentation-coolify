@@ -1,6 +1,10 @@
 ---
 title: Supertokens
-description: "Add authentication on Coolify with SuperTokens for login, session management, user administration, and Auth0 alternative SDKs."
+description: "Open-source authentication solution."
+og:
+  description: "Add authentication on Coolify with SuperTokens for login, session management, user administration, and Auth0 alternative SDKs."
+category: "Security"
+icon: "/docs/images/services/supertokens-logo.svg"
 ---
 
 # Supertokens

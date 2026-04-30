@@ -1,6 +1,10 @@
 ---
 title: "Mediawiki"
-description: "Run MediaWiki on Coolify for Wikipedia-style documentation, knowledge bases, collaborative editing, and structured wiki content management."
+description: "A free and open-source wiki software package."
+og:
+  description: "Run MediaWiki on Coolify for Wikipedia-style documentation, knowledge bases, collaborative editing, and structured wiki content management."
+category: "Documentation"
+icon: "/docs/images/services/mediawiki-logo.svg"
 ---
 
 ![Mediawiki](https://www.mediawiki.org/static/images/icons/mediawikiwiki.svg)

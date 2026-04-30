@@ -1,6 +1,10 @@
 ---
 title: "Actual Budget"
-description: "Host Actual Budget on Coolify for privacy-focused envelope budgeting with multi-device sync, end-to-end encryption, and real-time financial tracking."
+description: "A local-first personal finance tool based on zero-based budgeting."
+og:
+  description: "Host Actual Budget on Coolify for privacy-focused envelope budgeting with multi-device sync, end-to-end encryption, and real-time financial tracking."
+category: "Finance"
+icon: "/docs/images/services/actualbudget-logo.webp"
 ---
 
 <ZoomableImage src="/docs/images/services/actual-budget-logo.webp" alt="Actual Budget Logo logo" />

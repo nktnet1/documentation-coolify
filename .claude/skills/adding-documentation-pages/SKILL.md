@@ -14,7 +14,7 @@ Create new documentation pages for the Coolify docs (guides, tutorials, KB artic
 - Service pages in `docs/services/`
 - One-click services from Coolify's catalog
 
-Services require List.vue registration and logo handling covered by that skill.
+Services use a frontmatter-driven generation pipeline (the listing and `all.md` are regenerated from each service page's frontmatter) and have specific logo handling — covered by that skill.
 
 ## Quick Start
 

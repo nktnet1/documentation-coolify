@@ -1,6 +1,10 @@
 ---
 title: Drupal
-description: "Deploy Drupal CMS on Coolify for enterprise content management with powerful APIs, content types, workflows, and extensive module ecosystem."
+description: "Open-source content management system."
+og:
+  description: "Deploy Drupal CMS on Coolify for enterprise content management with powerful APIs, content types, workflows, and extensive module ecosystem."
+category: "CMS"
+icon: "/docs/images/services/drupal-logo.svg"
 ---
 
 # Drupal

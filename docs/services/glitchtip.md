@@ -1,6 +1,10 @@
 ---
 title: "Glitchtip"
-description: "Deploy GlitchTip error tracking on Coolify as open-source Sentry alternative for exception monitoring, performance tracking, and debugging."
+description: "An open-source error tracking tool."
+og:
+  description: "Deploy GlitchTip error tracking on Coolify as open-source Sentry alternative for exception monitoring, performance tracking, and debugging."
+category: "Development"
+icon: "/docs/images/services/glitchtip-logo.png"
 ---
 
 ![Glitchtip](https://glitchtip.com/assets/logo-again.svg)

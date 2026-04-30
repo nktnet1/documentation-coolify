@@ -1,6 +1,10 @@
 ---
 title: "ESPHome"
-description: "Smart Home Made Simple."
+description: "Open-source firmware framework for WiFi-enabled microcontrollers."
+og:
+  description: "Smart Home Made Simple."
+category: "IoT"
+icon: "/docs/images/services/esphome-logo.svg"
 ---
 
 # ESPHome

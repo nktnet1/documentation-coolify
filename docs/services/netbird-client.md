@@ -1,6 +1,10 @@
 ---
 title: "Netbird-Client"
-description: "Run NetBird client on Coolify for WireGuard-based mesh VPN, zero-trust network access, and secure peer-to-peer connectivity."
+description: "Connect your devices into a secure WireGuard-based mesh network."
+og:
+  description: "Run NetBird client on Coolify for WireGuard-based mesh VPN, zero-trust network access, and secure peer-to-peer connectivity."
+category: "Networking"
+icon: "/docs/images/services/netbird-logo.png"
 ---
 
 <ZoomableImage src="/docs/images/services/netbird-client.webp" alt="Netbird Client Logo logo" />

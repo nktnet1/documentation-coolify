@@ -1,6 +1,10 @@
 ---
 title: "Label Studio"
-description: "Deploy Label Studio on Coolify for ML data labeling, annotation workflows, image tagging, NLP tasks, and AI training dataset preparation."
+description: "Open source data labeling platform."
+og:
+  description: "Deploy Label Studio on Coolify for ML data labeling, annotation workflows, image tagging, NLP tasks, and AI training dataset preparation."
+category: "AI"
+icon: "/docs/images/services/labelstudio-logo.png"
 ---
 
 # What is Label Studio?

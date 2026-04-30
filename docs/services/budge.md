@@ -1,6 +1,10 @@
 ---
 title: "BudgE"
-description: "Manage finances with Budge on Coolify offering budget tracking, expense categorization, financial goals, and spending insights for personal finance."
+description: "A budgeting personal finance app."
+og:
+  description: "Manage finances with Budge on Coolify offering budget tracking, expense categorization, financial goals, and spending insights for personal finance."
+category: "Finance"
+icon: "/docs/images/services/budge-logo.png"
 ---
 
 ## What is BudgE?

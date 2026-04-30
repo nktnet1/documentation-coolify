@@ -1,6 +1,10 @@
 ---
 title: "SFTPGo"
-description: "SFTPGo is an event-driven SFTP, FTP/S, HTTP/S and WebDAV server."
+description: "Event-driven SFTP, FTP/S, HTTP/S and WebDAV server."
+og:
+  description: "SFTPGo is an event-driven SFTP, FTP/S, HTTP/S and WebDAV server."
+category: "File Management"
+icon: "/docs/images/services/sftpgo-logo.png"
 ---
 
 # SFTPGo

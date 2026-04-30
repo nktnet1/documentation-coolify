@@ -1,6 +1,10 @@
 ---
 title: "Diun"
-description: "Monitor Docker images on Coolify with Diun for automatic update notifications, registry tracking, and container version management alerts."
+description: "Docker Image Update Notifier."
+og:
+  description: "Monitor Docker images on Coolify with Diun for automatic update notifications, registry tracking, and container version management alerts."
+category: "Monitoring"
+icon: "/docs/images/services/diun-logo.svg"
 ---
 
 <ZoomableImage src="/docs/images/services/diun-logo.webp" alt="Diun Logo logo" />

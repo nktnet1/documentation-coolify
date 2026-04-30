@@ -1,6 +1,10 @@
 ---
 title: "Code Server"
-description: "Run VS Code in browser on Coolify with code-server for remote development, extensions support, terminal access, and cloud-based coding environment."
+description: "Run VS Code on any machine anywhere and access it in the browser."
+og:
+  description: "Run VS Code in browser on Coolify with code-server for remote development, extensions support, terminal access, and cloud-based coding environment."
+category: "Development"
+icon: "/docs/images/services/codeserver-logo.svg"
 ---
 
 # Code Server

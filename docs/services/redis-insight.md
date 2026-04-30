@@ -1,6 +1,10 @@
 ---
 title: "Redis Insight"
-description: "Here you can find the documentation for hosting Redis Insight with Coolify."
+description: "Official Redis GUI that lets you do both GUI- and CLI-based interactions in a fully-featured desktop GUI client."
+og:
+  description: "Here you can find the documentation for hosting Redis Insight with Coolify."
+category: "Development"
+icon: "/docs/images/services/redisinsight-logo.png"
 ---
 
 # Redis Insight

@@ -1,6 +1,10 @@
 ---
 title: "Alexandrie"
-description: "Self-hosted Markdown note-taking app focused on performance, local data, and knowledge graph navigation."
+description: "Markdown note-taking app focused on performance, local data, and knowledge graph navigation."
+og:
+  description: "Self-hosted Markdown note-taking app focused on performance, local data, and knowledge graph navigation."
+category: "Productivity"
+icon: "/docs/images/services/alexandrie-logo.svg"
 ---
 
 # Alexandrie

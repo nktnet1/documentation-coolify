@@ -1,6 +1,10 @@
 ---
 title: "Wings"
-description: "The server control plane for Pterodactyl Panel. Written from the ground-up with security, speed, and stability in mind."
+description: "Pterodactyl server control daemon for standalone game server node deployments."
+og:
+  description: "The server control plane for Pterodactyl Panel. Written from the ground-up with security, speed, and stability in mind."
+category: "Gaming"
+icon: "/docs/images/services/pterodactyl_logo_transparent.png"
 ---
 
 # Wings

@@ -1,6 +1,10 @@
 ---
 title: Mattermost
-description: "Deploy Mattermost team chat on Coolify for secure messaging, file sharing, integrations, and Slack alternative with on-premises control."
+description: "Open-source messaging platform for teams."
+og:
+  description: "Deploy Mattermost team chat on Coolify for secure messaging, file sharing, integrations, and Slack alternative with on-premises control."
+category: "Communication"
+icon: "/docs/images/services/mattermost-logo.svg"
 ---
 
 # Mattermost

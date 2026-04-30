@@ -1,6 +1,10 @@
 ---
 title: "TrailBase"
-description: "A blazingly fast Rust/SQLite/Wasmtime app server with type-safe APIs"
+description: "Blazingly fast Rust/SQLite/Wasmtime app server with type-safe APIs."
+og:
+  description: "A blazingly fast Rust/SQLite/Wasmtime app server with type-safe APIs"
+category: "Development"
+icon: "/docs/images/services/trailbase-logo.svg"
 ---
 
 # TrailBase

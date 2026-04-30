@@ -1,6 +1,10 @@
 ---
 title: "Uptime Kuma"
-description: "Monitor uptime on Coolify with Uptime Kuma for status pages, notifications, SSL checks, and beautiful server monitoring dashboard."
+description: "A fancy self-hosted monitoring tool."
+og:
+  description: "Monitor uptime on Coolify with Uptime Kuma for status pages, notifications, SSL checks, and beautiful server monitoring dashboard."
+category: "Monitoring"
+icon: "/docs/images/services/uptime-kuma-logo.svg"
 ---
 
 # What is Uptime Kuma?

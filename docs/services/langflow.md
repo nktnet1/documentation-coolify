@@ -1,6 +1,10 @@
 ---
 title: "Langflow"
-description: "Host Langflow on Coolify to build and deploy AI-powered agents and workflows with a visual drag-and-drop interface and Python extensibility."
+description: "Open source Python-based framework for building AI applications."
+og:
+  description: "Host Langflow on Coolify to build and deploy AI-powered agents and workflows with a visual drag-and-drop interface and Python extensibility."
+category: "AI"
+icon: "/docs/images/services/langflow.svg"
 ---
 
 # Langflow

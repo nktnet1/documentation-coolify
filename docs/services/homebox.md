@@ -1,6 +1,10 @@
 ---
 title: "Homebox"
-description: "Manage home inventory on Coolify with Homebox for asset tracking, warranty management, location organization, and household item cataloging."
+description: "Inventory and organization system built for the Home User."
+og:
+  description: "Manage home inventory on Coolify with Homebox for asset tracking, warranty management, location organization, and household item cataloging."
+category: "Home"
+icon: "/docs/images/services/homebox-logo.svg"
 ---
 
 # Homebox

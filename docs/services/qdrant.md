@@ -1,6 +1,10 @@
 ---
 title: "Qdrant"
-description: "Deploy Qdrant vector database on Coolify for AI embeddings, semantic search, similarity matching, and high-performance vector storage."
+description: "Open source, AI-native vector database."
+og:
+  description: "Deploy Qdrant vector database on Coolify for AI embeddings, semantic search, similarity matching, and high-performance vector storage."
+category: "AI"
+icon: "/docs/images/services/qdrant-logo.svg"
 ---
 
 <ZoomableImage src="/docs/images/services/qdrant-logo.svg" alt="Qdrant dashboard" />

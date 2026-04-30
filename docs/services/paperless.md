@@ -1,6 +1,10 @@
 ---
 title: Paperless
-description: "Manage documents on Coolify with Paperless-ngx for scanning, OCR, tagging, full-text search, and digital document management system."
+description: "Document management system that transforms physical documents into searchable online archives."
+og:
+  description: "Manage documents on Coolify with Paperless-ngx for scanning, OCR, tagging, full-text search, and digital document management system."
+category: "Documentation"
+icon: "/docs/images/services/paperless-logo.png"
 ---
 
 # Paperless

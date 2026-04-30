@@ -1,6 +1,10 @@
 ---
 title: "Metube"
-description: "Deploy MeTube on Coolify for YouTube video downloading with web interface supporting playlists, quality selection, and multiple video platforms."
+description: "A self-hosted video sharing platform."
+og:
+  description: "Deploy MeTube on Coolify for YouTube video downloading with web interface supporting playlists, quality selection, and multiple video platforms."
+category: "Media"
+icon: "/docs/images/services/metube-logo.svg"
 ---
 
 ![Metube](https://github.com/alexta69/metube/raw/master/screenshot.gif)

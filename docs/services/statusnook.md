@@ -1,6 +1,10 @@
 ---
 title: "Statusnook"
-description: "Monitor status on Coolify with StatusNook for uptime monitoring, status pages, incident management, and service availability tracking."
+description: "A status page system for your website."
+og:
+  description: "Monitor status on Coolify with StatusNook for uptime monitoring, status pages, incident management, and service availability tracking."
+category: "Monitoring"
+icon: "/docs/images/services/statusnook-logo.svg"
 ---
 
 <ZoomableImage src="/docs/images/services/statusnook-logo.svg" alt="Statusnook dashboard" />

@@ -1,6 +1,10 @@
 ---
 title: "Jenkins"
-description: "Run Jenkins CI/CD on Coolify for automated builds, testing, deployment pipelines, and continuous integration workflows with extensive plugins."
+description: "Open-source automation server."
+og:
+  description: "Run Jenkins CI/CD on Coolify for automated builds, testing, deployment pipelines, and continuous integration workflows with extensive plugins."
+category: "Development"
+icon: "/docs/images/services/jenkins-logo.svg"
 ---
 
 ![Jenkins](https://www.jenkins.io/images/jenkins-logo-title-dark.svg)

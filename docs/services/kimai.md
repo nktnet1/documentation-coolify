@@ -1,6 +1,10 @@
 ---
 title: "Kimai"
-description: "Track time on Coolify with Kimai for project time tracking, invoicing, reporting, and team productivity management with mobile support."
+description: "An open-source time-tracking solution for teams of all sizes."
+og:
+  description: "Track time on Coolify with Kimai for project time tracking, invoicing, reporting, and team productivity management with mobile support."
+category: "Business"
+icon: "/docs/images/services/kimai-logo.svg"
 ---
 
 ![Kimai](https://raw.githubusercontent.com/kimai/www.kimai.org/refs/heads/main/images/kimai_logo.webp)

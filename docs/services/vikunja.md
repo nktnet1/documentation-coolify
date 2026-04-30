@@ -1,6 +1,10 @@
 ---
 title: "Vikunja"
-description: "Manage tasks on Coolify with Vikunja for to-do lists, kanban boards, gantt charts, calendars, and team project organization."
+description: "The open-source to-do app."
+og:
+  description: "Manage tasks on Coolify with Vikunja for to-do lists, kanban boards, gantt charts, calendars, and team project organization."
+category: "Productivity"
+icon: "/docs/images/services/vikunja-logo.svg"
 ---
 
 ![Vikunja](https://vikunja.cloud/images/vikunja-logo.svg)

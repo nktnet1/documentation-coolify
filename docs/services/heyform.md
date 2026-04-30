@@ -1,6 +1,10 @@
 ---
 title: Heyform
-description: "Build forms on Coolify with HeyForm featuring conversational forms, conditional logic, integrations, and beautiful form experiences without coding."
+description: "Open-source form builder for conversational forms."
+og:
+  description: "Build forms on Coolify with HeyForm featuring conversational forms, conditional logic, integrations, and beautiful form experiences without coding."
+category: "Development"
+icon: "/docs/images/services/heyform-logo.svg"
 ---
 
 # Heyform

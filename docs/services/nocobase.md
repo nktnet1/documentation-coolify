@@ -1,6 +1,10 @@
 ---
 title: NocoBase
-description: "NocoBase is the most extensible AI-powered no-code platform. Total control. Infinite extensibility. AI collaboration."
+description: "The most extensible AI-powered no-code platform with total control and infinite extensibility."
+og:
+  description: "NocoBase is the most extensible AI-powered no-code platform. Total control. Infinite extensibility. AI collaboration."
+category: "Development"
+icon: "/docs/images/services/nocobase-logo.png"
 ---
 
 <ZoomableImage src="/docs/images/services/nocobase.png" alt="NocoBase dashboard" />

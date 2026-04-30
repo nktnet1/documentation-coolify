@@ -1,6 +1,10 @@
 ---
 title: Qbittorrent
-description: "Run qBittorrent on Coolify for torrent downloads, RSS automation, web UI, sequential downloading, and BitTorrent client management."
+description: "Free and open-source BitTorrent client."
+og:
+  description: "Run qBittorrent on Coolify for torrent downloads, RSS automation, web UI, sequential downloading, and BitTorrent client management."
+category: "Media"
+icon: "/docs/images/services/qbittorrent-logo.svg"
 ---
 
 # Qbittorrent

@@ -1,6 +1,10 @@
 ---
 title: "Pairdrop"
-description: "Share files on Coolify with PairDrop for local network file transfer, AirDrop alternative, and quick peer-to-peer file sharing via browser."
+description: "Local file sharing in your browser."
+og:
+  description: "Share files on Coolify with PairDrop for local network file transfer, AirDrop alternative, and quick peer-to-peer file sharing via browser."
+category: "File Sharing"
+icon: "/docs/images/services/pairdrop-logo.png"
 ---
 
 ![Pairdrop](https://raw.githubusercontent.com/schlagmichdoch/PairDrop/refs/heads/master/public/images/android-chrome-192x192-maskable.png)

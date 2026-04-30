@@ -1,6 +1,10 @@
 ---
 title: Convertx
-description: "Host ConvertX file conversion on Coolify for format transformation, document processing, image optimization, and media file conversion services."
+description: "File conversion service supporting multiple formats."
+og:
+  description: "Host ConvertX file conversion on Coolify for format transformation, document processing, image optimization, and media file conversion services."
+category: "Utilities"
+icon: "/docs/images/services/convertx-logo.png"
 ---
 
 # Convertx

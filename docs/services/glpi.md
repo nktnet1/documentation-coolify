@@ -1,6 +1,10 @@
 ---
 title: GLPI (Gestionnaire Libre de Parc Informatique)
-description: "GLPI (Gestionnaire Libre de Parc Informatique) is a free, open-source IT Service Management (ITSM) platform used for IT asset management, helpdesk, and service desk operations."
+description: "Free, open-source IT Service Management platform for asset management, helpdesk, and service desk operations."
+og:
+  description: "GLPI (Gestionnaire Libre de Parc Informatique) is a free, open-source IT Service Management (ITSM) platform used for IT asset management, helpdesk, and service desk operations."
+category: "Business"
+icon: "/docs/images/services/glpi-logo.svg"
 ---
 
 # GLPI

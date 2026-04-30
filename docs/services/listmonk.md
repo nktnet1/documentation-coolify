@@ -1,6 +1,10 @@
 ---
 title: "Listmonk"
-description: "Run Listmonk newsletter on Coolify for email campaigns, subscriber management, templates, analytics, and high-performance mailing lists."
+description: "Self-hosted newsletter and mailing list manager."
+og:
+  description: "Run Listmonk newsletter on Coolify for email campaigns, subscriber management, templates, analytics, and high-performance mailing lists."
+category: "Marketing"
+icon: "/docs/images/services/listmonk-logo.svg"
 ---
 
 ![Listmonk](https://user-images.githubusercontent.com/547147/231084896-835dba66-2dfe-497c-ba0f-787564c0819e.png)

@@ -1,6 +1,10 @@
 ---
 title: "Radarr"
-description: "Automate movies on Coolify with Radarr for torrent/usenet downloads, quality management, metadata, and integration with download clients."
+description: "A Media server software."
+og:
+  description: "Automate movies on Coolify with Radarr for torrent/usenet downloads, quality management, metadata, and integration with download clients."
+category: "Media"
+icon: "/docs/images/services/radarr-logo.svg"
 ---
 
 <ZoomableImage src="/docs/images/services/radarr-logo.svg" alt="Radarr dashboard" />

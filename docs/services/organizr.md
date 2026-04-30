@@ -1,6 +1,10 @@
 ---
 title: Organizr
-description: "Deploy Organizr dashboard on Coolify for unified homepage with service tabs, user management, SSO integration, and organized app access."
+description: "Homepage organizer for your server services."
+og:
+  description: "Deploy Organizr dashboard on Coolify for unified homepage with service tabs, user management, SSO integration, and organized app access."
+category: "Administration"
+icon: "/docs/images/services/organizr-logo.png"
 ---
 
 # Organizr

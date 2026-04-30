@@ -1,6 +1,10 @@
 ---
 title: "Autobase"
-description: "Autobase for PostgreSQL® is an open-source alternative to cloud-managed databases (self-hosted DBaaS)."
+description: "Open-source alternative to cloud-managed databases for PostgreSQL (self-hosted DBaaS)."
+og:
+  description: "Autobase for PostgreSQL® is an open-source alternative to cloud-managed databases (self-hosted DBaaS)."
+category: "Database"
+icon: "/docs/images/services/autobase-logo.svg"
 ---
 
 # Autobase

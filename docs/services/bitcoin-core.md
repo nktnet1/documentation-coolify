@@ -1,6 +1,10 @@
 ---
 title: Bitcoin Core
-description: "Run Bitcoin Core full node on Coolify for decentralized cryptocurrency network participation, wallet management, and blockchain validation."
+description: "Bitcoin Core full node software."
+og:
+  description: "Run Bitcoin Core full node on Coolify for decentralized cryptocurrency network participation, wallet management, and blockchain validation."
+category: "Crypto"
+icon: "/docs/images/services/bitcoin-logo.svg"
 ---
 
 # Bitcoin Core

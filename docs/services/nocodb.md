@@ -1,6 +1,10 @@
 ---
 title: "NocoDB"
-description: "Deploy NoCoDB on Coolify as Airtable alternative turning databases into smart spreadsheets with REST APIs, forms, and no-code interface."
+description: "Open Source Airtable Alternative."
+og:
+  description: "Deploy NoCoDB on Coolify as Airtable alternative turning databases into smart spreadsheets with REST APIs, forms, and no-code interface."
+category: "Database"
+icon: "/docs/images/services/nocodb-logo.svg"
 ---
 
 # What is NocoDB?

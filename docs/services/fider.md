@@ -1,6 +1,10 @@
 ---
 title: "Fider"
-description: "Deploy Fider feedback platform on Coolify for product ideas, feature voting, roadmap planning, and customer feedback collection for product teams."
+description: "An open platform to collect and organize customer feedback."
+og:
+  description: "Deploy Fider feedback platform on Coolify for product ideas, feature voting, roadmap planning, and customer feedback collection for product teams."
+category: "Business"
+icon: "/docs/images/services/fider-logo.svg"
 ---
 
 ![Fider](https://github.com/getfider/fider/raw/main/etc/homepage.png)

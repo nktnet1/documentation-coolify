@@ -1,6 +1,10 @@
 ---
 title: Neon Ws Proxy
-description: "Deploy Neon WebSocket proxy on Coolify for serverless Postgres connections, connection pooling, and edge database access optimization."
+description: "WebSocket proxy for Neon database."
+og:
+  description: "Deploy Neon WebSocket proxy on Coolify for serverless Postgres connections, connection pooling, and edge database access optimization."
+category: "Development"
+icon: "/docs/images/services/neon-logo.svg"
 ---
 
 # Neon Ws Proxy

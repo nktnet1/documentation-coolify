@@ -1,6 +1,10 @@
 ---
 title: "Pterodactyl Panel"
-description: "Host game servers on Coolify with Pterodactyl panel for Minecraft, CS:GO, ARK with web management, Docker isolation, and automation."
+description: "Game server management panel with Wings daemon for hosting Minecraft, CS:GO, ARK and more."
+og:
+  description: "Host game servers on Coolify with Pterodactyl panel for Minecraft, CS:GO, ARK with web management, Docker isolation, and automation."
+category: "Gaming"
+icon: "/docs/images/services/pterodactyl_logo_transparent.png"
 ---
 
 <ZoomableImage src="/docs/images/services/pterodactyl-logo.png" alt="Pterodactyl logo" />

@@ -1,6 +1,10 @@
 ---
 title: "GitHub Runner"
-description: "Run self-hosted GitHub Actions runner on Coolify for CI/CD workflows, private infrastructure builds, and automated deployment pipelines."
+description: "A GitHub Actions runner for Docker."
+og:
+  description: "Run self-hosted GitHub Actions runner on Coolify for CI/CD workflows, private infrastructure builds, and automated deployment pipelines."
+category: "Development"
+icon: "/docs/images/services/githubrunner-logo.png"
 ---
 
 # GitHub Runner

@@ -1,6 +1,10 @@
 ---
 title: "Matrix"
-description: "Run Matrix Synapse server on Coolify for decentralized chat, end-to-end encryption, federation, and secure real-time communication platform."
+description: "Chat securely with your family, friends, community."
+og:
+  description: "Run Matrix Synapse server on Coolify for decentralized chat, end-to-end encryption, federation, and secure real-time communication platform."
+category: "Communication"
+icon: "/docs/images/services/matrix-logo.svg"
 ---
 
 # Matrix (Synapse)

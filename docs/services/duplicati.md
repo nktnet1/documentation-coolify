@@ -1,6 +1,10 @@
 ---
 title: "Duplicati"
-description: "Host Duplicati backup on Coolify with encrypted cloud backups, incremental updates, scheduling, and restore capabilities for data protection."
+description: "A free backup client that securely stores encrypted, incremental, compressed backups on cloud storage services and remote file servers."
+og:
+  description: "Host Duplicati backup on Coolify with encrypted cloud backups, incremental updates, scheduling, and restore capabilities for data protection."
+category: "Backup"
+icon: "/docs/images/services/duplicati-logo.webp"
 ---
 
 ![Duplicati](https://avatars.githubusercontent.com/u/8270231?s=200&v=4)

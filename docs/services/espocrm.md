@@ -1,6 +1,10 @@
 ---
 title: "EspoCRM"
-description: "Here you can find the documentation for hosting EspoCRM with Coolify."
+description: "A free and open-source CRM platform."
+og:
+  description: "Here you can find the documentation for hosting EspoCRM with Coolify."
+category: "Business"
+icon: "/docs/images/services/espocrm.svg"
 ---
 
 <ZoomableImage src="/docs/images/services/espocrm.svg" alt="EspoCRM" />

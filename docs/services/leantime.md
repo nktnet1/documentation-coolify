@@ -1,6 +1,10 @@
 ---
 title: "Leantime"
-description: "Manage projects on Coolify with Leantime featuring tasks, gantt charts, time tracking, ideas management, and lean project management approach."
+description: "Lean project management system for innovators."
+og:
+  description: "Manage projects on Coolify with Leantime featuring tasks, gantt charts, time tracking, ideas management, and lean project management approach."
+category: "Project Management"
+icon: "/docs/images/services/leantime-logo.svg"
 ---
 
 <ZoomableImage src="/docs/images/services/leantime-logo.webp" alt="Leantime Logo logo" />

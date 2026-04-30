@@ -1,6 +1,10 @@
 ---
 title: Ntfy
-description: "Host ntfy notification service on Coolify for simple pub/sub push notifications via HTTP, mobile apps, and scriptable alert delivery."
+description: "Simple HTTP-based pub-sub notification service."
+og:
+  description: "Host ntfy notification service on Coolify for simple pub/sub push notifications via HTTP, mobile apps, and scriptable alert delivery."
+category: "Notifications"
+icon: "/docs/images/services/ntfy-logo.svg"
 ---
 
 # Ntfy

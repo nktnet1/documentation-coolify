@@ -1,6 +1,10 @@
 ---
 title: "Formbricks"
-description: "Run Formbricks surveys on Coolify for in-app feedback, NPS surveys, user research, and product experience analytics with no-code forms."
+description: "A form builder for static sites."
+og:
+  description: "Run Formbricks surveys on Coolify for in-app feedback, NPS surveys, user research, and product experience analytics with no-code forms."
+category: "Development"
+icon: "/docs/images/services/formbricks-logo.png"
 ---
 
 ![Formbricks](https://github.com/formbricks/formbricks/assets/72809645/0086704f-bee7-4d38-9cc8-fa42ee59e004)
