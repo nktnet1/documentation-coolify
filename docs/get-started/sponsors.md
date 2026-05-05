@@ -295,6 +295,22 @@ const sponsors = [
     ]
   },
   {
+    avatar: '../images/sponsors/lumadock.webp',
+    name: 'LumaDock',
+    title: 'Fast and reliable virtual server hosting',
+    links: [
+      { icon: 'expedia', link: 'https://lumadock.com/vps-hosting/coolify?utm_source=coolify&utm_medium=sponsorship&utm_campaign=coolify_oss_sponsor_2026&utm_content=docs' }
+    ]
+  },
+  {
+    avatar: '../images/sponsors/capture-page.webp',
+    name: 'Capture.page',
+    title: 'Fast & Reliable Screenshot API for Developers',
+    links: [
+      { icon: 'expedia', link: 'https://capture.page/?ref=coolify.io' }
+    ]
+  },
+  {
     avatar: '../images/team/coollabs-logo-smaller.webp',
     name: 'Your Company?',
     title: 'Will Your Company Be Next?'
