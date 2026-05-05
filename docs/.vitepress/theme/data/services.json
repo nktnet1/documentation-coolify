@@ -173,7 +173,8 @@
     "slug": "calcom",
     "icon": "/docs/images/services/calcom-logo.svg",
     "description": "Open-source Calendly alternative for scheduling meetings.",
-    "category": "Productivity"
+    "category": "Productivity",
+    "disabled": true
   },
   {
     "name": "Calibre Web",
@@ -1476,8 +1477,7 @@
     "slug": "plane",
     "icon": "/docs/images/services/plane-logo.svg",
     "description": "Open source project planning tool.",
-    "category": "Project Management",
-    "disabled": true
+    "category": "Project Management"
   },
   {
     "name": "Plausible Analytics",
