@@ -1,87 +1,70 @@
 ---
-layout: page
 title: coolLabs Team
 description: Meet the international team developing Coolify including founder Andras Bacsai, core developers, community leads, and documentation maintainers.
 ---
 
-<script setup>
-import {
-  VPTeamPage,
-  VPTeamPageTitle,
-  VPTeamMembers,
-  VPTeamPageSection
-} from 'vitepress/theme'
+# coolLabs Team
 
+The development of Coolify is guided by an international team, some of whom have chosen to be featured below.
 
-const coreMembers = [
-  {
-    avatar: '../images/team/andras.webp',
-    name: 'Andras Bacsai',
-    title: 'Founder, Lead Developer',
-    links: [
-      { icon: 'github', link: 'https://github.com/andrasbacsai' },
-      { icon: 'expedia', link: 'https://heyandras.dev' },
-      { icon: 'x', link: 'https://x.com/heyandras' },
-      { icon: 'bluesky', link: 'https://bsky.app/profile/heyandras.dev' }
-    ]
-  },
-  {
-    avatar: '../images/team/peak.webp',
-    name: 'Peaklabs Dev',
-    title: 'Core Developer',
-    links: [
-      { icon: 'github', link: 'https://github.com/peaklabs-dev' },
-      { icon: 'x', link: 'https://x.com/peaklabs_dev' },
-      { icon: 'bluesky', link: 'https://bsky.app/profile/peaklabs.dev' },
-      { icon: 'mastodon', link: 'https://fosstodon.org/@peaklabs_dev' }
-    ]
-  },
-  {
-    avatar: '../images/team/shadowarcanist.webp',
-    name: 'ShadowArcanist',
-    title: 'Community Lead, Docs Maintainer',
-    links: [
-      { icon: 'github', link: 'https://github.com/shadowarcanist' },
-      { icon: 'expedia', link: 'https://shadowarcanist.com' },
-      { icon: 'x', link: 'https://x.com/shadowarcanist' }
-    ]
-  },
-  {
-    avatar: '../images/team/aditya.webp',
-    name: 'Aditya Tripathi',
-    title: 'Developer, Community Moderator',
-    links: [
-      { icon: 'github', link: 'https://github.com/adiologydev' },
-      { icon: 'expedia', link: 'https://adiology.dev' },
-      { icon: 'x', link: 'https://x.com/AdityaTripathiD' }
-    ]
-  },
-  {
-    avatar: '../images/team/oren.webp',
-    name: 'Oren Aksakal',
-    title: 'Developer',
-    links: [
-      { icon: 'github', link: 'https://github.com/orenaksakal' },
-      { icon: 'x', link: 'https://x.com/orenaksakal' }
-    ]
-  },
-  {
-    avatar: '../images/team/coollabs.webp',
-    name: 'You?',
-    title: 'Will You Be Next?'
-  }
-]
-
-</script>
-
-<VPTeamPage>
-  <VPTeamPageTitle>
-    <template #title>
-      coolLabs Team
-    </template>
-    <template #lead>
-      The development of Coolify is guided by an international team, some of whom have chosen to be featured below.
-    </template>
-  </VPTeamPageTitle>
-  <VPTeamMembers size="small" :members="coreMembers" />
-</VPTeamPage>
+<div className="not-prose grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+  <div className="rounded-lg border border-fd-border bg-fd-card p-4">
+    <div className="flex items-center gap-4">
+      <img src="/docs/images/team/andras.webp" alt="Andras Bacsai" className="size-14 rounded-md object-cover" />
+      <div>
+        <p className="m-0 font-semibold text-fd-foreground">Andras Bacsai</p>
+        <p className="m-0 mt-1 text-sm text-fd-muted-foreground">Founder, Lead Developer</p>
+      </div>
+    </div>
+    <p className="m-0 mt-3 text-sm"><a href="https://github.com/andrasbacsai">GitHub</a> · <a href="https://heyandras.dev">Website</a> · <a href="https://x.com/heyandras">X</a> · <a href="https://bsky.app/profile/heyandras.dev">Bluesky</a></p>
+  </div>
+  <div className="rounded-lg border border-fd-border bg-fd-card p-4">
+    <div className="flex items-center gap-4">
+      <img src="/docs/images/team/peak.webp" alt="Peaklabs Dev" className="size-14 rounded-md object-cover" />
+      <div>
+        <p className="m-0 font-semibold text-fd-foreground">Peaklabs Dev</p>
+        <p className="m-0 mt-1 text-sm text-fd-muted-foreground">Core Developer</p>
+      </div>
+    </div>
+    <p className="m-0 mt-3 text-sm"><a href="https://github.com/peaklabs-dev">GitHub</a> · <a href="https://x.com/peaklabs_dev">X</a> · <a href="https://bsky.app/profile/peaklabs.dev">Bluesky</a> · <a href="https://fosstodon.org/@peaklabs_dev">Mastodon</a></p>
+  </div>
+  <div className="rounded-lg border border-fd-border bg-fd-card p-4">
+    <div className="flex items-center gap-4">
+      <img src="/docs/images/team/shadowarcanist.webp" alt="ShadowArcanist" className="size-14 rounded-md object-cover" />
+      <div>
+        <p className="m-0 font-semibold text-fd-foreground">ShadowArcanist</p>
+        <p className="m-0 mt-1 text-sm text-fd-muted-foreground">Community Lead, Docs Maintainer</p>
+      </div>
+    </div>
+    <p className="m-0 mt-3 text-sm"><a href="https://github.com/shadowarcanist">GitHub</a> · <a href="https://shadowarcanist.com">Website</a> · <a href="https://x.com/shadowarcanist">X</a></p>
+  </div>
+  <div className="rounded-lg border border-fd-border bg-fd-card p-4">
+    <div className="flex items-center gap-4">
+      <img src="/docs/images/team/aditya.webp" alt="Aditya Tripathi" className="size-14 rounded-md object-cover" />
+      <div>
+        <p className="m-0 font-semibold text-fd-foreground">Aditya Tripathi</p>
+        <p className="m-0 mt-1 text-sm text-fd-muted-foreground">Developer, Community Moderator</p>
+      </div>
+    </div>
+    <p className="m-0 mt-3 text-sm"><a href="https://github.com/adiologydev">GitHub</a> · <a href="https://adiology.dev">Website</a> · <a href="https://x.com/AdityaTripathiD">X</a></p>
+  </div>
+  <div className="rounded-lg border border-fd-border bg-fd-card p-4">
+    <div className="flex items-center gap-4">
+      <img src="/docs/images/team/oren.webp" alt="Oren Aksakal" className="size-14 rounded-md object-cover" />
+      <div>
+        <p className="m-0 font-semibold text-fd-foreground">Oren Aksakal</p>
+        <p className="m-0 mt-1 text-sm text-fd-muted-foreground">Developer</p>
+      </div>
+    </div>
+    <p className="m-0 mt-3 text-sm"><a href="https://github.com/orenaksakal">GitHub</a> · <a href="https://x.com/orenaksakal">X</a></p>
+  </div>
+  <div className="rounded-lg border border-dashed border-fd-border bg-fd-card p-4">
+    <div className="flex items-center gap-4">
+      <img src="/docs/images/team/coollabs.webp" alt="Join the coolLabs team" className="size-14 rounded-md object-cover" />
+      <div>
+        <p className="m-0 font-semibold text-fd-foreground">You?</p>
+        <p className="m-0 mt-1 text-sm text-fd-muted-foreground">Will You Be Next?</p>
+      </div>
+    </div>
+  </div>
+</div>

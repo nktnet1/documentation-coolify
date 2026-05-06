@@ -124,11 +124,6 @@ icon: "/docs/images/services/activepieces-logo.png"
 #         retries: 10
 ---
 
-<!-- <script setup>
-import { useData } from 'vitepress'
-const { frontmatter } = useData()
-</script> -->
-
 <ZoomableImage src="/docs/images/services/activepieces0.webp" alt="Activepieces dashboard" />
 
 ## What is ActivePieces

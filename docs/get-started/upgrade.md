@@ -1,5 +1,5 @@
 ---
-title: Upgrading Coolify
+title: Upgrading
 description: Upgrade self-hosted Coolify automatically, semi-automatically with UI notifications, or manually via terminal with version-specific installation.
 ---
 

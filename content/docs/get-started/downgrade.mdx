@@ -1,5 +1,5 @@
 ---
-title: Downgrading Coolify
+title: Downgrading
 description: Downgrade self-hosted Coolify to previous versions by disabling auto-update, using SSH terminal commands, and handling database compatibility risks.
 ---
 

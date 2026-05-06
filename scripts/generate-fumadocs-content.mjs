@@ -4,7 +4,7 @@ import path from 'node:path'
 const root = process.cwd()
 const sourceDir = path.join(root, 'docs')
 const outputDir = path.join(root, 'content/docs')
-const ignoredDirs = new Set(['.vitepress', 'public'])
+const ignoredDirs = new Set(['public'])
 
 const folderIndexAliases = new Map([
   ['applications/build-packs/overview', 'applications/build-packs/index.mdx'],
@@ -37,19 +37,23 @@ const sidebarMetas = {
   'get-started': {
     title: 'Get Started',
     pages: [
+      '---Setup---',
       'introduction',
       'installation',
       'upgrade',
       'downgrade',
       'uninstallation',
       'cloud',
+      '---Learn---',
       'usage',
       'concepts',
       'screenshots',
       'videos',
+      '---Community---',
       'team',
       'support',
       'sponsors',
+      '---Contribute---',
       'contribute',
     ],
   },
@@ -415,81 +419,6 @@ function convertContainers(text) {
   return converted.join('\n')
 }
 
-function convertVueTeamPage(markdown) {
-  if (!markdown.includes('<script setup>') || !markdown.includes('VPTeam')) {
-    return markdown
-  }
-
-  const frontmatterMatch = markdown.match(/^---\n[\s\S]*?\n---/)
-  const frontmatter = frontmatterMatch?.[0] ?? ''
-  const title = frontmatter.match(/\ntitle:\s*"?([^"\n]+)"?/)?.[1] ?? 'Team'
-  const description = frontmatter.match(/\ndescription:\s*"?([^"\n]+)"?/)?.[1]
-  const people = [...markdown.matchAll(/name:\s*'([^']+)'[\s\S]*?title:\s*'([^']+)'/g)].map((match) => ({
-    name: match[1],
-    title: match[2],
-  }))
-
-  const body = [
-    '',
-    `# ${title}`,
-    '',
-    description ?? '',
-    '',
-    ...people.flatMap((person) => [`- **${person.name}** - ${person.title}`]),
-    '',
-  ].join('\n')
-
-  return `${frontmatter}\n${body}`
-}
-
-function convertSponsorsPage(markdown) {
-  if (!markdown.includes('const sponsors = [') || !markdown.includes('<VPTeamMembers')) {
-    return markdown
-  }
-
-  const frontmatterMatch = markdown.match(/^---\n[\s\S]*?\n---/)
-  const frontmatter = frontmatterMatch?.[0] ?? `---\ntitle: Coolify Sponsors\ndescription: Meet the companies and organizations sponsoring Coolify development.\n---`
-  const sponsorsBlock = markdown.match(/const sponsors = \[([\s\S]*?)\]\s*<\/script>/)?.[1] ?? ''
-  const sponsors = [...sponsorsBlock.matchAll(/\{\s*avatar:\s*'([^']+)',\s*name:\s*'([^']+)',\s*title:\s*'([^']+)'(?:,\s*links:\s*\[\s*\{\s*icon:\s*'[^']+',\s*link:\s*'([^']+)'\s*\}\s*\])?\s*\}/g)].map((match) => ({
-    avatar: match[1].replace(/^\.\.\//, '/docs/'),
-    name: match[2],
-    title: match[3],
-    link: match[4],
-  }))
-
-  const cards = sponsors.map((sponsor) => {
-    const image = `<img src="${escapeAttribute(sponsor.avatar)}" alt="${escapeAttribute(sponsor.name)} logo" className="size-14 shrink-0 rounded-md object-contain" />`
-    const content = `<div className="flex min-w-0 items-center gap-4">
-  ${image}
-  <div className="min-w-0">
-    <p className="m-0 font-semibold text-fd-foreground">${sponsor.name}</p>
-    <p className="m-0 mt-1 text-sm leading-6 text-fd-muted-foreground">${sponsor.title}</p>
-  </div>
-</div>`
-
-    if (!sponsor.link) {
-      return `<div className="rounded-lg border border-fd-border bg-fd-card p-4">
-${content}
-</div>`
-    }
-
-    return `<a href="${escapeAttribute(sponsor.link)}" className="rounded-lg border border-fd-border bg-fd-card p-4 no-underline transition hover:border-fd-primary/60 hover:bg-fd-muted/40">
-${content}
-</a>`
-  }).join('\n')
-
-  return `${frontmatter}
-
-# Coolify Sponsors
-
-We have amazing sponsors who support the development of Coolify.
-
-<div className="not-prose grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-${cards}
-</div>
-`
-}
-
 function convertTextPart(text) {
   let converted = text
 
@@ -529,8 +458,6 @@ function convertTextPart(text) {
 function convertMarkdown(markdown) {
   markdown = convertHomePage(markdown)
   markdown = ensureFrontmatterTitle(markdown)
-  markdown = convertSponsorsPage(markdown)
-  markdown = convertVueTeamPage(markdown)
   markdown = markdown.replace(/<!--[\s\S]*?-->/g, '')
   markdown = markdown.replace(/<script[\s\S]*?<\/script>/g, '')
   markdown = markdown.replace(/<OAOperation\b[^>]*\/>/g, 'API operation details are generated from the Coolify OpenAPI specification.')
@@ -542,7 +469,7 @@ function convertMarkdown(markdown) {
 }
 
 function convertHomePage(markdown) {
-  if (!/^---\n[\s\S]*?\nlayout:\s*home/m.test(markdown)) {
+  if (!/^---\n[\s\S]*?layout:\s*home/m.test(markdown)) {
     return markdown
   }
 

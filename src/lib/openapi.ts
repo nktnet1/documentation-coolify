@@ -1,6 +1,6 @@
 import { createOpenAPI } from 'fumadocs-openapi/server';
 import type { Document } from 'fumadocs-openapi';
-import openapiSchema from '../../docs/.vitepress/theme/openapi.json' with { type: 'json' };
+import openapiSchema from '../../config/openapi.json' with { type: 'json' };
 
 function titleFromOperationId(operationId: string) {
   return operationId

@@ -1,315 +1,335 @@
 ---
-layout: page
 title: Coolify Sponsors
 description: Meet the companies and organizations sponsoring Coolify development including Hetzner, Logto, Tolgee, and other technology partners.
 ---
 
-<script setup>
-import {
-  VPTeamPage,
-  VPTeamPageTitle,
-  VPTeamMembers,
-  VPTeamPageSection
-} from 'vitepress/theme'
+# Coolify Sponsors
 
+We have amazing sponsors who support the development of Coolify.
 
-const sponsors = [
-  {
-    avatar: '../images/sponsors/hetzner.webp',
-    name: 'Hetzner',
-    title: 'Server, cloud, hosting, and data center solutions',
-    links: [
-      { icon: 'expedia', link: 'http://htznr.li/CoolifyXHetzner' }
-    ]
-  },
-  {
-    avatar: '../images/sponsors/logto.webp',
-    name: 'Logto',
-    title: 'The better identity infrastructure for developers',
-    links: [
-      { icon: 'expedia', link: 'https://logto.io/?ref=coolify' }
-    ]
-  },
-  {
-    avatar: '../images/sponsors/tolgee.webp',
-    name: 'Tolgee',
-    title: 'The open source localization platform',
-    links: [
-      { icon: 'expedia', link: 'https://tolgee.io/?ref=coolify.io' }
-    ]
-  },
-  {
-    avatar: '../images/sponsors/bc.webp',
-    name: 'Best Consultant',
-    title: 'Your trusted technology consulting partner',
-    links: [
-      { icon: 'expedia', link: 'https://bc.direct/?ref=coolify.io' }
-    ]
-  },
-  {
-    avatar: '../images/sponsors/quant.webp',
-    name: 'QuantCDN',
-    title: 'Enterprise-grade content delivery network',
-    links: [
-      { icon: 'expedia', link: 'https://www.quantcdn.io/?ref=coolify.io' }
-    ]
-  },
-  {
-    avatar: '../images/sponsors/arcjet.webp',
-    name: 'Arcjet',
-    title: 'Advanced web security and performance solutions',
-    links: [
-      { icon: 'expedia', link: 'https://arcjet.com/?ref=coolify.io' }
-    ]
-  },
-  {
-    avatar: '../images/sponsors/supaguide.webp',
-    name: 'SupaGuide',
-    title: 'Your comprehensive guide to Supabase',
-    links: [
-      { icon: 'expedia', link: 'https://supa.guide/?ref=coolify.io' }
-    ]
-  },
-  {
-    avatar: '../images/sponsors/coderabbit.webp',
-    name: 'CodeRabbit',
-    title: 'Cut Code Review Time & Bugs in Half',
-    links: [
-      { icon: 'expedia', link: 'https://coderabbit.ai/?ref=coolify.io' }
-    ]
-  },
-  {
-    avatar: '../images/sponsors/convex.webp',
-    name: 'Convex',
-    title: 'Open-source reactive database for web app developers',
-    links: [
-      { icon: 'expedia', link: 'https://convex.link/coolify.io' }
-    ]
-  },
-  {
-    avatar: '../images/sponsors/goldenvm.webp',
-    name: 'GoldenVM',
-    title: 'Premium virtual machine hosting solutions',
-    links: [
-      { icon: 'expedia', link: 'https://billing.goldenvm.com/?ref=coolify.io' }
-    ]
-  },
-  {
-    avatar: '../images/sponsors/tigris.webp',
-    name: 'Tigris',
-    title: 'Modern developer data platform',
-    links: [
-      { icon: 'expedia', link: 'https://www.tigrisdata.com/?ref=coolify.io' }
-    ]
-  },
-  {
-    avatar: '../images/sponsors/cloudify.webp',
-    name: 'Cloudify',
-    title: 'Cloud hosting solutions',
-    links: [
-      { icon: 'expedia', link: 'https://cloudify.ro/?ref=coolify.io' }
-    ]
-  },
-  {
-    avatar: '../images/sponsors/trieve.webp',
-    name: 'Trieve',
-    title: 'AI-powered search and analytics',
-    links: [
-      { icon: 'expedia', link: 'https://trieve.ai/?ref=coolify.io' }
-    ]
-  },
-  {
-    avatar: '../images/sponsors/blacksmith.webp',
-    name: 'Blacksmith',
-    title: 'Infrastructure automation platform',
-    links: [
-      { icon: 'expedia', link: 'https://blacksmith.sh/?ref=coolify.io' }
-    ]
-  },
-  {
-    avatar: '../images/sponsors/comit.webp',
-    name: 'Comit International',
-    title: 'New York Times award–winning contractor!',
-    links: [
-      { icon: 'expedia', link: 'https://comit.international/?ref=coolify.io' }
-    ]
-  },
-  {
-    avatar: '../images/sponsors/branddev.webp',
-    name: 'Brand.dev',
-    title: 'The #1 Brand API for B2B software startups',
-    links: [
-      { icon: 'expedia', link: 'https://brand.dev/?ref=coolify.io' }
-    ]
-  },
-  {
-    avatar: '../images/sponsors/syntax.webp',
-    name: 'Syntax.fm',
-    title: 'Podcast for web developers',
-    links: [
-      { icon: 'expedia', link: 'https://syntax.fm?ref=coolify.io' }
-    ]
-  },
-  {
-    avatar: '../images/sponsors/jobscollider.webp',
-    name: 'Jobs Collider',
-    title: '30,000+ remote jobs for developers',
-    links: [
-      { icon: 'expedia', link: 'https://jobscollider.com/remote-jobs?ref=coolify.io' }
-    ]
-  },
-  {
-    avatar: '../images/sponsors/hostinger.webp',
-    name: 'Hostinger',
-    title: 'Web hosting and VPS solutions',
-    links: [
-      { icon: 'expedia', link: 'https://www.hostinger.com/vps/coolify-hosting?ref=coolify.io' }
-    ]
-  },
-  {
-    avatar: '../images/sponsors/glueops.webp',
-    name: 'GlueOps',
-    title: 'DevOps automation and infrastructure management',
-    links: [
-      { icon: 'expedia', link: 'https://www.glueops.dev/?ref=coolify.io' }
-    ]
-  },
-  {
-    avatar: '../images/sponsors/ubicloud.webp',
-    name: 'Ubicloud',
-    title: 'Open source cloud infrastructure platform',
-    links: [
-      { icon: 'expedia', link: 'https://www.ubicloud.com/?ref=coolify.io' }
-    ]
-  },
-  {
-    avatar: '../images/sponsors/pfglabs.webp',
-    name: 'Pfglabs',
-    title: 'Build Real Projects with Golang',
-    links: [
-      { icon: 'expedia', link: 'https://pfglabs.com/?ref=coolify.io' }
-    ]
-  },
-  {
-    avatar: '../images/sponsors/juxtdigital.webp',
-    name: 'JuxtDigital',
-    title: 'Digital transformation and web solutions',
-    links: [
-      { icon: 'expedia', link: 'https://juxtdigital.com/?ref=coolify.io' }
-    ]
-  },
-  {
-    avatar: '../images/sponsors/saasykit.webp',
-    name: 'SaasyKit',
-    title: 'Complete SaaS starter kit for developers',
-    links: [
-      { icon: 'expedia', link: 'https://saasykit.com/?ref=coolify.io' }
-    ]
-  },
-  {
-    avatar: '../images/sponsors/massivegrid.webp',
-    name: 'MassiveGrid',
-    title: 'Enterprise cloud hosting solutions',
-    links: [
-      { icon: 'expedia', link: 'https://massivegrid.com/?ref=coolify.io' }
-    ]
-  },
-  {
-    avatar: '../images/sponsors/americancloud.webp',
-    name: 'American Cloud',
-    title: 'US-based cloud infrastructure services',
-    links: [
-      { icon: 'expedia', link: 'https://americancloud.com/?utm_source=coolify.io' }
-    ]
-  },
-  {
-    avatar: '../images/sponsors/algora.webp',
-    name: 'Algora',
-    title: 'Open source contribution platform',
-    links: [
-      { icon: 'expedia', link: 'https://algora.io/?utm_source=coolify.io' }
-    ]
-  },
-  {
-    avatar: '../images/sponsors/liquidweb.webp',
-    name: 'LiquidWeb',
-    title: 'Premium managed hosting solutions',
-    links: [
-      { icon: 'expedia', link: 'https://liquidweb.com/?utm_source=coolify.io' }
-    ]
-  },
-  {
-    avatar: '../images/sponsors/yaak.webp',
-    name: 'Yaak',
-    title: 'The API client for modern developers',
-    links: [
-      { icon: 'expedia', link: 'https://yaak.app/?ref=coolify.io' }
-    ]
-  },
-  {
-    avatar: '../images/sponsors/comp.webp',
-    name: 'Comp AI',
-    title: 'The open-source platform that automates compliance',
-    links: [
-      { icon: 'expedia', link: 'https://www.trycomp.ai/?ref=coolify.io' }
-    ]
-  },
-  {
-    avatar: '../images/sponsors/darweb.webp',
-    name: 'Darweb',
-    title: 'Design. Develop. Deliver. Specialized in 3D CPQ Solutions for eCommerce',
-    links: [
-      { icon: 'expedia', link: 'https://darweb.nl/?ref=coolify.io' }
-    ]
-  },
-  {
-    avatar: '../images/sponsors/wzit.webp',
-    name: 'WZ-IT',
-    title: 'German agency for customized cloud solutions, migration, managed services and open source hosting',
-    links: [
-      { icon: 'expedia', link: 'https://wz-it.com/?ref=coolify.io' }
-    ]
-  },
-  {
-    avatar: '../images/sponsors/supadata.webp',
-    name: 'Supadata',
-    title: 'Scrape YouTube, web, and files. Get AI-ready, clean data for your next project',
-    links: [
-      { icon: 'expedia', link: 'https://supadata.ai/?ref=coolify.io' }
-    ]
-  },
-  {
-    avatar: '../images/sponsors/gozunga.webp',
-    name: 'Gozunga',
-    title: 'Seriously Simple Cloud Infrastructure',
-    links: [
-      { icon: 'expedia', link: 'https://gozunga.com/?ref=coolify.io' }
-    ]
-  },
-  {
-    avatar: '../images/sponsors/macarne.webp',
-    name: 'Macarne',
-    title: 'Best IP Transit & Carrier Ethernet Solutions for Simplified Network Connectivity',
-    links: [
-      { icon: 'expedia', link: 'https://macarne.com/?ref=coolify.io' }
-    ]
-  },
-  {
-    avatar: '../images/team/coollabs-logo-smaller.webp',
-    name: 'Your Company?',
-    title: 'Will Your Company Be Next?'
-  }
-]
-</script>
-
-<VPTeamPage>
-  <VPTeamPageTitle>
-    <template #title>
-      Coolify Sponsors
-    </template>
-    <template #lead>
-      We have amazing sponsors who support the development of Coolify.
-    </template>
-  </VPTeamPageTitle>
-<VPTeamMembers size="small" :members="sponsors" />
-</VPTeamPage>
+<div className="not-prose grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+<a href="http://htznr.li/CoolifyXHetzner" className="rounded-lg border border-fd-border bg-fd-card p-4 no-underline transition hover:border-fd-primary/60 hover:bg-fd-muted/40">
+<div className="flex min-w-0 items-center gap-4">
+  <img src="/docs/images/sponsors/hetzner.webp" alt="Hetzner logo" className="size-14 shrink-0 rounded-md object-contain" />
+  <div className="min-w-0">
+    <p className="m-0 font-semibold text-fd-foreground">Hetzner</p>
+    <p className="m-0 mt-1 text-sm leading-6 text-fd-muted-foreground">Server, cloud, hosting, and data center solutions</p>
+  </div>
+</div>
+</a>
+<a href="https://logto.io/?ref=coolify" className="rounded-lg border border-fd-border bg-fd-card p-4 no-underline transition hover:border-fd-primary/60 hover:bg-fd-muted/40">
+<div className="flex min-w-0 items-center gap-4">
+  <img src="/docs/images/sponsors/logto.webp" alt="Logto logo" className="size-14 shrink-0 rounded-md object-contain" />
+  <div className="min-w-0">
+    <p className="m-0 font-semibold text-fd-foreground">Logto</p>
+    <p className="m-0 mt-1 text-sm leading-6 text-fd-muted-foreground">The better identity infrastructure for developers</p>
+  </div>
+</div>
+</a>
+<a href="https://tolgee.io/?ref=coolify.io" className="rounded-lg border border-fd-border bg-fd-card p-4 no-underline transition hover:border-fd-primary/60 hover:bg-fd-muted/40">
+<div className="flex min-w-0 items-center gap-4">
+  <img src="/docs/images/sponsors/tolgee.webp" alt="Tolgee logo" className="size-14 shrink-0 rounded-md object-contain" />
+  <div className="min-w-0">
+    <p className="m-0 font-semibold text-fd-foreground">Tolgee</p>
+    <p className="m-0 mt-1 text-sm leading-6 text-fd-muted-foreground">The open source localization platform</p>
+  </div>
+</div>
+</a>
+<a href="https://bc.direct/?ref=coolify.io" className="rounded-lg border border-fd-border bg-fd-card p-4 no-underline transition hover:border-fd-primary/60 hover:bg-fd-muted/40">
+<div className="flex min-w-0 items-center gap-4">
+  <img src="/docs/images/sponsors/bc.webp" alt="Best Consultant logo" className="size-14 shrink-0 rounded-md object-contain" />
+  <div className="min-w-0">
+    <p className="m-0 font-semibold text-fd-foreground">Best Consultant</p>
+    <p className="m-0 mt-1 text-sm leading-6 text-fd-muted-foreground">Your trusted technology consulting partner</p>
+  </div>
+</div>
+</a>
+<a href="https://www.quantcdn.io/?ref=coolify.io" className="rounded-lg border border-fd-border bg-fd-card p-4 no-underline transition hover:border-fd-primary/60 hover:bg-fd-muted/40">
+<div className="flex min-w-0 items-center gap-4">
+  <img src="/docs/images/sponsors/quant.webp" alt="QuantCDN logo" className="size-14 shrink-0 rounded-md object-contain" />
+  <div className="min-w-0">
+    <p className="m-0 font-semibold text-fd-foreground">QuantCDN</p>
+    <p className="m-0 mt-1 text-sm leading-6 text-fd-muted-foreground">Enterprise-grade content delivery network</p>
+  </div>
+</div>
+</a>
+<a href="https://arcjet.com/?ref=coolify.io" className="rounded-lg border border-fd-border bg-fd-card p-4 no-underline transition hover:border-fd-primary/60 hover:bg-fd-muted/40">
+<div className="flex min-w-0 items-center gap-4">
+  <img src="/docs/images/sponsors/arcjet.webp" alt="Arcjet logo" className="size-14 shrink-0 rounded-md object-contain" />
+  <div className="min-w-0">
+    <p className="m-0 font-semibold text-fd-foreground">Arcjet</p>
+    <p className="m-0 mt-1 text-sm leading-6 text-fd-muted-foreground">Advanced web security and performance solutions</p>
+  </div>
+</div>
+</a>
+<a href="https://supa.guide/?ref=coolify.io" className="rounded-lg border border-fd-border bg-fd-card p-4 no-underline transition hover:border-fd-primary/60 hover:bg-fd-muted/40">
+<div className="flex min-w-0 items-center gap-4">
+  <img src="/docs/images/sponsors/supaguide.webp" alt="SupaGuide logo" className="size-14 shrink-0 rounded-md object-contain" />
+  <div className="min-w-0">
+    <p className="m-0 font-semibold text-fd-foreground">SupaGuide</p>
+    <p className="m-0 mt-1 text-sm leading-6 text-fd-muted-foreground">Your comprehensive guide to Supabase</p>
+  </div>
+</div>
+</a>
+<a href="https://coderabbit.ai/?ref=coolify.io" className="rounded-lg border border-fd-border bg-fd-card p-4 no-underline transition hover:border-fd-primary/60 hover:bg-fd-muted/40">
+<div className="flex min-w-0 items-center gap-4">
+  <img src="/docs/images/sponsors/coderabbit.webp" alt="CodeRabbit logo" className="size-14 shrink-0 rounded-md object-contain" />
+  <div className="min-w-0">
+    <p className="m-0 font-semibold text-fd-foreground">CodeRabbit</p>
+    <p className="m-0 mt-1 text-sm leading-6 text-fd-muted-foreground">Cut Code Review Time & Bugs in Half</p>
+  </div>
+</div>
+</a>
+<a href="https://convex.link/coolify.io" className="rounded-lg border border-fd-border bg-fd-card p-4 no-underline transition hover:border-fd-primary/60 hover:bg-fd-muted/40">
+<div className="flex min-w-0 items-center gap-4">
+  <img src="/docs/images/sponsors/convex.webp" alt="Convex logo" className="size-14 shrink-0 rounded-md object-contain" />
+  <div className="min-w-0">
+    <p className="m-0 font-semibold text-fd-foreground">Convex</p>
+    <p className="m-0 mt-1 text-sm leading-6 text-fd-muted-foreground">Open-source reactive database for web app developers</p>
+  </div>
+</div>
+</a>
+<a href="https://billing.goldenvm.com/?ref=coolify.io" className="rounded-lg border border-fd-border bg-fd-card p-4 no-underline transition hover:border-fd-primary/60 hover:bg-fd-muted/40">
+<div className="flex min-w-0 items-center gap-4">
+  <img src="/docs/images/sponsors/goldenvm.webp" alt="GoldenVM logo" className="size-14 shrink-0 rounded-md object-contain" />
+  <div className="min-w-0">
+    <p className="m-0 font-semibold text-fd-foreground">GoldenVM</p>
+    <p className="m-0 mt-1 text-sm leading-6 text-fd-muted-foreground">Premium virtual machine hosting solutions</p>
+  </div>
+</div>
+</a>
+<a href="https://www.tigrisdata.com/?ref=coolify.io" className="rounded-lg border border-fd-border bg-fd-card p-4 no-underline transition hover:border-fd-primary/60 hover:bg-fd-muted/40">
+<div className="flex min-w-0 items-center gap-4">
+  <img src="/docs/images/sponsors/tigris.webp" alt="Tigris logo" className="size-14 shrink-0 rounded-md object-contain" />
+  <div className="min-w-0">
+    <p className="m-0 font-semibold text-fd-foreground">Tigris</p>
+    <p className="m-0 mt-1 text-sm leading-6 text-fd-muted-foreground">Modern developer data platform</p>
+  </div>
+</div>
+</a>
+<a href="https://cloudify.ro/?ref=coolify.io" className="rounded-lg border border-fd-border bg-fd-card p-4 no-underline transition hover:border-fd-primary/60 hover:bg-fd-muted/40">
+<div className="flex min-w-0 items-center gap-4">
+  <img src="/docs/images/sponsors/cloudify.webp" alt="Cloudify logo" className="size-14 shrink-0 rounded-md object-contain" />
+  <div className="min-w-0">
+    <p className="m-0 font-semibold text-fd-foreground">Cloudify</p>
+    <p className="m-0 mt-1 text-sm leading-6 text-fd-muted-foreground">Cloud hosting solutions</p>
+  </div>
+</div>
+</a>
+<a href="https://trieve.ai/?ref=coolify.io" className="rounded-lg border border-fd-border bg-fd-card p-4 no-underline transition hover:border-fd-primary/60 hover:bg-fd-muted/40">
+<div className="flex min-w-0 items-center gap-4">
+  <img src="/docs/images/sponsors/trieve.webp" alt="Trieve logo" className="size-14 shrink-0 rounded-md object-contain" />
+  <div className="min-w-0">
+    <p className="m-0 font-semibold text-fd-foreground">Trieve</p>
+    <p className="m-0 mt-1 text-sm leading-6 text-fd-muted-foreground">AI-powered search and analytics</p>
+  </div>
+</div>
+</a>
+<a href="https://blacksmith.sh/?ref=coolify.io" className="rounded-lg border border-fd-border bg-fd-card p-4 no-underline transition hover:border-fd-primary/60 hover:bg-fd-muted/40">
+<div className="flex min-w-0 items-center gap-4">
+  <img src="/docs/images/sponsors/blacksmith.webp" alt="Blacksmith logo" className="size-14 shrink-0 rounded-md object-contain" />
+  <div className="min-w-0">
+    <p className="m-0 font-semibold text-fd-foreground">Blacksmith</p>
+    <p className="m-0 mt-1 text-sm leading-6 text-fd-muted-foreground">Infrastructure automation platform</p>
+  </div>
+</div>
+</a>
+<a href="https://comit.international/?ref=coolify.io" className="rounded-lg border border-fd-border bg-fd-card p-4 no-underline transition hover:border-fd-primary/60 hover:bg-fd-muted/40">
+<div className="flex min-w-0 items-center gap-4">
+  <img src="/docs/images/sponsors/comit.webp" alt="Comit International logo" className="size-14 shrink-0 rounded-md object-contain" />
+  <div className="min-w-0">
+    <p className="m-0 font-semibold text-fd-foreground">Comit International</p>
+    <p className="m-0 mt-1 text-sm leading-6 text-fd-muted-foreground">New York Times award–winning contractor!</p>
+  </div>
+</div>
+</a>
+<a href="https://brand.dev/?ref=coolify.io" className="rounded-lg border border-fd-border bg-fd-card p-4 no-underline transition hover:border-fd-primary/60 hover:bg-fd-muted/40">
+<div className="flex min-w-0 items-center gap-4">
+  <img src="/docs/images/sponsors/branddev.webp" alt="Brand.dev logo" className="size-14 shrink-0 rounded-md object-contain" />
+  <div className="min-w-0">
+    <p className="m-0 font-semibold text-fd-foreground">Brand.dev</p>
+    <p className="m-0 mt-1 text-sm leading-6 text-fd-muted-foreground">The #1 Brand API for B2B software startups</p>
+  </div>
+</div>
+</a>
+<a href="https://syntax.fm?ref=coolify.io" className="rounded-lg border border-fd-border bg-fd-card p-4 no-underline transition hover:border-fd-primary/60 hover:bg-fd-muted/40">
+<div className="flex min-w-0 items-center gap-4">
+  <img src="/docs/images/sponsors/syntax.webp" alt="Syntax.fm logo" className="size-14 shrink-0 rounded-md object-contain" />
+  <div className="min-w-0">
+    <p className="m-0 font-semibold text-fd-foreground">Syntax.fm</p>
+    <p className="m-0 mt-1 text-sm leading-6 text-fd-muted-foreground">Podcast for web developers</p>
+  </div>
+</div>
+</a>
+<a href="https://jobscollider.com/remote-jobs?ref=coolify.io" className="rounded-lg border border-fd-border bg-fd-card p-4 no-underline transition hover:border-fd-primary/60 hover:bg-fd-muted/40">
+<div className="flex min-w-0 items-center gap-4">
+  <img src="/docs/images/sponsors/jobscollider.webp" alt="Jobs Collider logo" className="size-14 shrink-0 rounded-md object-contain" />
+  <div className="min-w-0">
+    <p className="m-0 font-semibold text-fd-foreground">Jobs Collider</p>
+    <p className="m-0 mt-1 text-sm leading-6 text-fd-muted-foreground">30,000+ remote jobs for developers</p>
+  </div>
+</div>
+</a>
+<a href="https://www.hostinger.com/vps/coolify-hosting?ref=coolify.io" className="rounded-lg border border-fd-border bg-fd-card p-4 no-underline transition hover:border-fd-primary/60 hover:bg-fd-muted/40">
+<div className="flex min-w-0 items-center gap-4">
+  <img src="/docs/images/sponsors/hostinger.webp" alt="Hostinger logo" className="size-14 shrink-0 rounded-md object-contain" />
+  <div className="min-w-0">
+    <p className="m-0 font-semibold text-fd-foreground">Hostinger</p>
+    <p className="m-0 mt-1 text-sm leading-6 text-fd-muted-foreground">Web hosting and VPS solutions</p>
+  </div>
+</div>
+</a>
+<a href="https://www.glueops.dev/?ref=coolify.io" className="rounded-lg border border-fd-border bg-fd-card p-4 no-underline transition hover:border-fd-primary/60 hover:bg-fd-muted/40">
+<div className="flex min-w-0 items-center gap-4">
+  <img src="/docs/images/sponsors/glueops.webp" alt="GlueOps logo" className="size-14 shrink-0 rounded-md object-contain" />
+  <div className="min-w-0">
+    <p className="m-0 font-semibold text-fd-foreground">GlueOps</p>
+    <p className="m-0 mt-1 text-sm leading-6 text-fd-muted-foreground">DevOps automation and infrastructure management</p>
+  </div>
+</div>
+</a>
+<a href="https://www.ubicloud.com/?ref=coolify.io" className="rounded-lg border border-fd-border bg-fd-card p-4 no-underline transition hover:border-fd-primary/60 hover:bg-fd-muted/40">
+<div className="flex min-w-0 items-center gap-4">
+  <img src="/docs/images/sponsors/ubicloud.webp" alt="Ubicloud logo" className="size-14 shrink-0 rounded-md object-contain" />
+  <div className="min-w-0">
+    <p className="m-0 font-semibold text-fd-foreground">Ubicloud</p>
+    <p className="m-0 mt-1 text-sm leading-6 text-fd-muted-foreground">Open source cloud infrastructure platform</p>
+  </div>
+</div>
+</a>
+<a href="https://pfglabs.com/?ref=coolify.io" className="rounded-lg border border-fd-border bg-fd-card p-4 no-underline transition hover:border-fd-primary/60 hover:bg-fd-muted/40">
+<div className="flex min-w-0 items-center gap-4">
+  <img src="/docs/images/sponsors/pfglabs.webp" alt="Pfglabs logo" className="size-14 shrink-0 rounded-md object-contain" />
+  <div className="min-w-0">
+    <p className="m-0 font-semibold text-fd-foreground">Pfglabs</p>
+    <p className="m-0 mt-1 text-sm leading-6 text-fd-muted-foreground">Build Real Projects with Golang</p>
+  </div>
+</div>
+</a>
+<a href="https://juxtdigital.com/?ref=coolify.io" className="rounded-lg border border-fd-border bg-fd-card p-4 no-underline transition hover:border-fd-primary/60 hover:bg-fd-muted/40">
+<div className="flex min-w-0 items-center gap-4">
+  <img src="/docs/images/sponsors/juxtdigital.webp" alt="JuxtDigital logo" className="size-14 shrink-0 rounded-md object-contain" />
+  <div className="min-w-0">
+    <p className="m-0 font-semibold text-fd-foreground">JuxtDigital</p>
+    <p className="m-0 mt-1 text-sm leading-6 text-fd-muted-foreground">Digital transformation and web solutions</p>
+  </div>
+</div>
+</a>
+<a href="https://saasykit.com/?ref=coolify.io" className="rounded-lg border border-fd-border bg-fd-card p-4 no-underline transition hover:border-fd-primary/60 hover:bg-fd-muted/40">
+<div className="flex min-w-0 items-center gap-4">
+  <img src="/docs/images/sponsors/saasykit.webp" alt="SaasyKit logo" className="size-14 shrink-0 rounded-md object-contain" />
+  <div className="min-w-0">
+    <p className="m-0 font-semibold text-fd-foreground">SaasyKit</p>
+    <p className="m-0 mt-1 text-sm leading-6 text-fd-muted-foreground">Complete SaaS starter kit for developers</p>
+  </div>
+</div>
+</a>
+<a href="https://massivegrid.com/?ref=coolify.io" className="rounded-lg border border-fd-border bg-fd-card p-4 no-underline transition hover:border-fd-primary/60 hover:bg-fd-muted/40">
+<div className="flex min-w-0 items-center gap-4">
+  <img src="/docs/images/sponsors/massivegrid.webp" alt="MassiveGrid logo" className="size-14 shrink-0 rounded-md object-contain" />
+  <div className="min-w-0">
+    <p className="m-0 font-semibold text-fd-foreground">MassiveGrid</p>
+    <p className="m-0 mt-1 text-sm leading-6 text-fd-muted-foreground">Enterprise cloud hosting solutions</p>
+  </div>
+</div>
+</a>
+<a href="https://americancloud.com/?utm_source=coolify.io" className="rounded-lg border border-fd-border bg-fd-card p-4 no-underline transition hover:border-fd-primary/60 hover:bg-fd-muted/40">
+<div className="flex min-w-0 items-center gap-4">
+  <img src="/docs/images/sponsors/americancloud.webp" alt="American Cloud logo" className="size-14 shrink-0 rounded-md object-contain" />
+  <div className="min-w-0">
+    <p className="m-0 font-semibold text-fd-foreground">American Cloud</p>
+    <p className="m-0 mt-1 text-sm leading-6 text-fd-muted-foreground">US-based cloud infrastructure services</p>
+  </div>
+</div>
+</a>
+<a href="https://algora.io/?utm_source=coolify.io" className="rounded-lg border border-fd-border bg-fd-card p-4 no-underline transition hover:border-fd-primary/60 hover:bg-fd-muted/40">
+<div className="flex min-w-0 items-center gap-4">
+  <img src="/docs/images/sponsors/algora.webp" alt="Algora logo" className="size-14 shrink-0 rounded-md object-contain" />
+  <div className="min-w-0">
+    <p className="m-0 font-semibold text-fd-foreground">Algora</p>
+    <p className="m-0 mt-1 text-sm leading-6 text-fd-muted-foreground">Open source contribution platform</p>
+  </div>
+</div>
+</a>
+<a href="https://liquidweb.com/?utm_source=coolify.io" className="rounded-lg border border-fd-border bg-fd-card p-4 no-underline transition hover:border-fd-primary/60 hover:bg-fd-muted/40">
+<div className="flex min-w-0 items-center gap-4">
+  <img src="/docs/images/sponsors/liquidweb.webp" alt="LiquidWeb logo" className="size-14 shrink-0 rounded-md object-contain" />
+  <div className="min-w-0">
+    <p className="m-0 font-semibold text-fd-foreground">LiquidWeb</p>
+    <p className="m-0 mt-1 text-sm leading-6 text-fd-muted-foreground">Premium managed hosting solutions</p>
+  </div>
+</div>
+</a>
+<a href="https://yaak.app/?ref=coolify.io" className="rounded-lg border border-fd-border bg-fd-card p-4 no-underline transition hover:border-fd-primary/60 hover:bg-fd-muted/40">
+<div className="flex min-w-0 items-center gap-4">
+  <img src="/docs/images/sponsors/yaak.webp" alt="Yaak logo" className="size-14 shrink-0 rounded-md object-contain" />
+  <div className="min-w-0">
+    <p className="m-0 font-semibold text-fd-foreground">Yaak</p>
+    <p className="m-0 mt-1 text-sm leading-6 text-fd-muted-foreground">The API client for modern developers</p>
+  </div>
+</div>
+</a>
+<a href="https://www.trycomp.ai/?ref=coolify.io" className="rounded-lg border border-fd-border bg-fd-card p-4 no-underline transition hover:border-fd-primary/60 hover:bg-fd-muted/40">
+<div className="flex min-w-0 items-center gap-4">
+  <img src="/docs/images/sponsors/comp.webp" alt="Comp AI logo" className="size-14 shrink-0 rounded-md object-contain" />
+  <div className="min-w-0">
+    <p className="m-0 font-semibold text-fd-foreground">Comp AI</p>
+    <p className="m-0 mt-1 text-sm leading-6 text-fd-muted-foreground">The open-source platform that automates compliance</p>
+  </div>
+</div>
+</a>
+<a href="https://darweb.nl/?ref=coolify.io" className="rounded-lg border border-fd-border bg-fd-card p-4 no-underline transition hover:border-fd-primary/60 hover:bg-fd-muted/40">
+<div className="flex min-w-0 items-center gap-4">
+  <img src="/docs/images/sponsors/darweb.webp" alt="Darweb logo" className="size-14 shrink-0 rounded-md object-contain" />
+  <div className="min-w-0">
+    <p className="m-0 font-semibold text-fd-foreground">Darweb</p>
+    <p className="m-0 mt-1 text-sm leading-6 text-fd-muted-foreground">Design. Develop. Deliver. Specialized in 3D CPQ Solutions for eCommerce</p>
+  </div>
+</div>
+</a>
+<a href="https://wz-it.com/?ref=coolify.io" className="rounded-lg border border-fd-border bg-fd-card p-4 no-underline transition hover:border-fd-primary/60 hover:bg-fd-muted/40">
+<div className="flex min-w-0 items-center gap-4">
+  <img src="/docs/images/sponsors/wzit.webp" alt="WZ-IT logo" className="size-14 shrink-0 rounded-md object-contain" />
+  <div className="min-w-0">
+    <p className="m-0 font-semibold text-fd-foreground">WZ-IT</p>
+    <p className="m-0 mt-1 text-sm leading-6 text-fd-muted-foreground">German agency for customized cloud solutions, migration, managed services and open source hosting</p>
+  </div>
+</div>
+</a>
+<a href="https://supadata.ai/?ref=coolify.io" className="rounded-lg border border-fd-border bg-fd-card p-4 no-underline transition hover:border-fd-primary/60 hover:bg-fd-muted/40">
+<div className="flex min-w-0 items-center gap-4">
+  <img src="/docs/images/sponsors/supadata.webp" alt="Supadata logo" className="size-14 shrink-0 rounded-md object-contain" />
+  <div className="min-w-0">
+    <p className="m-0 font-semibold text-fd-foreground">Supadata</p>
+    <p className="m-0 mt-1 text-sm leading-6 text-fd-muted-foreground">Scrape YouTube, web, and files. Get AI-ready, clean data for your next project</p>
+  </div>
+</div>
+</a>
+<a href="https://gozunga.com/?ref=coolify.io" className="rounded-lg border border-fd-border bg-fd-card p-4 no-underline transition hover:border-fd-primary/60 hover:bg-fd-muted/40">
+<div className="flex min-w-0 items-center gap-4">
+  <img src="/docs/images/sponsors/gozunga.webp" alt="Gozunga logo" className="size-14 shrink-0 rounded-md object-contain" />
+  <div className="min-w-0">
+    <p className="m-0 font-semibold text-fd-foreground">Gozunga</p>
+    <p className="m-0 mt-1 text-sm leading-6 text-fd-muted-foreground">Seriously Simple Cloud Infrastructure</p>
+  </div>
+</div>
+</a>
+<a href="https://macarne.com/?ref=coolify.io" className="rounded-lg border border-fd-border bg-fd-card p-4 no-underline transition hover:border-fd-primary/60 hover:bg-fd-muted/40">
+<div className="flex min-w-0 items-center gap-4">
+  <img src="/docs/images/sponsors/macarne.webp" alt="Macarne logo" className="size-14 shrink-0 rounded-md object-contain" />
+  <div className="min-w-0">
+    <p className="m-0 font-semibold text-fd-foreground">Macarne</p>
+    <p className="m-0 mt-1 text-sm leading-6 text-fd-muted-foreground">Best IP Transit & Carrier Ethernet Solutions for Simplified Network Connectivity</p>
+  </div>
+</div>
+</a>
+<div className="rounded-lg border border-fd-border bg-fd-card p-4">
+<div className="flex min-w-0 items-center gap-4">
+  <img src="/docs/images/team/coollabs-logo-smaller.webp" alt="Your Company? logo" className="size-14 shrink-0 rounded-md object-contain" />
+  <div className="min-w-0">
+    <p className="m-0 font-semibold text-fd-foreground">Your Company?</p>
+    <p className="m-0 mt-1 text-sm leading-6 text-fd-muted-foreground">Will Your Company Be Next?</p>
+  </div>
+</div>
+</div>
+</div>

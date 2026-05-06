@@ -228,7 +228,7 @@ function Page() {
   const indexLayoutProps = data.isIndex
     ? {
         sidebar: {
-          className: 'inset-y-2 rounded-xl border shadow-lg -translate-x-(--fd-sidebar-width) rtl:translate-x-full',
+          enabled: false,
         },
         containerProps: {
           style: {

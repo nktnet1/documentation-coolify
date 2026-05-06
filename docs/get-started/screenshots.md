@@ -1,5 +1,5 @@
 ---
-title: Coolify UI Screenshots
+title: UI Screenshots
 description: View screenshots of Coolify's user interface showing dashboard, deployment options, server management, and application configuration features.
 ---
 
@@ -59,5 +59,3 @@ The Coolify team is currently developing a brand new UI design. Below are the im
 <br />
 
 <ZoomableImage src="/docs/images/resources/screenshots/18.webp" alt="Coolify dashboard screenshot" />
-
- 

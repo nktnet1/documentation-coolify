@@ -1,5 +1,5 @@
 ---
-title: Coolify Concepts
+title: Concepts
 description: Learn core Coolify concepts including servers, resources, environments, projects, Docker containers, reverse proxy, and team management basics.
 ---
 
