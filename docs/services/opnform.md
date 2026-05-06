@@ -9,7 +9,7 @@ icon: "/docs/images/services/opnform.svg"
 
 # OpnForm
 
-![OpnForm](/public/images/services/opnform.svg)
+<img src="/images/services/opnform.svg" alt="OpnForm" />
 
 ## What is OpnForm?
 

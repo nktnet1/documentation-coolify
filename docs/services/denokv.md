@@ -9,7 +9,7 @@ icon: "/docs/images/services/denolookingup-logo.svg"
 
 # Denokv
 
-<ZoomableImage src="/docs/images/services/deno-looking-up.svg" alt="Denokv dashboard" />
+<ZoomableImage src="/docs/images/services/denolookingup-logo.svg" alt="Deno KV logo" />
 
 ## What is Deno KV
 

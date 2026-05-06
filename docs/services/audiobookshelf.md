@@ -9,7 +9,7 @@ icon: "/docs/images/services/audiobookshelf-logo.svg"
 
 # Audiobookshelf
 
-<ZoomableImage src="/docs/images/services/audiobookshelf.svg" alt="Audiobookshelf dashboard" />
+<ZoomableImage src="/docs/images/services/audiobookshelf-logo.svg" alt="Audiobookshelf logo" />
 
 ## What is Audiobookshelf
 

@@ -9,7 +9,7 @@ icon: "/docs/images/services/chroma-logo.svg"
 
 # Chroma
 
-<ZoomableImage src="/docs/images/services/chroma.svg" alt="Chroma dashboard" />
+<ZoomableImage src="/docs/images/services/chroma-logo.svg" alt="Chroma logo" />
 
 ## What is Chroma?
 

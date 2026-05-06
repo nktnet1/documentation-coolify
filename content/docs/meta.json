@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "index",
+    "get-started",
+    "applications",
+    "services",
+    "databases",
+    "integrations",
+    "knowledge-base",
+    "api-reference",
+    "troubleshoot"
+  ]
+}

@@ -9,7 +9,7 @@ icon: "/docs/images/services/bookstack-logo.png"
 
 # Bookstack
 
-<ZoomableImage src="/docs/images/services/bookstack.png" alt="Bookstack dashboard" />
+<ZoomableImage src="/docs/images/services/bookstack-logo.png" alt="Bookstack logo" />
 
 ## What is Bookstack
 

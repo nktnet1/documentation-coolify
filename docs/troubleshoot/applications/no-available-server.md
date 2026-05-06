@@ -80,7 +80,7 @@ Look for error messages like `client version 1.24 is too old` which indicates a 
 
    **Missing dependencies in container:**
 
-   Ensure that all necessary tools are installed in your Docker image for the health check to work. [Applications](/applications/index) will need either `curl` or `wget` installed.
+   Ensure that all necessary tools are installed in your Docker image for the health check to work. [Applications](/applications) will need either `curl` or `wget` installed.
 
    ```dockerfile
    # Add curl to your Dockerfile
@@ -164,7 +164,7 @@ Make sure the protocol in your domain configuration matches how you want to acce
 
    <ZoomableImage src="/docs/images/troubleshoot/applications/bad-gateway/1.webp" alt="Screenshot showing No Available Server" />
 
-   In [Applications](/applications/index), this is defined in the `Ports Exposes` field.
+   In [Applications](/applications), this is defined in the `Ports Exposes` field.
 
       <ZoomableImage src="/docs/images/troubleshoot/applications/bad-gateway/4.webp" alt="Screenshot showing No Available Server" />
 

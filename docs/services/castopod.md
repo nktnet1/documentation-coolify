@@ -9,7 +9,7 @@ icon: "/docs/images/services/castopod-logo.svg"
 
 # Castopod
 
-<ZoomableImage src="/docs/images/services/castopod.svg" alt="Castopod dashboard" />
+<ZoomableImage src="/docs/images/services/castopod-logo.svg" alt="Castopod logo" />
 
 ## What is Castopod
 

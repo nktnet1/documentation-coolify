@@ -43,20 +43,20 @@ Coolify Cloud uses the same open-source codebase, so there are no locked-behind-
 
    - ::: details Detailed Server Connection Guide
      1. **Add Private Key:** Login to your Coolify account (or create one if you’re new) and Add a new private key
-        <ZoomableImage src="/docs/images/resources/integrations/6.webp" alt="Coolify dashboard screenshot" />
+        <ZoomableImage src="/docs/images/resources/screenshots/6.webp" alt="Coolify dashboard screenshot" />
         <br />
-        <ZoomableImage src="/docs/images/resources/integrations/7.webp" alt="Coolify dashboard screenshot" />
+        <ZoomableImage src="/docs/images/resources/screenshots/7.webp" alt="Coolify dashboard screenshot" />
      ***
      2. **Add a Server:** Navigate to the **Servers** tab and add a new server by entering your Hetzner server’s IPv4 address.
-        <ZoomableImage src="/docs/images/resources/integrations/8.webp" alt="Coolify dashboard screenshot" />
+        <ZoomableImage src="/docs/images/resources/screenshots/8.webp" alt="Coolify dashboard screenshot" />
         <br />
-        <ZoomableImage src="/docs/images/resources/integrations/9.webp" alt="Coolify dashboard screenshot" />
+        <ZoomableImage src="/docs/images/resources/screenshots/9.webp" alt="Coolify dashboard screenshot" />
      ***
      3. **Validate Server:** Click **Validate Server & Install Docker Engine**. Coolify will automatically install all necessary components on your server.
-        <ZoomableImage src="/docs/images/resources/integrations/10.webp" alt="Coolify dashboard screenshot" />
+        <ZoomableImage src="/docs/images/resources/screenshots/10.webp" alt="Coolify dashboard screenshot" />
      ***
      4. **Check Status:** Once finished, you should see a green **Proxy Running** status indicating everything is set up.
-        <ZoomableImage src="/docs/images/resources/integrations/11.webp" alt="Coolify dashboard screenshot" />
+        <ZoomableImage src="/docs/images/resources/screenshots/11.webp" alt="Coolify dashboard screenshot" />
         :::
 
 5. **Deploy Your Applications**

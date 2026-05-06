@@ -7,7 +7,7 @@ category: "Media"
 icon: "/docs/images/services/prowlarr-logo.svg"
 ---
 
-<ZoomableImage src="/docs/images/services/prowlarr.svg" alt="Prowlarr dashboard" />
+<ZoomableImage src="/docs/images/services/prowlarr-logo.svg" alt="Prowlarr logo" />
 
 ## What is Prowlarr?
 

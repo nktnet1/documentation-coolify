@@ -9,7 +9,7 @@ icon: "/docs/images/services/convex-logo.svg"
 
 # Convex
 
-<ZoomableImage src="/docs/images/services/convex.svg" alt="Convex dashboard" />
+<ZoomableImage src="/docs/images/services/convex-logo.svg" alt="Convex logo" />
 
 ## What is Convex
 

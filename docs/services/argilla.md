@@ -7,7 +7,7 @@ category: "AI"
 icon: "/docs/images/services/argilla-logo.svg"
 ---
 
-<ZoomableImage src="/docs/images/services/argilla.svg" alt="Argilla dashboard" />
+<ZoomableImage src="/docs/images/services/argilla-logo.svg" alt="Argilla logo" />
 
 ## What is Argilla?
 

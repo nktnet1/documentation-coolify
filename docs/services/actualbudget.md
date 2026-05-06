@@ -7,7 +7,7 @@ category: "Finance"
 icon: "/docs/images/services/actualbudget-logo.webp"
 ---
 
-<ZoomableImage src="/docs/images/services/actual-budget-logo.webp" alt="Actual Budget Logo logo" />
+<ZoomableImage src="/docs/images/services/actualbudget-logo.webp" alt="Actual Budget logo" />
 
 ## What is Actual Budget?
 

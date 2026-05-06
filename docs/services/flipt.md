@@ -9,7 +9,7 @@ icon: "/docs/images/services/flipt-logo.svg"
 
 # Flipt
 
-<ZoomableImage src="/docs/images/services/flipt.svg" alt="Flipt dashboard" />
+<ZoomableImage src="/docs/images/services/flipt-logo.svg" alt="Flipt logo" />
 
 ## What is Flipt
 

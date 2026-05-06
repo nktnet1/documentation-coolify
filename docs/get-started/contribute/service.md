@@ -110,7 +110,7 @@ In the [Coolify Docs Contribute section](/get-started/contribute/documentation) 
 ::: info HOW THE SERVICE LIST IS BUILT
 The services overview page and the [All Services](/services/all) directory are **generated automatically** from the frontmatter of each markdown file in `docs/services/`. You do **not** need to edit `List.vue` or `all.md` manually anymore. The generators run as part of `bun run dev`, `bun run build`, and `bun run preview`.
 
-- `scripts/generate-service-list.mjs` → writes `docs/.vitepress/theme/data/services.json` (consumed by the services overview component)
+- `scripts/generate-service-list.mjs` → writes `src/generated/services.json` (consumed by the services overview component)
 - `scripts/generate-services-page.mjs` → writes `docs/services/all.md`
 - Both scripts share `scripts/services-data.mjs`, which parses each service's frontmatter and resolves its logo from `docs/public/images/services/`
 :::
@@ -173,7 +173,7 @@ As soon as you have your local setup ready, follow these steps to add your new s
    bun run generate:services
    ```
 
-   This refreshes `docs/.vitepress/theme/data/services.json` and `docs/services/all.md`. Commit both regenerated files alongside your new service page.
+   This refreshes `src/generated/services.json` and `docs/services/all.md`. Commit both regenerated files alongside your new service page.
 
 5. Submit a Pull Request
 

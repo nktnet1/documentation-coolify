@@ -9,7 +9,7 @@ icon: "/docs/images/services/homebox-logo.svg"
 
 # Homebox
 
-<ZoomableImage src="/docs/images/services/homebox.svg" alt="Homebox dashboard" />
+<ZoomableImage src="/docs/images/services/homebox-logo.svg" alt="Homebox logo" />
 
 ## What is Homebox?
 

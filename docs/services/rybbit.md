@@ -7,7 +7,7 @@ category: "Analytics"
 icon: "/docs/images/services/rybbit.svg"
 ---
 
-![Rybbit](/public/images/services/rybbit.svg)
+<img src="/images/services/rybbit.svg" alt="Rybbit" />
 
 ## What is Rybbit?
 

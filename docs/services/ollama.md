@@ -7,7 +7,7 @@ category: "AI"
 icon: "/docs/images/services/ollama-logo.svg"
 ---
 
-<ZoomableImage src="/docs/images/services/ollama-logo.webp" alt="Ollama dashboard" />
+<ZoomableImage src="/docs/images/services/ollama-logo.svg" alt="Ollama logo" />
 
 ## What is Ollama?
 

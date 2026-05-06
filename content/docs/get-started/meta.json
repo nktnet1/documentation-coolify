@@ -1,0 +1,19 @@
+{
+  "title": "Get Started",
+  "pages": [
+    "introduction",
+    "installation",
+    "upgrade",
+    "downgrade",
+    "uninstallation",
+    "cloud",
+    "usage",
+    "concepts",
+    "screenshots",
+    "videos",
+    "team",
+    "support",
+    "sponsors",
+    "contribute"
+  ]
+}

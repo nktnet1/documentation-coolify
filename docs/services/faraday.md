@@ -9,7 +9,7 @@ icon: "/docs/images/services/faraday-logo.png"
 
 # Faraday
 
-<ZoomableImage src="/docs/images/services/faraday.png" alt="Faraday dashboard" />
+<ZoomableImage src="/docs/images/services/faraday-logo.png" alt="Faraday logo" />
 
 ## What is Faraday
 

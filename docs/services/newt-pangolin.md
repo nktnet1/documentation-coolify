@@ -7,7 +7,7 @@ category: "Networking"
 icon: "/docs/images/services/pangolin_newt.svg"
 ---
 
-![Newt Pangolin](/public/images/services/pangolin_newt.svg)
+<img src="/images/services/pangolin_newt.svg" alt="Newt Pangolin" />
 
 ## What is Newt?
 

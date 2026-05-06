@@ -9,7 +9,7 @@ icon: "/docs/images/services/bluesky-logo.svg"
 
 # Bluesky PDS
 
-<ZoomableImage src="/docs/images/services/bluesky.svg" alt="Bluesky logo" />
+<ZoomableImage src="/docs/images/services/bluesky-logo.svg" alt="Bluesky logo" />
 
 ## What is a Bluesky PDS?
 

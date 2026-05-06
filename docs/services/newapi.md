@@ -9,7 +9,7 @@ icon: "/docs/images/services/newapi-logo.png"
 
 # NewAPI
 
-<ZoomableImage src="/docs/images/services/newapi.png" alt="NewAPI Logo" />
+<ZoomableImage src="/docs/images/services/newapi-logo.png" alt="NewAPI logo" />
 
 ## What is NewAPI?
 

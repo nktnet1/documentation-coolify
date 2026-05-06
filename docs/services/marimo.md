@@ -7,7 +7,7 @@ category: "Development"
 icon: "/docs/images/services/marimo.svg"
 ---
 
-<ZoomableImage src="/docs/images/services/marimo-logo.webp" alt="Marimo Logo logo" />
+<ZoomableImage src="/docs/images/services/marimo-logo.svg" alt="Marimo logo" />
 
 ## What is Marimo?
 

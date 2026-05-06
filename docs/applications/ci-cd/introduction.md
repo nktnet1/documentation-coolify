@@ -95,7 +95,7 @@ While we provide detailed integration guides for popular platforms, **Coolify wo
 
 Ready to connect your Git provider? Choose your platform for detailed setup guides:
 
-- **[GitHub Integration](/applications/ci-cd/github/integration)** - Connect GitHub repositories
+- **[GitHub Integration](/applications/ci-cd/github/overview)** - Connect GitHub repositories
 - **[GitLab Integration](/applications/ci-cd/gitlab/integration)** - Connect GitLab repositories
 - **[Bitbucket Integration](/applications/ci-cd/bitbucket/integration)** - Connect Bitbucket repositories
 - **[Gitea Integration](/applications/ci-cd/gitea/integration)** - Connect self-hosted Gitea

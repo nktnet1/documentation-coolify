@@ -121,9 +121,8 @@ Select the private key you created in Coolify from the list of available private
 <ZoomableImage src="/docs/images/applications/ci-cd/github/deploy-key/12.webp" />
 
 1. Paste the SSH URL you copied from GitHub (e.g., `git@github.com:ShadowArcanist/coolify-dev.git`).
-2. After entering the repository link, configure the buildpack, ports, and other settings. (Refer to our dedicated guide on [builds](/builds/introduction) for more details.)
+2. After entering the repository link, configure the buildpack, ports, and other settings. (Refer to our dedicated guide on [applications](/applications) for more details.)
 
 Once configured, deploy your application.
 
 That's it! 
-

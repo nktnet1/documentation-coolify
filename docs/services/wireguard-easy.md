@@ -9,7 +9,7 @@ icon: "/docs/images/services/wireguardeasy-logo.svg"
 
 # Wireguard Easy
 
-<ZoomableImage src="/docs/images/services/wireguard-logo.svg" alt="Wireguard Easy dashboard" />
+<ZoomableImage src="/docs/images/services/wireguardeasy-logo.svg" alt="WireGuard Easy logo" />
 
 ## What is Wireguard Easy
 

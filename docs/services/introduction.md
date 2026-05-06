@@ -6,7 +6,7 @@ description: Deploy 200+ pre-configured open-source applications instantly with 
 
 ## What are Services?
 
-Services in Coolify are deployments based on **Docker Compose files** that are stored directly on your server. Unlike [Applications](/applications/introduction), Services are **not connected to a Git source** — they don't pull code from a repository or rebuild on commits.
+Services in Coolify are deployments based on **Docker Compose files** that are stored directly on your server. Unlike [Applications](/applications), Services are **not connected to a Git source** — they don't pull code from a repository or rebuild on commits.
 
 There are two types of Services in Coolify:
 

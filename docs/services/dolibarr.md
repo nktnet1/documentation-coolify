@@ -4,12 +4,12 @@ description: "Open-source ERP and CRM software."
 og:
   description: "Run Dolibarr ERP/CRM on Coolify with invoicing, inventory, projects, HR management, and business process automation for small to medium enterprises."
 category: "Business"
-icon: "/docs/images/services/dolibarr-logo.png"
+icon: "/docs/images/services/dolibarr.png"
 ---
 
 # Dolibarr
 
-<ZoomableImage src="/docs/images/services/dolibarr-logo.png" alt="Dolibarr dashboard" />
+<ZoomableImage src="/docs/images/services/dolibarr.png" alt="Dolibarr logo" />
 
 ## What is Dolibarr
 

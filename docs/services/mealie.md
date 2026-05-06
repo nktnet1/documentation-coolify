@@ -9,7 +9,7 @@ icon: "/docs/images/services/mealie-logo.png"
 
 # Mealie
 
-<ZoomableImage src="/docs/images/services/mealie.png" alt="Mealie dashboard" />
+<ZoomableImage src="/docs/images/services/mealie-logo.png" alt="Mealie logo" />
 
 ## What is Mealie
 

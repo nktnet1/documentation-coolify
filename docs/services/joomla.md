@@ -9,7 +9,7 @@ icon: "/docs/images/services/joomla-logo.svg"
 
 # Joomla
 
-<ZoomableImage src="/docs/images/services/Joomla!-Logo.svg" alt="Joomla! Logo logo" />
+<ZoomableImage src="/docs/images/services/Joomla-Logo.svg" alt="Joomla logo" />
 
 ## What is Joomla
 

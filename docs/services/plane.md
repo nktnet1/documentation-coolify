@@ -7,7 +7,7 @@ category: "Project Management"
 icon: "/docs/images/services/plane-logo.svg"
 ---
 
-![Plane](/public/images/services/plane-logo.svg)
+<img src="/images/services/plane-logo.svg" alt="Plane" />
 
 ## What is Plane?
 

@@ -24,7 +24,7 @@ On the Coolify dashboard, open your project and click the **Create New Resource*
 
 **A.** If your Git repository is public, choose the **Public Repository** option.
 
-**B.** If your repository is private, you can select **Github App** or **Deploy Key**. (These methods require extra configuration. You can check the guides on setting up a [Github App](/applications/ci-cd/github/integration#with-github-app-recommended) or [Deploy Key](/applications/ci-cd/github/integration#with-deploy-keys) if needed.)
+**B.** If your repository is private, you can select **Github App** or **Deploy Key**. (These methods require extra configuration. You can check the guides on setting up a [Github App](/applications/ci-cd/github/setup-app) or [Deploy Key](/applications/ci-cd/github/deploy-key) if needed.)
 
 ### 3. Select Your Git Repository
 

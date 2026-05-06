@@ -9,7 +9,7 @@ icon: "/docs/images/services/dashy-logo.png"
 
 # Dashy
 
-<ZoomableImage src="/docs/images/services/dashy.png" alt="Dashy dashboard" />
+<ZoomableImage src="/docs/images/services/dashy-logo.png" alt="Dashy logo" />
 
 ## What is Dashy
 

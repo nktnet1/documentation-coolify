@@ -1,0 +1,17 @@
+{
+  "title": "Servers",
+  "pages": [
+    "introduction",
+    "automated-cleanup",
+    "build-server",
+    "firewall",
+    "multiple-servers",
+    "sentinel",
+    "non-root-user",
+    "openssh",
+    "oracle-cloud",
+    "proxies",
+    "patching",
+    "terminal-access"
+  ]
+}

@@ -3,12 +3,12 @@ import path from 'node:path'
 import { collectServices, root } from './services-data.mjs'
 
 /**
- * Generate the service list JSON consumed by the VitePress service component.
+ * Generate the service list JSON consumed by the Fumadocs service component.
  *
  * @returns {Promise<void>}
  */
 async function generateServices() {
-  const outputFile = path.join(root, 'docs/.vitepress/theme/data/services.json')
+  const outputFile = path.join(root, 'src/generated/services.json')
   const services = await collectServices()
 
   await mkdir(path.dirname(outputFile), { recursive: true })

@@ -9,7 +9,7 @@ icon: "/docs/images/services/calibreweb-logo.svg"
 
 # Calibre Web
 
-<ZoomableImage src="/docs/images/services/calibre-web.svg" alt="Calibre Web dashboard" />
+<ZoomableImage src="/docs/images/services/calibreweb-logo.svg" alt="Calibre Web logo" />
 
 ## What is Calibre Web
 
