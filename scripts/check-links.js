@@ -5,14 +5,11 @@ const REDIRECTS_CONF = new URL('../nginx/redirects.conf', import.meta.url);
 const CONTENT_DIR = new URL('../content/docs/', import.meta.url);
 const CONCURRENCY = Number(process.env.CONCURRENCY ?? 12);
 const REQUEST_TIMEOUT_MS = Number(process.env.REQUEST_TIMEOUT_MS ?? 15000);
-const CRAWL_RENDERED = process.env.CRAWL_RENDERED === '1';
 
 const docsUrl = normalizeStartUrl(DOCS_URL);
 const docsOrigin = docsUrl.origin;
 const docsPathPrefix = trimTrailingSlash(docsUrl.pathname);
 
-const seenPages = new Set();
-const queuedPages = new Set([docsUrl.href]);
 const linkChecks = new Map();
 const brokenLinks = [];
 const redirectIssues = [];
@@ -34,11 +31,6 @@ const ignoredUrlPatterns = [
 async function main() {
   logPhase('Scanning markdown links');
   await scanMarkdownLinks();
-
-  if (CRAWL_RENDERED) {
-    logPhase('Crawling rendered docs pages');
-    await crawlDocs();
-  }
 
   logPhase('Checking links');
   await checkLinks();
@@ -71,56 +63,6 @@ async function scanMarkdownLinks() {
   }
 
   console.log(`Found ${markdownLinkCount} markdown links in ${markdownFileCount} files.`);
-}
-
-async function crawlDocs() {
-  const queue = [docsUrl.href];
-
-  while (queue.length > 0) {
-    const pageUrl = queue.shift();
-    if (!pageUrl || seenPages.has(pageUrl)) continue;
-
-    seenPages.add(pageUrl);
-    if (seenPages.size === 1 || seenPages.size % 25 === 0) {
-      console.log(`Crawled ${seenPages.size} rendered pages; queue: ${queue.length}`);
-    }
-
-    const response = await request(pageUrl);
-    if (shouldIgnoreStatus(response.status)) {
-      addIgnoredResponse({
-        source: 'crawler',
-        url: pageUrl,
-        status: response.status,
-        reason: response.statusText,
-      });
-      continue;
-    }
-
-    if (!response.ok) {
-      brokenLinks.push({
-        source: 'crawler',
-        url: pageUrl,
-        status: response.status,
-        reason: response.error ?? response.statusText,
-      });
-      continue;
-    }
-
-    if (!response.text) continue;
-
-    for (const href of extractHrefs(response.text)) {
-      const linkUrl = normalizeLink(href, pageUrl);
-      if (!linkUrl || shouldIgnoreUrl(linkUrl)) continue;
-
-      addLinkCheck(linkUrl, pageUrl);
-
-      const crawlUrl = stripHash(linkUrl);
-      if (shouldCrawl(crawlUrl) && !seenPages.has(crawlUrl) && !queuedPages.has(crawlUrl)) {
-        queuedPages.add(crawlUrl);
-        queue.push(crawlUrl);
-      }
-    }
-  }
 }
 
 async function checkLinks() {
@@ -250,10 +192,6 @@ function addLinkCheck(url, source) {
   linkChecks.get(cleanUrl).add(source);
 }
 
-function extractHrefs(html) {
-  return Array.from(html.matchAll(/\s(?:href|src)=["']([^"']+)["']/gi), (match) => match[1]);
-}
-
 function extractMarkdownLinks(contents) {
   const links = [];
   const markdownLinkPattern = /!?\[[^\]]*]\(([^)\s]+)(?:\s+["'][^"']*["'])?\)/g;
@@ -298,13 +236,6 @@ function addIgnoredResponse(response) {
 
 function shouldIgnoreStatus(status) {
   return ignoredStatusCodes.has(status);
-}
-
-function shouldCrawl(url) {
-  const parsed = new URL(url);
-  const pathname = trimTrailingSlash(parsed.pathname);
-
-  return parsed.origin === docsOrigin && (pathname === docsPathPrefix || pathname.startsWith(`${docsPathPrefix}/`));
 }
 
 function shouldIgnoreUrl(url) {
@@ -437,7 +368,6 @@ function trimTrailingSlash(value) {
 }
 
 function printResults() {
-  console.log(`Checked ${seenPages.size} docs pages`);
   console.log(`Checked ${linkChecks.size} unique links`);
 
   if (brokenLinks.length > 0) {
@@ -474,7 +404,6 @@ function printResults() {
   console.log('\nSummary:');
   console.log(`- Markdown files scanned: ${markdownFileCount}`);
   console.log(`- Markdown links found: ${markdownLinkCount}`);
-  console.log(`- Rendered docs pages crawled: ${seenPages.size}`);
   console.log(`- Links checked: ${linkChecks.size}`);
   console.log(`- Broken links: ${brokenLinks.length}`);
   console.log(`- Redirects checked: ${redirectCount}`);
