@@ -141,7 +141,7 @@ Preview deployments are a great way to test your application before merging it i
 
 #### URL Template
 
-You can setup your preview URL with a custom template. Default is <span v-pre>`&#123;&#123;pr_id&#125;&#125;.&#123;&#123;domain&#125;&#125;`</span>.
+You can setup your preview URL with a custom template. Default is <span v-pre>`{{pr_id}};.{{domain}};`</span>.
 
 This means that if you open a Pull Request with the ID `123`, and you resource domain is `example.com` the preview URL will be `123.example.com`.
 
@@ -149,7 +149,7 @@ This means that if you open a Pull Request with the ID `123`, and you resource d
 <Callout type="success" title="TIP">
 
   If you have several domains for your resource, the first will be used as the&#123;" "&#125;
-  <span v-pre>`&#123;&#123; domain &#125;&#125;`</span> part.
+  <span v-pre>`{{ domain }};`</span> part.
 
 </Callout>
 

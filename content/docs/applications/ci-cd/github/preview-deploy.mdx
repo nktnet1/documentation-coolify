@@ -18,8 +18,8 @@ These preview deployments are automatically deleted once the associated pull req
 <ZoomImage src="/docs/images/applications/ci-cd/github/preview-deploy/4.webp" />
 
 - **Preview URL Template:** Each preview deployment gets its own unique URL based on this template.
-  - Use <code v-pre>&#123;&#123;random&#125;&#125;</code> to generate a random subdomain each time a PR is deployed.
-  - Use <code v-pre>&#123;&#123;pr_id&#125;&#125;</code> to use the pull request ID as the subdomain.
+  - Use `{{random}}` to generate a random subdomain each time a PR is deployed.
+  - Use `{{pr_id}}` to use the pull request ID as the subdomain.
 
 
 <Callout type="warn" title="IMPORTANT">
