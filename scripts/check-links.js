@@ -168,7 +168,7 @@ async function checkRedirects() {
         console.log(`Checked ${completed}/${redirects.length} redirects.`);
       }
     };
-    const fromUrl = new URL(redirect.from, docsOrigin).href;
+    const fromUrl = docsUrlForPath(redirect.from);
     const expectedToUrl = new URL(redirect.to, docsOrigin).href;
     const source = await request(fromUrl, { method: 'GET', redirect: 'manual' });
 
@@ -341,7 +341,13 @@ async function findMdxFiles(directory) {
 function sourceFileToPageUrl(file) {
   const relativePath = relativeDocPath(file).replace(/\.mdx$/, '');
   const pagePath = relativePath.endsWith('/index') ? relativePath.slice(0, -'/index'.length) : relativePath;
-  return new URL(`${trimTrailingSlash(docsUrl.pathname)}/${pagePath}`, docsOrigin).href;
+  return docsUrlForPath(pagePath);
+}
+
+function docsUrlForPath(pathname) {
+  const path = pathname.startsWith('/') ? pathname : `/${pathname}`;
+  const prefix = docsPathPrefix === '/' ? '' : docsPathPrefix;
+  return new URL(`${prefix}${path}`, docsOrigin).href;
 }
 
 function relativeContentPath(file) {
