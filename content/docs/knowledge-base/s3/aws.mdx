@@ -38,9 +38,9 @@ The following data is used as an example in this guide. Please replace it with y
 
 ---
 
+<Accordions type="multiple">
 
-<details>
-<summary>TLDR (click to view)</summary>
+<Accordion title="TLDR (click to view)">
 
 1. Create a bucket in AWS Console
 2. Create a custom policy in AWS Console with the following permissions:
@@ -79,6 +79,10 @@ The following data is used as an example in this guide. Please replace it with y
 
 </Callout>
 
+
+</Accordion>
+
+</Accordions>
 
 
 ## 1. Create a S3 Bucket
@@ -246,6 +250,3 @@ You can see the backups stored on your S3 from the execution logs:
 <ZoomImage src="/docs/images/aws-s3/25.webp" alt="Screenshot of Aws" />
 
 Now you’re done! Your Coolify instance is set up to automatically backup and store them on your Aws S3 bucket safely.
-
-
-</details>

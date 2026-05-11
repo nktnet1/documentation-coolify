@@ -103,15 +103,20 @@ A plain Node.js process only uses one CPU core. To make a Node.js (or Bun) app u
 
 ## Known Issues and Solutions
 
-::: details 1. Visiting the Application Domain Shows "No Available Server"
+<Accordions type="multiple">
+
+<Accordion title="1. Visiting the Application Domain Shows &quot;No Available Server&quot;">
+
 If you see a "No Available Server" error when visiting your website, it is likely due to the health check for your container.
 
 Run `docker ps` on your server terminal to check if your container is unhealthy or still starting.
 
 To resolve this, fix the issue causing the container to be unhealthy or remove the health checks.
-:::
 
-::: details 2. App only works inside the Container
+</Accordion>
+
+<Accordion title="2. App only works inside the Container">
+
 If your app works when you check it with a `curl localhost` inside the container but you receive a 404 or "No Available Server" error when accessing your domain, verify the port settings.
 
 Make sure that the port in the network settings matches the port where your application is listening. Also, check the startup log to ensure the application is not only listening on localhost.
@@ -119,4 +124,7 @@ Make sure that the port in the network settings matches the port where your appl
 <ZoomableImage src="/docs/images/builds/packs/dockerfile/9.webp" alt="Coolify dashboard screenshot" />
 
 If needed, change it to listen on all interfaces (for example, `0.0.0.0`).
-:::
+
+</Accordion>
+
+</Accordions>

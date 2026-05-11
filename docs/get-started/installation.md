@@ -168,7 +168,9 @@ curl -fsSL https://cdn.coollabs.io/coolify/install.sh | sudo bash
 
 The installation script supports several environment variables to customize your Coolify installation. These are completely optional.
 
-:::details Click to view all available environment variables
+<Accordions type="multiple">
+
+<Accordion title="Click to view all available environment variables">
 
 You can set these environment variables before running the installation script to customize your Coolify setup:
 
@@ -233,7 +235,9 @@ DOCKER_ADDRESS_POOL_BASE=172.16.0.0/12 \
 bash -c 'curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash'
 ```
 
-:::
+</Accordion>
+
+</Accordions>
 
 #### 3. Access Coolify
 

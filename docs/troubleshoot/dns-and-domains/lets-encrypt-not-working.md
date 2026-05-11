@@ -50,14 +50,20 @@ If the certificates stored on your server are corrupted or outdated, you can del
   rm /data/coolify/proxy/acme.json
   ```
 - Then, restart the Coolify proxy from the dashboard by clicking the Restart Proxy button.
-  ::: details Guide: How to Restart Proxy from Dashboard?
+<Accordions type="multiple">
+
+<Accordion title="Guide: How to Restart Proxy from Dashboard?">
+
 
   1. Select your server on the Coolify Dashboard
      <ZoomableImage src="/docs/images/troubleshoot/dns-and-domains/lets-encrypt-not-working/1.webp" alt="Screenshot showing Lets Encrypt Not Working" />
 
   2. Click on Restart Proxy button
      <ZoomableImage src="/docs/images/troubleshoot/dns-and-domains/lets-encrypt-not-working/2.webp" alt="Screenshot showing Lets Encrypt Not Working" />
-     :::
+
+</Accordion>
+
+</Accordions>
 
 ## 7. Check Your WAF Settings
 
@@ -72,14 +78,20 @@ On the Coolify proxy logs check for error messages.
   - In this case, wait for a while and check your domain again. Most users won't encounter this, but it can happen if you are using a shared IP address.
 
 - If you see an error message with a 403 status code, it means that requests from Let's Encrypt are blocked by something like a Web Application Firewall (WAF).
-  ::: details Guide: How to check Coolify proxy logs?
+<Accordions type="multiple">
+
+<Accordion title="Guide: How to check Coolify proxy logs?">
+
 
   1. Select your server on the Coolify Dashboard
      <ZoomableImage src="/docs/images/troubleshoot/dns-and-domains/lets-encrypt-not-working/1.webp" alt="Screenshot showing Lets Encrypt Not Working" />
 
   2. Go to the proxy section and click the refresh button
      <ZoomableImage src="/docs/images/troubleshoot/dns-and-domains/lets-encrypt-not-working/3.webp" alt="Screenshot showing Lets Encrypt Not Working" />
-     :::
+
+</Accordion>
+
+</Accordions>
 
 ## 9. Verify DNS Records
 

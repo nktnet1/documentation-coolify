@@ -27,8 +27,9 @@ To understand the tech stack, please refer to the [Tech Stack](https://github.co
 ## 1. Setup Development Environment
 Follow the steps below for your operating system:
 
-<details>
-<summary><strong>Windows</strong></summary>
+<Accordions type="multiple">
+
+<Accordion title="Windows">
 
 1. Install `docker-ce`, Docker Desktop (or similar):
    - Docker CE (recommended):
@@ -42,10 +43,9 @@ Follow the steps below for your operating system:
 2. Install Spin:
    - Follow the instructions to install Spin on Windows from the [Spin documentation](https://serversideup.net/open-source/spin/docs/installation/install-windows#download-and-install-spin-into-wsl2?ref=coolify)
 
-</details>
+</Accordion>
 
-<details>
-<summary><strong>MacOS</strong></summary>
+<Accordion title="MacOS">
 
 1. Install Orbstack, Docker Desktop (or similar):
    - Orbstack (recommended, as it is a faster and lighter alternative to Docker Desktop):
@@ -56,10 +56,9 @@ Follow the steps below for your operating system:
 2. Install Spin:
    - Follow the instructions to install Spin on MacOS from the [Spin documentation](https://serversideup.net/open-source/spin/docs/installation/install-macos/#download-and-install-spin?ref=coolify)
 
-</details>
+</Accordion>
 
-<details>
-<summary><strong>Linux</strong></summary>
+<Accordion title="Linux">
 
 1. Install Docker Engine, Docker Desktop (or similar):
    - Docker Engine (recommended, as there is no VM overhead):
@@ -70,7 +69,9 @@ Follow the steps below for your operating system:
 2. Install Spin:
    - Follow the instructions to install Spin on Linux from the [Spin documentation](https://serversideup.net/open-source/spin/docs/installation/install-linux#configure-docker-permissions?ref=coolify)
 
-</details>
+</Accordion>
+
+</Accordions>
 
 
 ## 2. Verify Installation (Optional)

@@ -59,16 +59,24 @@ If you'd like to prioritize support for a specific package manager, feel free to
 
 ## FAQ
 
-::: details 1. Can I change how frequently Coolify checks for updates?
+<Accordions type="multiple">
+
+<Accordion title="1. Can I change how frequently Coolify checks for updates?">
+
 No, the update check interval is currently fixed.
 
 However, you can manually trigger a check by clicking the **Check now** button on the Server Patching page.
 
 This feature was introduced in **v4.0.0-beta.419**, and we’re focusing on improving it based on user feedback. If you'd like to request customizable check intervals, feel free to start a discussion here: [Coolify Discussions on GitHub](https://github.com/coollabsio/coolify/discussions)
-:::
 
-::: details 2. Does Coolify install updates automatically?
+</Accordion>
+
+<Accordion title="2. Does Coolify install updates automatically?">
+
 **No**, Coolify does not install updates automatically.
 
 Updates are only applied when you manually click the **Update** or **Update all packages** button on the dashboard.
-:::
+
+</Accordion>
+
+</Accordions>

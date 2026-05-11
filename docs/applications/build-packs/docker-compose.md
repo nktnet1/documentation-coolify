@@ -218,10 +218,16 @@ If build cache is not being preserved between deployments, ensure "Include Sourc
 
 ## Known Issues and Solutions
 
-::: details 1. Visiting the Application Domain Shows "No Available Server"
+<Accordions type="multiple">
+
+<Accordion title="1. Visiting the Application Domain Shows &quot;No Available Server&quot;">
+
 If you see a "No Available Server" error when visiting your website, it is likely due to the health check for your container.
 
 Run `docker ps` on your server terminal to check if your container is unhealthy or still starting.
 
 To resolve this, fix the issue causing the container to be unhealthy or remove the health checks.
-:::
+
+</Accordion>
+
+</Accordions>

@@ -34,7 +34,10 @@ The following data is used as an example in this guide. Please replace it with y
 
 ---
 
-::: details TLDR (click to view)
+<Accordions type="multiple">
+
+<Accordion title="TLDR (click to view)">
+
 1. Create a bucket in AWS Console
 2. Create a custom policy in AWS Console with the following permissions:
 
@@ -67,7 +70,11 @@ The following data is used as an example in this guide. Please replace it with y
 5. Add the `Access Key` and `Secret Key` in Coolify when you create a new S3 source.
    ::: success Tip
      You need to use the S3 HTTP endpoint without the bucket name, for example,`https://s3.eu-central-1.amazonaws.com`.
-:::
+   :::
+
+</Accordion>
+
+</Accordions>
 
 
 ## 1. Create a S3 Bucket
