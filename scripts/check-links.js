@@ -26,6 +26,7 @@ const ignoredStatusCodes = new Set([403, 429]);
 const ignoredUrlPatterns = [
   /^https:\/\/example\.com\/?$/,
   /\/docs\/brand\/favicon\.ico$/,
+  /\/docs\/images\/services\/service-name-logo\.svg$/,
   /\/docs\/site\.webmanifest$/,
   /\/docs\/@tanstack-start\/styles\.css$/,
 ];
