@@ -5,6 +5,7 @@ const REDIRECTS_CONF = new URL('../nginx/redirects.conf', import.meta.url);
 const CONTENT_DIR = new URL('../content/docs/', import.meta.url);
 const CONCURRENCY = Number(process.env.CONCURRENCY ?? 12);
 const REQUEST_TIMEOUT_MS = Number(process.env.REQUEST_TIMEOUT_MS ?? 15000);
+const CRAWL_RENDERED = process.env.CRAWL_RENDERED === '1';
 
 const docsUrl = normalizeStartUrl(DOCS_URL);
 const docsOrigin = docsUrl.origin;
@@ -26,9 +27,18 @@ const ignoredUrlPatterns = [
 ];
 
 async function main() {
+  logPhase('Scanning markdown links');
   await scanMarkdownLinks();
-  await crawlDocs();
+
+  if (CRAWL_RENDERED) {
+    logPhase('Crawling rendered docs pages');
+    await crawlDocs();
+  }
+
+  logPhase('Checking links');
   await checkLinks();
+
+  logPhase('Checking redirects');
   await checkRedirects();
 
   printResults();
@@ -54,6 +64,8 @@ async function scanMarkdownLinks() {
       addLinkCheck(linkUrl, `${relativeContentPath(file)}:${link.line}`);
     }
   }
+
+  console.log(`Found ${markdownLinkCount} markdown links in ${markdownFileCount} files.`);
 }
 
 async function crawlDocs() {
@@ -64,6 +76,9 @@ async function crawlDocs() {
     if (!pageUrl || seenPages.has(pageUrl)) continue;
 
     seenPages.add(pageUrl);
+    if (seenPages.size === 1 || seenPages.size % 25 === 0) {
+      console.log(`Crawled ${seenPages.size} rendered pages; queue: ${queue.length}`);
+    }
 
     const response = await request(pageUrl);
     if (!response.ok) {
@@ -95,6 +110,8 @@ async function crawlDocs() {
 
 async function checkLinks() {
   const checks = Array.from(linkChecks.entries());
+  let completed = 0;
+  console.log(`Checking ${checks.length} unique links with concurrency ${CONCURRENCY}.`);
 
   await runWithConcurrency(checks, CONCURRENCY, async ([url, sources]) => {
     const response = await request(url, { method: 'HEAD' });
@@ -108,14 +125,27 @@ async function checkLinks() {
         reason: result.error ?? result.statusText,
       });
     }
+
+    completed += 1;
+    if (completed === checks.length || completed % 50 === 0) {
+      console.log(`Checked ${completed}/${checks.length} links.`);
+    }
   });
 }
 
 async function checkRedirects() {
   const redirects = parseRedirects(await readFile(REDIRECTS_CONF, 'utf8'));
   redirectCount = redirects.length;
+  let completed = 0;
+  console.log(`Checking ${redirects.length} nginx redirects with concurrency ${CONCURRENCY}.`);
 
   await runWithConcurrency(redirects, CONCURRENCY, async (redirect) => {
+    const markCompleted = () => {
+      completed += 1;
+      if (completed === redirects.length || completed % 25 === 0) {
+        console.log(`Checked ${completed}/${redirects.length} redirects.`);
+      }
+    };
     const fromUrl = new URL(redirect.from, docsOrigin).href;
     const expectedToUrl = new URL(redirect.to, docsOrigin).href;
     const source = await request(fromUrl, { method: 'GET', redirect: 'manual' });
@@ -127,6 +157,7 @@ async function checkRedirects() {
         status: source.status,
         reason: source.error ?? source.statusText,
       });
+      markCompleted();
       return;
     }
 
@@ -138,6 +169,7 @@ async function checkRedirects() {
         status: source.status,
         reason: 'Expected a 3xx redirect with a Location header',
       });
+      markCompleted();
       return;
     }
 
@@ -162,6 +194,8 @@ async function checkRedirects() {
         reason: targetResult.error ?? targetResult.statusText,
       });
     }
+
+    markCompleted();
   });
 }
 
@@ -375,11 +409,15 @@ function printResults() {
   console.log('\nSummary:');
   console.log(`- Markdown files scanned: ${markdownFileCount}`);
   console.log(`- Markdown links found: ${markdownLinkCount}`);
-  console.log(`- Docs pages crawled: ${seenPages.size}`);
+  console.log(`- Rendered docs pages crawled: ${seenPages.size}`);
   console.log(`- Links checked: ${linkChecks.size}`);
   console.log(`- Broken links: ${brokenLinks.length}`);
   console.log(`- Redirects checked: ${redirectCount}`);
   console.log(`- Redirect issues: ${redirectIssues.length}`);
+}
+
+function logPhase(message) {
+  console.log(`\n${message}...`);
 }
 
 main().catch((error) => {
