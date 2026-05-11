@@ -988,7 +988,8 @@
     "slug": "litequeen",
     "icon": "/docs/images/services/litequeen-logo.svg",
     "description": "Lightweight service management platform.",
-    "category": "Administration"
+    "category": "Administration",
+    "disabled": true
   },
   {
     "name": "LobeChat",
