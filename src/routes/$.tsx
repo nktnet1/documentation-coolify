@@ -181,11 +181,17 @@ async function loadPageData(slugs: string[]): Promise<LoaderData> {
 const clientLoader = browserCollections.docs.createClientLoader({
   component(
     { toc, frontmatter, default: MDX },
-    { markdownUrl, path }: { markdownUrl: string; path: string },
+    { hideFooter, markdownUrl, path }: { hideFooter?: boolean; markdownUrl: string; path: string },
   ) {
     if (frontmatter.full) {
       return (
-        <DocsPage full toc={toc} tableOfContent={{ enabled: false }} breadcrumb={{ enabled: false }}>
+        <DocsPage
+          full
+          toc={toc}
+          tableOfContent={{ enabled: false }}
+          breadcrumb={{ enabled: false }}
+          footer={{ enabled: !hideFooter }}
+        >
           <MDX components={useMDXComponents()} />
         </DocsPage>
       );
@@ -222,7 +228,11 @@ function Page() {
       </DocsPage>
     );
   } else {
-    content = clientLoader.useContent(data.path, { markdownUrl: data.markdownUrl, path: data.path });
+    content = clientLoader.useContent(data.path, {
+      hideFooter: data.isIndex,
+      markdownUrl: data.markdownUrl,
+      path: data.path,
+    });
   }
 
   const indexLayoutProps = data.isIndex
