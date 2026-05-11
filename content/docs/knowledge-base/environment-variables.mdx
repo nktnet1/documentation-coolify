@@ -247,8 +247,19 @@ For Docker Compose / Service Stack deployments, Coolify can auto-generate dynami
 | `SERVICE_FQDN_<ID>` | The FQDN portion of the generated URL | `app-vgsco4o.example.com`                 |
 | `SERVICE_FQDN_<ID>_3000` | FQDN with proxy routing to a specific port | `app-vgsco4o.example.com:3000`            |
 | `SERVICE_FQDN_<ID>=/api` | FQDN with a path appended | `app-vgsco4o.example.com/api`             |
-| `SERVICE_USER_<ID>` | A random username string | `a8Kd3fR2mNpQ1xYz`                        |
-| `SERVICE_PASSWORD_<ID>` | A random password (`PASSWORD_64` for 64 characters) | `G7hkL9mpQ2rT4vXw`                        |
-| `SERVICE_BASE64_<ID>` | A random base64 string (`BASE64_64`, `BASE64_128` for longer) | `x9Yf2KqLm4NpR7TdWb8ZcA1eG3hJ5kM`         |
+| `SERVICE_USER_<ID>` | Random string, 16 characters | `a8Kd3fR2mNpQ1xYz`                        |
+| `SERVICE_PASSWORD_<ID>` | Random password without symbols | `G7hkL9mpQ2rT4vXw`                        |
+| `SERVICE_PASSWORD_64_<ID>` | Random password without symbols, 64 characters | `qG7hkL9mpQ2rT4vXw8BnP6sYd...`            |
+| `SERVICE_PASSWORDWITHSYMBOLS_<ID>` | Random password with symbols | `G7!kL9#pQ2rT4vXw`                        |
+| `SERVICE_PASSWORDWITHSYMBOLS_64_<ID>` | Random password with symbols, 64 characters | `qG7!kL9#pQ2rT4vXw8BnP6sYd...`            |
+| `SERVICE_BASE64_<ID>` or `SERVICE_BASE64_32_<ID>` | Random string, not Base64-encoded, 32 characters | `x9Yf2KqLm4NpR7TdWb8ZcA1eG3hJ5kM`         |
+| `SERVICE_BASE64_64_<ID>` | Random string, not Base64-encoded, 64 characters | `x9Yf2KqLm4NpR7TdWb8ZcA1eG3hJ5kM...`      |
+| `SERVICE_BASE64_128_<ID>` | Random string, not Base64-encoded, 128 characters | `x9Yf2KqLm4NpR7TdWb8ZcA1eG3hJ5kM...`      |
+| `SERVICE_REALBASE64_<ID>` or `SERVICE_REALBASE64_32_<ID>` | Base64-encoded random string, 32 characters | `eDlZZjJLcUxtNE5wUjdUZA==`                |
+| `SERVICE_REALBASE64_64_<ID>` | Base64-encoded random string, 64 characters | `cU83aGtMOW1wUTJyVDR2WHc4Qm4=...`         |
+| `SERVICE_REALBASE64_128_<ID>` | Base64-encoded random string, 128 characters | `cU83aGtMOW1wUTJyVDR2WHc4Qm4=...`         |
+| `SERVICE_HEX_32_<ID>` | Hexadecimal random string, 32 characters | `a6b9f34e43c112d79f9a3d5c7983344f`       |
+| `SERVICE_HEX_64_<ID>` | Hexadecimal random string, 64 characters | `db8c8a1a3b9df5a9fb8fd3f87df62f4...`     |
+| `SERVICE_HEX_128_<ID>` | Hexadecimal random string, 128 characters | `7f8c98a98db56b0c6c8768b1db6d24...`      |
 
 Generated values are reusable across services and persist between deployments. For full usage examples in a compose file, see [Magic Environment Variables in Docker Compose](/knowledge-base/docker/compose#coolify-s-magic-environment-variables).
