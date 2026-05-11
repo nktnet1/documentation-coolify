@@ -24,14 +24,14 @@ For standard (non-Docker Compose) applications, you configure middlewares by edi
 2. Uncheck **Readonly labels** so the label textarea becomes editable.
 3. Add your middleware definition label(s). For example, to add rate limiting:
 
-   ```bash
+   ```yaml
    traefik.http.middlewares.my-ratelimit.ratelimit.average=100
    traefik.http.middlewares.my-ratelimit.ratelimit.period=1m
    ```
 
 4. Find the existing `traefik.http.routers.https-0-<uuid>.middlewares=...` line and **append** your middleware name to it:
 
-   ```bash
+   ```yaml
    traefik.http.routers.https-0-<uuid>.middlewares=gzip,my-ratelimit
    ```
 
@@ -51,7 +51,7 @@ Use the **Reset Labels to Defaults** button to restore auto-generated labels if 
 
 Given Coolify generated labels like:
 
-```bash
+```yaml
 traefik.enable=true
 traefik.http.middlewares.gzip.compress=true
 traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https
@@ -71,11 +71,11 @@ traefik.http.services.https-0-abc123.loadbalancer.server.port=3000
 
 To add a custom headers middleware, add a definition and update the router:
 
-```bash
+```yaml
 traefik.http.middlewares.security-headers.headers.browserXssFilter=true
 traefik.http.middlewares.security-headers.headers.contentTypeNosniff=true
 traefik.http.middlewares.security-headers.headers.frameDeny=true
-traefik.http.routers.https-0-abc123.middlewares=gzip,security-headers // [!code focus]
+traefik.http.routers.https-0-abc123.middlewares=gzip,security-headers # [!code ++] [!code focus]
 ```
 
 ## Docker Compose Services
@@ -93,7 +93,7 @@ services:
     labels:
       - "traefik.http.middlewares.my-ratelimit.ratelimit.average=100"
       - "traefik.http.middlewares.my-ratelimit.ratelimit.period=1m"
-      - "coolify.traefik.middlewares=my-ratelimit" # [!code focus]
+      - "coolify.traefik.middlewares=my-ratelimit" # [!code ++] [!code focus]
 ```
 
 Coolify reads this label during deployment, extracts the middleware name, and appends it to the router's middleware chain alongside built-in middlewares like `gzip`.
@@ -135,7 +135,7 @@ http:
 
 **Standard Application** — update the router middlewares line:
 
-```bash
+```yaml
 traefik.http.routers.https-0-abc123.middlewares=gzip,my-ipallowlist@file
 ```
 
@@ -160,7 +160,7 @@ The `@file` suffix tells Traefik to look for the middleware in its file-based dy
 
 See [Traefik RateLimit reference](https://doc.traefik.io/traefik/reference/routing-configuration/http/middlewares/ratelimit/?utm_source=coolify.io) for all available options.
 
-```bash
+```yaml
 traefik.http.middlewares.my-ratelimit.ratelimit.average=100
 traefik.http.middlewares.my-ratelimit.ratelimit.period=1m
 traefik.http.middlewares.my-ratelimit.ratelimit.burst=50
@@ -170,7 +170,7 @@ traefik.http.middlewares.my-ratelimit.ratelimit.burst=50
 
 See [Traefik Headers reference](https://doc.traefik.io/traefik/reference/routing-configuration/http/middlewares/headers/?utm_source=coolify.io) for all available options.
 
-```bash
+```yaml
 traefik.http.middlewares.security-headers.headers.browserXssFilter=true
 traefik.http.middlewares.security-headers.headers.contentTypeNosniff=true
 traefik.http.middlewares.security-headers.headers.frameDeny=true
@@ -182,13 +182,13 @@ traefik.http.middlewares.security-headers.headers.stsIncludeSubdomains=true
 
 See [Traefik IPAllowList reference](https://doc.traefik.io/traefik/reference/routing-configuration/http/middlewares/ipallowlist/?utm_source=coolify.io) for all available options.
 
-```bash
+```yaml
 traefik.http.middlewares.my-ipwhitelist.ipallowlist.sourcerange=192.168.1.0/24,10.0.0.0/8
 ```
 
 ### Redirects
 
-For www/non-www redirects and domain forwarding, see the dedicated [Redirects](/knowledge-base/proxy/traefik/redirects) guide, which also covers Coolify's built-in Direction setting.
+For `www/non-www` redirects and domain forwarding, see the dedicated [Redirects](/knowledge-base/proxy/traefik/redirects) guide, which also covers Coolify's built-in Direction setting.
 
 
 <Callout type="info">
