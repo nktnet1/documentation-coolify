@@ -2,9 +2,9 @@
   "title": "CI/CD",
   "pages": [
     "github",
-    "gitlab/integration",
-    "bitbucket/integration",
-    "gitea/integration",
+    "gitlab",
+    "bitbucket",
+    "gitea",
     "other-providers"
   ]
 }
