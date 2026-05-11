@@ -34,8 +34,9 @@ Go to **Servers → your server → Proxy** and replace the default Traefik conf
 The highlighted lines show exactly what changes from the default HTTP-challenge setup.
 
 
-<Callout type="info">
+<Tabs items={['Hetzner', 'Cloudflare', 'AWS (route53)', 'Hostinger']}>
 
+<Tab value="Hetzner">
 
 ```yaml
 name: coolify-proxy
@@ -47,8 +48,8 @@ services:
     container_name: coolify-proxy
     image: 'traefik:v3.6'
     restart: unless-stopped
-    environment: # [!code focus]
-      - HETZNER_API_TOKEN=<Hetzner API Token> # [!code ++][!code focus]
+    environment: # [!code ++:2][!code focus:2]
+      - HETZNER_API_TOKEN=<Hetzner API Token> 
     extra_hosts:
       - 'host.docker.internal:host-gateway'
     networks:
@@ -81,10 +82,10 @@ services:
       - '--providers.docker.exposedbydefault=false'
       - '--providers.file.directory=/traefik/dynamic/'
       - '--providers.file.watch=true'
-      - '--certificatesresolvers.letsencrypt.acme.httpchallenge=true' # [!code --][!code focus]
-      - '--certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=http' # [!code --][!code focus]
-      - '--certificatesresolvers.letsencrypt.acme.dnschallenge.provider=hetzner' # [!code ++][!code focus]
-      - '--certificatesresolvers.letsencrypt.acme.dnschallenge.delaybeforecheck=0' # [!code ++][!code focus]
+      - '--certificatesresolvers.letsencrypt.acme.httpchallenge=true'  # [!code --:2][!code focus:2]
+      - '--certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=http'
+      - '--certificatesresolvers.letsencrypt.acme.dnschallenge.provider=hetzner'  # [!code ++:2][!code focus:2]
+      - '--certificatesresolvers.letsencrypt.acme.dnschallenge.delaybeforecheck=0' 
       - '--certificatesresolvers.letsencrypt.acme.storage=/traefik/acme.json'
       - '--providers.docker=true'
     labels:
@@ -96,6 +97,10 @@ services:
       - coolify.proxy=true
 ```
 
+</Tab>
+
+<Tab value="Cloudflare">
+
 ```yaml
 name: coolify-proxy
 networks:
@@ -106,8 +111,8 @@ services:
     container_name: coolify-proxy
     image: 'traefik:v3.6'
     restart: unless-stopped
-    environment: # [!code focus]
-      - CF_DNS_API_TOKEN=<Cloudflare API Token> # [!code ++][!code focus]
+    environment: # [!code ++:2][!code focus:2]
+      - CF_DNS_API_TOKEN=<Cloudflare API Token>
     extra_hosts:
       - 'host.docker.internal:host-gateway'
     networks:
@@ -140,10 +145,10 @@ services:
       - '--providers.docker.exposedbydefault=false'
       - '--providers.file.directory=/traefik/dynamic/'
       - '--providers.file.watch=true'
-      - '--certificatesresolvers.letsencrypt.acme.httpchallenge=true' # [!code --][!code focus]
-      - '--certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=http' # [!code --][!code focus]
-      - '--certificatesresolvers.letsencrypt.acme.dnschallenge.provider=cloudflare' # [!code ++][!code focus]
-      - '--certificatesresolvers.letsencrypt.acme.dnschallenge.delaybeforecheck=0' # [!code ++][!code focus]
+      - '--certificatesresolvers.letsencrypt.acme.httpchallenge=true' # [!code --:2][!code focus:2]
+      - '--certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=http'
+      - '--certificatesresolvers.letsencrypt.acme.dnschallenge.provider=cloudflare'  # [!code ++:2][!code focus:2]
+      - '--certificatesresolvers.letsencrypt.acme.dnschallenge.delaybeforecheck=0' 
       - '--certificatesresolvers.letsencrypt.acme.storage=/traefik/acme.json'
       - '--providers.docker=true'
     labels:
@@ -155,6 +160,10 @@ services:
       - coolify.proxy=true
 ```
 
+</Tab>
+
+<Tab value="AWS (route53)">
+
 ```yaml
 name: coolify-proxy
 networks:
@@ -165,10 +174,10 @@ services:
     container_name: coolify-proxy
     image: 'traefik:v3.6'
     restart: unless-stopped
-    environment: # [!code focus]
-      - AWS_ACCESS_KEY_ID=<Access Key ID> # [!code ++][!code focus]
-      - AWS_SECRET_ACCESS_KEY=<Secret Access Key> # [!code ++][!code focus]
-      - AWS_REGION=<Region> # [!code ++][!code focus]
+    environment: # [!code ++:4][!code focus:4]
+      - AWS_ACCESS_KEY_ID=<Access Key ID> 
+      - AWS_SECRET_ACCESS_KEY=<Secret Access Key>
+      - AWS_REGION=<Region>
     extra_hosts:
       - 'host.docker.internal:host-gateway'
     networks:
@@ -201,10 +210,10 @@ services:
       - '--providers.docker.exposedbydefault=false'
       - '--providers.file.directory=/traefik/dynamic/'
       - '--providers.file.watch=true'
-      - '--certificatesresolvers.letsencrypt.acme.httpchallenge=true' # [!code --][!code focus]
-      - '--certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=http' # [!code --][!code focus]
-      - '--certificatesresolvers.letsencrypt.acme.dnschallenge.provider=route53' # [!code ++][!code focus]
-      - '--certificatesresolvers.letsencrypt.acme.dnschallenge.delaybeforecheck=0' # [!code ++][!code focus]
+      - '--certificatesresolvers.letsencrypt.acme.httpchallenge=true' # [!code --:2][!code focus:2]
+      - '--certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=http' 
+      - '--certificatesresolvers.letsencrypt.acme.dnschallenge.provider=route53' # [!code ++:2][!code focus:2]
+      - '--certificatesresolvers.letsencrypt.acme.dnschallenge.delaybeforecheck=0'
       - '--certificatesresolvers.letsencrypt.acme.storage=/traefik/acme.json'
       - '--providers.docker=true'
     labels:
@@ -215,6 +224,10 @@ services:
       - coolify.managed=true
       - coolify.proxy=true
 ```
+
+</Tab>
+
+<Tab value="Hostinger">
 
 ```yaml
 name: coolify-proxy
@@ -260,10 +273,10 @@ services:
       - '--providers.docker.exposedbydefault=false'
       - '--providers.file.directory=/traefik/dynamic/'
       - '--providers.file.watch=true'
-      - '--certificatesresolvers.letsencrypt.acme.httpchallenge=true' # [!code --][!code focus]
-      - '--certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=http' # [!code --][!code focus]
-      - '--certificatesresolvers.letsencrypt.acme.dnschallenge.provider=hostinger' # [!code ++][!code focus]
-      - '--certificatesresolvers.letsencrypt.acme.dnschallenge.delaybeforecheck=0' # [!code ++][!code focus]
+      - '--certificatesresolvers.letsencrypt.acme.httpchallenge=true' # [!code --:2][!code focus:2]
+      - '--certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=http' 
+      - '--certificatesresolvers.letsencrypt.acme.dnschallenge.provider=hostinger' # [!code ++:2][!code focus:2]
+      - '--certificatesresolvers.letsencrypt.acme.dnschallenge.delaybeforecheck=0' 
       - '--certificatesresolvers.letsencrypt.acme.storage=/traefik/acme.json'
       - '--providers.docker=true'
     labels:
@@ -275,13 +288,17 @@ services:
       - coolify.proxy=true
 ```
 
+</Tab>
+
+</Tabs>
+
+<Callout type="info" title="Note">
+
+You can also use `env_file` instead of `environment` — create a `.env` file on the server and reference it. This is useful for keeping secrets out of the UI.
+
+Change `--certificatesresolvers.letsencrypt.acme.dnschallenge.provider=<name>` to match your provider's identifier from the [Lego provider list](https://go-acme.github.io/lego/dns/index.html#dns-providers).
 
 </Callout>
-
-
-> You can also use `env_file` instead of `environment` — create a `.env` file on the server and reference it. This is useful for keeping secrets out of the UI.
-
-> Change `--certificatesresolvers.letsencrypt.acme.dnschallenge.provider=<name>` to match your provider's identifier from the [Lego provider list](https://go-acme.github.io/lego/dns/index.html#dns-providers).
 
 Restart the proxy after making these changes. Traefik will now use the DNS challenge to obtain and renew SSL certificates.
 
@@ -291,7 +308,7 @@ Restart the proxy after making these changes. Traefik will now use the DNS chall
 
 DNS propagation can be slow. If the challenge fails immediately, increase `delaybeforecheck` to give your provider time to propagate the TXT record:
 
-```
+```yaml
 - '--certificatesresolvers.letsencrypt.acme.dnschallenge.delaybeforecheck=30'
 ```
 
@@ -308,7 +325,7 @@ environment:
 
 Let's Encrypt enforces [rate limits](https://letsencrypt.org/docs/rate-limits/?utm_source=coolify.io). While testing, add the [staging CA](https://letsencrypt.org/docs/staging-environment/) flag to avoid burning your quota:
 
-```
+```yaml
 - '--certificatesresolvers.letsencrypt.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory'
 ```
 
