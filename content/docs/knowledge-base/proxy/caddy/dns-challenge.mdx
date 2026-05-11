@@ -162,7 +162,12 @@ services:
 </Tabs>
 
 
-> For other DNS providers, find the module path at [github.com/caddy-dns](https://github.com/orgs/caddy-dns/repositories?utm_source=coolify.io), replace the `--with github.com/caddy-dns/<provider>` line in the Dockerfile, and set the appropriate environment variable and `caddy.acme_dns` label.
+<Callout type="info" title="Note">
+
+For other DNS providers, find the module path at [github.com/caddy-dns](https://github.com/orgs/caddy-dns/repositories?utm_source=coolify.io), replace the `--with github.com/caddy-dns/<provider>` line in the Dockerfile, and set the appropriate environment variable and `caddy.acme_dns` label.
+
+</Callout>
+
 
 Restart the proxy after saving. Caddy will build the image on first start and then use the DNS challenge to obtain and renew SSL certificates.
 
@@ -172,7 +177,7 @@ Restart the proxy after saving. Caddy will build the image on first start and th
 
 DNS propagation can be slow. You can add an explicit delay per-site by editing `/data/coolify/proxy/caddy/dynamic/Caddyfile` on your server:
 
-```
+```sh
 your.domain.com {
     tls {
         dns hetzner {env.HETZNER_API_TOKEN}
