@@ -53,7 +53,7 @@ services:
   privatebin:
     image: privatebin/nginx-fpm-alpine
     environment:
-      - SERVICE_FQDN_PRIVATEBIN_8080
+      - SERVICE_URL_PRIVATEBIN_8080
     volumes:
       - 'privatebin_data:/srv/data'
     healthcheck:
@@ -63,6 +63,6 @@ services:
       interval: 5s
       timeout: 20s
       retries: 10
-    labels:
+    labels: # [!code ++:2] [!code focus:2]
       - traefik.http.middlewares.authentik-auth@file
 ```
