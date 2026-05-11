@@ -13,7 +13,6 @@
     "vuejs",
     "nuxt",
     "svelte-kit",
-    "vitepress",
     "build-packs",
     "ci-cd"
   ]
