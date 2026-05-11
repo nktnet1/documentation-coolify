@@ -21,9 +21,9 @@ labels:
   - traefik.enable=true
   - traefik.http.routers.traefik.entrypoints=http
   - traefik.http.routers.traefik.service=api@internal
-  - traefik.http.routers.traefik.tls.certresolver=letsencrypt # [!code ++]
-  - traefik.http.routers.traefik.tls.domains[0].main=coolify.io # [!code ++]
-  - traefik.http.routers.traefik.tls.domains[0].sans=*.coolify.io # [!code ++]
+  - traefik.http.routers.traefik.tls.certresolver=letsencrypt # [!code ++:3]
+  - traefik.http.routers.traefik.tls.domains[0].main=coolify.io
+  - traefik.http.routers.traefik.tls.domains[0].sans=*.coolify.io
   - traefik.http.services.traefik.loadbalancer.server.port=8080
   - coolify.managed=true
   - coolify.proxy=true
@@ -53,10 +53,11 @@ Use this if one application should respond to *every* subdomain (for example, a 
 - Add the following custom labels:
 
 
-<Callout type="info">
+<Tabs items={['Traefik v3', 'Traefik v2']}>
 
+<Tab value="Traefik v3">
 
-```bash
+```yaml
 traefik.enable=true
 traefik.http.routers.<unique_router_name_http>.entryPoints=http
 traefik.http.routers.<unique_router_name_http>.middlewares=redirect-to-https
@@ -69,8 +70,11 @@ traefik.http.routers.<unique_router_name_https>.tls.certresolver=letsencrypt
 traefik.http.routers.<unique_router_name_https>.tls=true
 traefik.http.services.<unique_service_name>.loadbalancer.server.port=80
 ```
+</Tab>
 
-```bash
+<Tab value="Traefik v2">
+
+```yaml
 traefik.enable=true
 traefik.http.routers.<unique_router_name_http>.entryPoints=http
 traefik.http.routers.<unique_router_name_http>.middlewares=redirect-to-https
@@ -84,13 +88,16 @@ traefik.http.routers.<unique_router_name_https>.tls=true
 traefik.http.services.<unique_service_name>.loadbalancer.server.port=80
 ```
 
+</Tab>
+
+</Tabs>
+
+<Callout type="info" title="Note">
+- `<unique_router_name_https>.tls.certresolver` must match the resolver name in your Traefik proxy configuration — `letsencrypt` by default.
+
+- `<unique_service_name>.loadbalancer.server.port` must match the port your application listens on (use `80` for static deployments).
 
 </Callout>
-
-
-> `<unique_router_name_https>.tls.certresolver` must match the resolver name in your Traefik proxy configuration — `letsencrypt` by default.
-
-> `<unique_service_name>.loadbalancer.server.port` must match the port your application listens on (use `80` for static deployments).
 
 Read more about the [HostRegexp](https://doc.traefik.io/traefik/routing/routers/#hostregexp) rule in the official Traefik documentation.
 
