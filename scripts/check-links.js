@@ -1,0 +1,388 @@
+import { readdir, readFile } from 'node:fs/promises';
+
+const DOCS_URL = process.argv[2] ?? process.env.DOCS_URL ?? 'http://localhost:8080/docs';
+const REDIRECTS_CONF = new URL('../nginx/redirects.conf', import.meta.url);
+const CONTENT_DIR = new URL('../content/docs/', import.meta.url);
+const CONCURRENCY = Number(process.env.CONCURRENCY ?? 12);
+const REQUEST_TIMEOUT_MS = Number(process.env.REQUEST_TIMEOUT_MS ?? 15000);
+
+const docsUrl = normalizeStartUrl(DOCS_URL);
+const docsOrigin = docsUrl.origin;
+const docsPathPrefix = trimTrailingSlash(docsUrl.pathname);
+
+const seenPages = new Set();
+const queuedPages = new Set([docsUrl.href]);
+const linkChecks = new Map();
+const brokenLinks = [];
+const redirectIssues = [];
+let markdownFileCount = 0;
+let markdownLinkCount = 0;
+let redirectCount = 0;
+
+const ignoredUrlPatterns = [
+  /\/docs\/brand\/favicon\.ico$/,
+  /\/docs\/site\.webmanifest$/,
+  /\/docs\/@tanstack-start\/styles\.css$/,
+];
+
+async function main() {
+  await scanMarkdownLinks();
+  await crawlDocs();
+  await checkLinks();
+  await checkRedirects();
+
+  printResults();
+
+  if (brokenLinks.length > 0 || redirectIssues.length > 0) {
+    process.exitCode = 1;
+  }
+}
+
+async function scanMarkdownLinks() {
+  const files = await findMdxFiles(CONTENT_DIR);
+  markdownFileCount = files.length;
+
+  for (const file of files) {
+    const contents = await readFile(file, 'utf8');
+    const sourcePageUrl = sourceFileToPageUrl(file);
+
+    for (const link of extractMarkdownLinks(contents)) {
+      const linkUrl = normalizeLink(link.href, sourcePageUrl);
+      if (!linkUrl || shouldIgnoreUrl(linkUrl)) continue;
+
+      markdownLinkCount += 1;
+      addLinkCheck(linkUrl, `${relativeContentPath(file)}:${link.line}`);
+    }
+  }
+}
+
+async function crawlDocs() {
+  const queue = [docsUrl.href];
+
+  while (queue.length > 0) {
+    const pageUrl = queue.shift();
+    if (!pageUrl || seenPages.has(pageUrl)) continue;
+
+    seenPages.add(pageUrl);
+
+    const response = await request(pageUrl);
+    if (!response.ok) {
+      brokenLinks.push({
+        source: 'crawler',
+        url: pageUrl,
+        status: response.status,
+        reason: response.error ?? response.statusText,
+      });
+      continue;
+    }
+
+    if (!response.text) continue;
+
+    for (const href of extractHrefs(response.text)) {
+      const linkUrl = normalizeLink(href, pageUrl);
+      if (!linkUrl || shouldIgnoreUrl(linkUrl)) continue;
+
+      addLinkCheck(linkUrl, pageUrl);
+
+      const crawlUrl = stripHash(linkUrl);
+      if (shouldCrawl(crawlUrl) && !seenPages.has(crawlUrl) && !queuedPages.has(crawlUrl)) {
+        queuedPages.add(crawlUrl);
+        queue.push(crawlUrl);
+      }
+    }
+  }
+}
+
+async function checkLinks() {
+  const checks = Array.from(linkChecks.entries());
+
+  await runWithConcurrency(checks, CONCURRENCY, async ([url, sources]) => {
+    const response = await request(url, { method: 'HEAD' });
+    const result = response.status === 405 ? await request(url, { method: 'GET' }) : response;
+
+    if (result.status >= 400 || result.error) {
+      brokenLinks.push({
+        source: Array.from(sources).sort().join(', '),
+        url,
+        status: result.status,
+        reason: result.error ?? result.statusText,
+      });
+    }
+  });
+}
+
+async function checkRedirects() {
+  const redirects = parseRedirects(await readFile(REDIRECTS_CONF, 'utf8'));
+  redirectCount = redirects.length;
+
+  await runWithConcurrency(redirects, CONCURRENCY, async (redirect) => {
+    const fromUrl = new URL(redirect.from, docsOrigin).href;
+    const expectedToUrl = new URL(redirect.to, docsOrigin).href;
+    const source = await request(fromUrl, { method: 'GET', redirect: 'manual' });
+
+    if (source.status >= 400 || source.error) {
+      redirectIssues.push({
+        from: fromUrl,
+        to: expectedToUrl,
+        status: source.status,
+        reason: source.error ?? source.statusText,
+      });
+      return;
+    }
+
+    const location = source.headers?.get('location');
+    if (source.status < 300 || source.status >= 400 || !location) {
+      redirectIssues.push({
+        from: fromUrl,
+        to: expectedToUrl,
+        status: source.status,
+        reason: 'Expected a 3xx redirect with a Location header',
+      });
+      return;
+    }
+
+    const actualToUrl = new URL(location, fromUrl).href;
+    if (actualToUrl !== expectedToUrl) {
+      redirectIssues.push({
+        from: fromUrl,
+        to: expectedToUrl,
+        status: source.status,
+        reason: `Redirects to ${actualToUrl}`,
+      });
+    }
+
+    const target = await request(expectedToUrl, { method: 'HEAD' });
+    const targetResult = target.status === 405 ? await request(expectedToUrl, { method: 'GET' }) : target;
+
+    if (targetResult.status >= 400 || targetResult.error) {
+      redirectIssues.push({
+        from: fromUrl,
+        to: expectedToUrl,
+        status: targetResult.status,
+        reason: targetResult.error ?? targetResult.statusText,
+      });
+    }
+  });
+}
+
+function addLinkCheck(url, source) {
+  const cleanUrl = stripHash(url);
+  if (!linkChecks.has(cleanUrl)) {
+    linkChecks.set(cleanUrl, new Set());
+  }
+
+  linkChecks.get(cleanUrl).add(source);
+}
+
+function extractHrefs(html) {
+  return Array.from(html.matchAll(/\s(?:href|src)=["']([^"']+)["']/gi), (match) => match[1]);
+}
+
+function extractMarkdownLinks(contents) {
+  const links = [];
+  const markdownLinkPattern = /!?\[[^\]]*]\(([^)\s]+)(?:\s+["'][^"']*["'])?\)/g;
+
+  for (const match of contents.matchAll(markdownLinkPattern)) {
+    const href = match[1];
+    if (!href || href.startsWith('<')) continue;
+
+    links.push({
+      href,
+      line: lineNumberAt(contents, match.index ?? 0),
+    });
+  }
+
+  return links;
+}
+
+function normalizeLink(href, baseUrl) {
+  if (!href || href.startsWith('#')) return null;
+
+  const trimmed = href.trim();
+  const lower = trimmed.toLowerCase();
+  if (
+    lower.startsWith('mailto:') ||
+    lower.startsWith('tel:') ||
+    lower.startsWith('javascript:') ||
+    lower.startsWith('data:')
+  ) {
+    return null;
+  }
+
+  try {
+    return new URL(trimmed, baseUrl).href;
+  } catch {
+    return null;
+  }
+}
+
+function shouldCrawl(url) {
+  const parsed = new URL(url);
+  const pathname = trimTrailingSlash(parsed.pathname);
+
+  return parsed.origin === docsOrigin && (pathname === docsPathPrefix || pathname.startsWith(`${docsPathPrefix}/`));
+}
+
+function shouldIgnoreUrl(url) {
+  const parsed = new URL(url);
+  return parsed.origin === docsOrigin && ignoredUrlPatterns.some((pattern) => pattern.test(parsed.pathname));
+}
+
+function parseRedirects(contents) {
+  return Array.from(
+    contents.matchAll(/location\s+=\s+(\S+)\s+\{\s+return\s+(30[1278])\s+([^;\s]+)\s*;\s+\}/g),
+    (match) => ({
+      from: match[1],
+      status: Number(match[2]),
+      to: match[3],
+    }),
+  );
+}
+
+async function findMdxFiles(directory) {
+  const entries = await readdir(directory, { withFileTypes: true });
+  const files = [];
+
+  for (const entry of entries) {
+    const entryUrl = new URL(entry.name, ensureDirectoryUrl(directory));
+
+    if (entry.isDirectory()) {
+      files.push(...(await findMdxFiles(entryUrl)));
+    } else if (entry.isFile() && entry.name.endsWith('.mdx')) {
+      files.push(entryUrl);
+    }
+  }
+
+  return files;
+}
+
+function sourceFileToPageUrl(file) {
+  const relativePath = relativeDocPath(file).replace(/\.mdx$/, '');
+  const pagePath = relativePath.endsWith('/index') ? relativePath.slice(0, -'/index'.length) : relativePath;
+  return new URL(`${trimTrailingSlash(docsUrl.pathname)}/${pagePath}`, docsOrigin).href;
+}
+
+function relativeContentPath(file) {
+  return `content/docs/${relativeDocPath(file)}`;
+}
+
+function relativeDocPath(file) {
+  return decodeURIComponent(file.pathname.replace(CONTENT_DIR.pathname, ''));
+}
+
+function ensureDirectoryUrl(url) {
+  return url.href.endsWith('/') ? url : new URL(`${url.href}/`);
+}
+
+function lineNumberAt(contents, index) {
+  return contents.slice(0, index).split('\n').length;
+}
+
+async function request(url, options = {}) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+
+  try {
+    const response = await fetch(url, {
+      redirect: 'follow',
+      ...options,
+      headers: {
+        'user-agent': 'coolify-docs-broken-link-checker',
+        ...(options.headers ?? {}),
+      },
+      signal: controller.signal,
+    });
+
+    const contentType = response.headers.get('content-type') ?? '';
+    const text =
+      options.method !== 'HEAD' && contentType.includes('text/html') ? await response.text() : undefined;
+
+    return {
+      headers: response.headers,
+      ok: response.ok,
+      status: response.status,
+      statusText: response.statusText,
+      text,
+    };
+  } catch (error) {
+    return {
+      headers: undefined,
+      ok: false,
+      status: 0,
+      statusText: 'Request failed',
+      error: error instanceof Error ? error.message : String(error),
+    };
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+async function runWithConcurrency(items, concurrency, worker) {
+  let index = 0;
+  const workers = Array.from({ length: Math.min(concurrency, items.length) }, async () => {
+    while (index < items.length) {
+      const current = items[index];
+      index += 1;
+      await worker(current);
+    }
+  });
+
+  await Promise.all(workers);
+}
+
+function normalizeStartUrl(value) {
+  const parsed = new URL(value);
+  parsed.hash = '';
+  return parsed;
+}
+
+function stripHash(value) {
+  const parsed = new URL(value);
+  parsed.hash = '';
+  return parsed.href;
+}
+
+function trimTrailingSlash(value) {
+  return value.length > 1 ? value.replace(/\/+$/, '') : value;
+}
+
+function printResults() {
+  console.log(`Checked ${seenPages.size} docs pages`);
+  console.log(`Checked ${linkChecks.size} unique links`);
+
+  if (brokenLinks.length > 0) {
+    console.log('\nBroken links:');
+    for (const link of brokenLinks) {
+      console.log(`- ${link.status} ${link.url}`);
+      console.log(`  Source: ${link.source}`);
+      if (link.reason) console.log(`  Reason: ${link.reason}`);
+    }
+  }
+
+  if (redirectIssues.length > 0) {
+    console.log('\nRedirect issues:');
+    for (const redirect of redirectIssues) {
+      console.log(`- ${redirect.status} ${redirect.from}`);
+      console.log(`  Expected: ${redirect.to}`);
+      if (redirect.reason) console.log(`  Reason: ${redirect.reason}`);
+    }
+  }
+
+  if (brokenLinks.length === 0 && redirectIssues.length === 0) {
+    console.log('\nNo broken links or redirect issues found.');
+  }
+
+  console.log('\nSummary:');
+  console.log(`- Markdown files scanned: ${markdownFileCount}`);
+  console.log(`- Markdown links found: ${markdownLinkCount}`);
+  console.log(`- Docs pages crawled: ${seenPages.size}`);
+  console.log(`- Links checked: ${linkChecks.size}`);
+  console.log(`- Broken links: ${brokenLinks.length}`);
+  console.log(`- Redirects checked: ${redirectCount}`);
+  console.log(`- Redirect issues: ${redirectIssues.length}`);
+}
+
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
