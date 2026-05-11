@@ -37,7 +37,7 @@ function applyFolderIndexLinks(nodes: Node[]) {
 export function preparePageTree<T extends Root | Folder>(tree: T): T {
   const prepared = {
     ...tree,
-    children: [...tree.children],
+    children: tree.children.filter((node) => !(node.type === 'page' && node.url === '/')),
   };
 
   applyFolderIndexLinks(prepared.children);
