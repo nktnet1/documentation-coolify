@@ -22,6 +22,8 @@ const ignoredStatusCodes = new Set([403, 429]);
 
 const ignoredUrlPatterns = [
   /^https:\/\/example\.com\/?$/,
+  /^https:\/\/github\.com\/example\/repo(?:\?.*)?$/,
+  /^https:\/\/support\.google\.com\/cloud\/answer\/15549257$/,
   /\/docs\/brand\/favicon\.ico$/,
   /\/docs\/images\/services\/service-name-logo\.svg$/,
   /\/docs\/site\.webmanifest$/,
@@ -240,7 +242,7 @@ function shouldIgnoreStatus(status) {
 
 function shouldIgnoreUrl(url) {
   const parsed = new URL(url);
-  return parsed.origin === docsOrigin && ignoredUrlPatterns.some((pattern) => pattern.test(parsed.pathname));
+  return ignoredUrlPatterns.some((pattern) => pattern.test(url) || (parsed.origin === docsOrigin && pattern.test(parsed.pathname)));
 }
 
 function parseRedirects(contents) {
