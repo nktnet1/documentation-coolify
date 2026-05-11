@@ -47,7 +47,7 @@ You need to set both URLs for your resource (e.g., `https://coolify.io,https://w
 
 #### www -> non-www
 
-```bash
+```yaml
 # Define the redirect middleware
 traefik.http.middlewares.example-redirect.redirectregex.regex=^(http|https)://www\.(.+)
 traefik.http.middlewares.example-redirect.redirectregex.replacement=${1}://${2}
@@ -59,7 +59,7 @@ traefik.http.routers.<unique_router_name>.middlewares=gzip,example-redirect
 
 #### non-www -> www
 
-```bash
+```yaml
 # Define the redirect middleware
 traefik.http.middlewares.example-redirect.redirectregex.regex=^(http|https)://(?:www\.)?(.+)
 traefik.http.middlewares.example-redirect.redirectregex.replacement=${1}://www.${2}
@@ -79,7 +79,7 @@ The `<unique_router_name>` is the router name Coolify generated for you (e.g., `
 
 #### Domain -> Other Domain
 
-```bash
+```yaml
 traefik.http.middlewares.redirect-otherdomain.redirectregex.regex=^(https?://)?source-domain\.com(.*)
 traefik.http.middlewares.redirect-otherdomain.redirectregex.replacement=https://target-domain.com${2}
 traefik.http.middlewares.redirect-otherdomain.redirectregex.permanent=true
@@ -87,7 +87,7 @@ traefik.http.middlewares.redirect-otherdomain.redirectregex.permanent=true
 
 If you also need to generate an SSL certificate for the source domain, add a router entry for it:
 
-```bash
+```yaml
 traefik.http.routers.redirect-otherdomain.middlewares=redirect-to-https,redirect-otherdomain
 traefik.http.routers.redirect-otherdomain.rule=Host(`source-domain.com`) && PathPrefix(`/`)
 traefik.http.routers.redirect-otherdomain.entryPoints=https
