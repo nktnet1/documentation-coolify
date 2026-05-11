@@ -88,7 +88,7 @@ export function ServicesList() {
                     ) : null}
                     <div className="min-w-0">
                       <h3 className="font-medium text-fd-foreground">{service.name}</h3>
-                      <p className="mt-1 line-clamp-3 text-sm text-fd-muted-foreground">{service.description}</p>
+                      <p className="mt-1 line-clamp-2 text-sm text-fd-muted-foreground">{service.description}</p>
                     </div>
                   </div>
                 </a>
