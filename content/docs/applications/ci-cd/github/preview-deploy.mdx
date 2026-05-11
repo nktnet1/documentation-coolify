@@ -81,14 +81,17 @@ We have a dedicated guide for setting up the GitHub App, so please follow it fir
 As part of the setup, ensure Preview Deployments is configured correctly. The steps differ depending on whether you use Automated or Manual setup, as shown below.
 
 
-<Callout type="info">
+<Tabs items={['Automated Setup', 'Manual Setup']}>
 
-== Automated Setup
+<Tab value="Automated Setup">
 <ZoomImage src="/docs/images/applications/ci-cd/github/preview-deploy/github-app/1.webp" />
 
 Before you click "Register now", enable the "Preview Deployments" option. That's it!
 
-== Manual Setup
+</Tab>
+
+<Tab value="Manual Setup">
+
 <ZoomImage src="/docs/images/applications/ci-cd/github/preview-deploy/github-app/2.webp" />
 
 While setting up permissions for the GitHub App, do the following:
@@ -100,8 +103,10 @@ While setting up permissions for the GitHub App, do the following:
 
 That's it!
 
+</Tab>
 
-</Callout>
+</Tabs>
+
 
 
 ---
