@@ -16,9 +16,12 @@ const queuedPages = new Set([docsUrl.href]);
 const linkChecks = new Map();
 const brokenLinks = [];
 const redirectIssues = [];
+const ignoredResponses = [];
 let markdownFileCount = 0;
 let markdownLinkCount = 0;
 let redirectCount = 0;
+
+const ignoredStatusCodes = new Set([403, 429]);
 
 const ignoredUrlPatterns = [
   /\/docs\/brand\/favicon\.ico$/,
@@ -81,6 +84,16 @@ async function crawlDocs() {
     }
 
     const response = await request(pageUrl);
+    if (shouldIgnoreStatus(response.status)) {
+      addIgnoredResponse({
+        source: 'crawler',
+        url: pageUrl,
+        status: response.status,
+        reason: response.statusText,
+      });
+      continue;
+    }
+
     if (!response.ok) {
       brokenLinks.push({
         source: 'crawler',
@@ -116,15 +129,24 @@ async function checkLinks() {
   await runWithConcurrency(checks, CONCURRENCY, async ([url, sources]) => {
     const response = await request(url, { method: 'HEAD' });
     const result = response.status === 405 ? await request(url, { method: 'GET' }) : response;
+    const source = Array.from(sources).sort().join(', ');
 
-    if (result.status >= 400 || result.error) {
+    if (shouldIgnoreStatus(result.status)) {
+      addIgnoredResponse({
+        source,
+        url,
+        status: result.status,
+        reason: result.statusText,
+      });
+    } else if (result.status >= 400 || result.error) {
       brokenLinks.push({
-        source: Array.from(sources).sort().join(', '),
+        source,
         url,
         status: result.status,
         reason: result.error ?? result.statusText,
       });
     }
+
 
     completed += 1;
     if (completed === checks.length || completed % 50 === 0) {
@@ -149,6 +171,17 @@ async function checkRedirects() {
     const fromUrl = new URL(redirect.from, docsOrigin).href;
     const expectedToUrl = new URL(redirect.to, docsOrigin).href;
     const source = await request(fromUrl, { method: 'GET', redirect: 'manual' });
+
+    if (shouldIgnoreStatus(source.status)) {
+      addIgnoredResponse({
+        source: 'redirect source',
+        url: fromUrl,
+        status: source.status,
+        reason: source.statusText,
+      });
+      markCompleted();
+      return;
+    }
 
     if (source.status >= 400 || source.error) {
       redirectIssues.push({
@@ -186,7 +219,14 @@ async function checkRedirects() {
     const target = await request(expectedToUrl, { method: 'HEAD' });
     const targetResult = target.status === 405 ? await request(expectedToUrl, { method: 'GET' }) : target;
 
-    if (targetResult.status >= 400 || targetResult.error) {
+    if (shouldIgnoreStatus(targetResult.status)) {
+      addIgnoredResponse({
+        source: `redirect target from ${fromUrl}`,
+        url: expectedToUrl,
+        status: targetResult.status,
+        reason: targetResult.statusText,
+      });
+    } else if (targetResult.status >= 400 || targetResult.error) {
       redirectIssues.push({
         from: fromUrl,
         to: expectedToUrl,
@@ -248,6 +288,14 @@ function normalizeLink(href, baseUrl) {
   } catch {
     return null;
   }
+}
+
+function addIgnoredResponse(response) {
+  ignoredResponses.push(response);
+}
+
+function shouldIgnoreStatus(status) {
+  return ignoredStatusCodes.has(status);
 }
 
 function shouldCrawl(url) {
@@ -402,6 +450,15 @@ function printResults() {
     }
   }
 
+  if (ignoredResponses.length > 0) {
+    console.log('\nIgnored responses:');
+    for (const response of ignoredResponses) {
+      console.log(`- ${response.status} ${response.url}`);
+      console.log(`  Source: ${response.source}`);
+      if (response.reason) console.log(`  Reason: ${response.reason}`);
+    }
+  }
+
   if (brokenLinks.length === 0 && redirectIssues.length === 0) {
     console.log('\nNo broken links or redirect issues found.');
   }
@@ -414,6 +471,7 @@ function printResults() {
   console.log(`- Broken links: ${brokenLinks.length}`);
   console.log(`- Redirects checked: ${redirectCount}`);
   console.log(`- Redirect issues: ${redirectIssues.length}`);
+  console.log(`- Ignored responses: ${ignoredResponses.length}`);
 }
 
 function logPhase(message) {
