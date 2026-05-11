@@ -49,6 +49,8 @@ The following data is used as an example in this guide. Please replace it with y
 1. If you are using Selfhost or Enterprise version of Github then you can enter your github details on the Selhost/Enterprise github section.
 2. The "System wide" option allows all teams you have on your coolify instance to use this specific github app, if you only want the current team to use the github app then leave this option unchecked.
 
+</Callout>
+
 <Callout type="warn">
 
   Coolify cloud users won't see the option "System wide" because this option will enable your github app to all Cloud users so this option is disabled on Coolify Cloud
@@ -151,6 +153,8 @@ That's it!
 1. If you are using Selfhost or Enterprise version of Github then you can enter your github details on the Selhost/Enterprise github section.
 2. The "System wide" option allows all teams you have on your coolify instance to use this specific github app, if you only want the current team to use the github app then leave this option unchecked.
 
+</Callout>
+
 <Callout type="warn">
 
   Coolify cloud users won't see the option "System wide" because this option will enable your github app to all Cloud users so this option is disabled on Coolify Cloud
@@ -177,9 +181,10 @@ We will get these data in the next few steps.
 Creating apps on github slightly varies for personal accounts and organizations so choose the correct one from the below section
 
 
-<Callout type="info">
+<Tabs items={['Personal Account', 'Organization']}>
 
-== Personal Account
+<Tab value="Personal Account">
+
 <ZoomImage src="/docs/images/applications/ci-cd/github/setup-app/19.webp" />
 
 1. Go to your github account settings
@@ -188,8 +193,10 @@ Creating apps on github slightly varies for personal accounts and organizations 
 <ZoomImage src="/docs/images/applications/ci-cd/github/setup-app/20.webp" />
 3. Click the "New github app" button
 
+</Tab>
 
-== Organization
+<Tab value="Organization">
+
 <ZoomImage src="/docs/images/applications/ci-cd/github/setup-app/21.webp" />
 
 1. Go to your github Organization settings
@@ -198,7 +205,9 @@ Creating apps on github slightly varies for personal accounts and organizations 
 4. Click the "New github app" button
 
 
-</Callout>
+</Tab>
+
+</Tabs>
 
 
 ### 3. Setup the Github App on Github
@@ -333,8 +342,3 @@ Select the Github App you created in Coolify from the list of available Apps.
 Once configured, deploy your application.
 
 That's it! 
-
-</Callout>
-
-
-</Callout>
