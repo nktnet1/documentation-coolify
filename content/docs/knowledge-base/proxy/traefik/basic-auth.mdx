@@ -8,7 +8,7 @@ The configuration is slightly different for [`Standard Applications`](#standard-
 
 ## Standard Applications
 
-```bash
+```yaml
 traefik.http.middlewares.<random_unique_name>.basicauth.users=test:$2y$12$ci.4U63YX83CwkyUrjqxAucnmi2xXOIlEF6T/KdP9824f1Rf1iyNG
 traefik.http.routers.<unique_router_name>.middlewares=<random_unique_name>
 ```
@@ -21,7 +21,7 @@ In the example above, we are using `test` as username and `test` as password.
 You most likely have a `traefik.http.middlewares` label already set. In that case, you must append the `random_unique_name` middleware to the existing value.
 For example:
 
-  ```bash
+  ```yaml
   traefik.http.routers.<unique_router_name>.middlewares=gzip,<random_unique_name>
   ```
 
@@ -58,19 +58,14 @@ traefik.http.routers.https-0-wc04wo4ow4scokgsw8wow4s8.tls.certresolver=letsencry
 traefik.http.routers.https-0-wc04wo4ow4scokgsw8wow4s8.tls=true
 traefik.http.services.http-0-wc04wo4ow4scokgsw8wow4s8.loadbalancer.server.port=80
 traefik.http.services.https-0-wc04wo4ow4scokgsw8wow4s8.loadbalancer.server.port=80
-caddy_0.encode=zstd gzip
-caddy_0.handle_path.0_reverse_proxy={{upstreams 80}}
-caddy_0.handle_path=/*
-caddy_0.header=-Server
-caddy_0.try_files={path} /index.html /index.php
-caddy_0=https://nginxsite.73rdst.com
-caddy_ingress_network=coolify
 ```
 
 If you want to add basic authentication to this service, assuming you want to name your auth middleware `mybasicauth`, you could add the following label below the
 first line `traefik.enable=true`:
 
-`traefik.http.middlewares.mybasicauth.basicauth.users=test:$2y$12$ci.4U63YX83CwkyUrjqxAucnmi2xXOIlEF6T/KdP9824f1Rf1iyNG`
+```yaml
+traefik.http.middlewares.mybasicauth.basicauth.users=test:$2y$12$ci.4U63YX83CwkyUrjqxAucnmi2xXOIlEF6T/KdP9824f1Rf1iyNG
+```
 
 Notice that `mybasicauth` has replaced the `<random_unique_name>` placeholder. In other words, you have named your own auth middleware `mybasicauth`.
 
@@ -78,11 +73,15 @@ Then you need to add the middleware to the router label, and since one or more m
 
 For example you would update the current line
 
-`traefik.http.routers.https-0-wc04wo4ow4scokgsw8wow4s8.middlewares=gzip`
+```yaml
+traefik.http.routers.https-0-wc04wo4ow4scokgsw8wow4s8.middlewares=gzip
+```
 
 to:
 
-`traefik.http.routers.https-0-wc04wo4ow4scokgsw8wow4s8.middlewares=gzip,mybasicauth`
+```yaml
+traefik.http.routers.https-0-wc04wo4ow4scokgsw8wow4s8.middlewares=gzip,mybasicauth
+```
 
 Notice that in this case `<unique_router_name>` has been replaced with `https-0-wc04wo4ow4scokgsw8wow4s8` which is the unique name for the router that Coolify has already generated for you.
 
