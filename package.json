@@ -19,10 +19,10 @@
     "generate:services:page": "node scripts/generate-services-page.mjs",
     "generate:services": "node scripts/generate-service-list.mjs && node scripts/generate-services-page.mjs",
     "generate:content": "node scripts/generate-fumadocs-content.mjs",
-    "dev": "bun run generate:services && bun run generate:content && vite dev",
-    "build": "NODE_ENV=production bun run generate:services && NODE_ENV=production bun run generate:content && NODE_ENV=production vite build && NODE_ENV=production bun run scripts/postbuild.ts",
+    "dev": "bun run generate:services && vite dev",
+    "build": "NODE_ENV=production bun run generate:services && NODE_ENV=production vite build && NODE_ENV=production bun run scripts/postbuild.ts",
     "preview": "vite preview",
-    "types:check": "bun run generate:services && bun run generate:content && bunx fumadocs-mdx && tsc --noEmit"
+    "types:check": "bun run generate:services && bunx fumadocs-mdx && tsc --noEmit"
   },
   "dependencies": {
     "@orama/orama": "^3.1.18",
