@@ -1,0 +1,9 @@
+{
+  "title": "S3",
+  "pages": [
+    "introduction",
+    "aws",
+    "r2",
+    "supabase"
+  ]
+}

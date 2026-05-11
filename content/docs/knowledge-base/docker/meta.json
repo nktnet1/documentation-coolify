@@ -1,0 +1,9 @@
+{
+  "title": "Docker",
+  "pages": [
+    "compose",
+    "custom-commands",
+    "registry",
+    "swarm"
+  ]
+}

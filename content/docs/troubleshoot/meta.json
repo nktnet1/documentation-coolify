@@ -1,0 +1,11 @@
+{
+  "title": "Troubleshoot",
+  "pages": [
+    "installation",
+    "applications",
+    "dashboard",
+    "docker",
+    "server",
+    "dns-and-domains"
+  ]
+}

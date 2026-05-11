@@ -1,0 +1,10 @@
+{
+  "title": "Server",
+  "pages": [
+    "connection-issues",
+    "crash-during-build",
+    "two-factor-stopped-working",
+    "raspberry-crashes",
+    "validation-issues"
+  ]
+}

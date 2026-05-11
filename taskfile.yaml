@@ -6,7 +6,7 @@
 version: '3'
 
 tasks:
-  # 🚀 Start the dev server with Bun + VitePress
+  # 🚀 Start the dev server with Bun + Fumadocs
   # - Installs dependencies
   # - Runs the server on port 2222 on all network interfaces
   # - Automatically opens the docs in the default browser

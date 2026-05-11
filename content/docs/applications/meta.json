@@ -1,0 +1,20 @@
+{
+  "title": "Applications",
+  "pages": [
+    "---Frameworks---",
+    "django",
+    "jekyll",
+    "laravel",
+    "phoenix",
+    "rails",
+    "symfony",
+    "nextjs",
+    "vite",
+    "vuejs",
+    "nuxt",
+    "svelte-kit",
+    "vitepress",
+    "build-packs",
+    "ci-cd"
+  ]
+}

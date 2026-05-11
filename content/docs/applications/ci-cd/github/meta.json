@@ -1,0 +1,13 @@
+{
+  "title": "Github",
+  "pages": [
+    "overview",
+    "actions",
+    "auto-deploy",
+    "preview-deploy",
+    "public-repository",
+    "deploy-key",
+    "setup-app",
+    "switch-apps"
+  ]
+}

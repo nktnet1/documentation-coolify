@@ -10,9 +10,6 @@ env:
   IMAGE_NAME: coollabsio/coolify-docs
   VITE_ANALYTICS_DOMAIN: coolify.io/docs
   VITE_SITE_URL: https://coolify.io/docs/
-  VITE_KORREKTLY_API_TOKEN: ${{ secrets.VITE_KORREKTLY_API_TOKEN }}
-  VITE_KORREKTLY_BASE_URL: ${{ secrets.VITE_KORREKTLY_BASE_URL }}
-  VITE_KORREKTLY_DATASET_ID: ${{ secrets.VITE_KORREKTLY_DATASET_ID }}
 
 jobs:
   build-push:
@@ -53,9 +50,6 @@ jobs:
           build-args: |
             VITE_ANALYTICS_DOMAIN=${{ env.VITE_ANALYTICS_DOMAIN }}
             VITE_SITE_URL=${{ env.VITE_SITE_URL }}
-            VITE_KORREKTLY_API_TOKEN=${{ env.VITE_KORREKTLY_API_TOKEN }}
-            VITE_KORREKTLY_BASE_URL=${{ env.VITE_KORREKTLY_BASE_URL }}
-            VITE_KORREKTLY_DATASET_ID=${{ env.VITE_KORREKTLY_DATASET_ID }}
           push: true
           tags: |
             ${{ env.GITHUB_REGISTRY }}/${{ env.IMAGE_NAME }}:latest-${{ matrix.arch }}

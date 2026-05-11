@@ -1,0 +1,9 @@
+{
+  "title": "Applications",
+  "pages": [
+    "bad-gateway",
+    "no-available-server",
+    "gateway-timeout",
+    "failed-to-get-token"
+  ]
+}
