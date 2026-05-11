@@ -7,13 +7,7 @@ import { Suspense, useLayoutEffect, type CSSProperties, type ReactNode } from 'r
 import { ClientAPIPage } from '@/components/api-page';
 import { DocsLayout } from 'fumadocs-ui/layouts/docs';
 import { useSidebar } from 'fumadocs-ui/layouts/docs/slots/sidebar';
-import {
-  DocsBody,
-  DocsDescription,
-  DocsPage,
-  DocsTitle,
-  MarkdownCopyButton,
-} from 'fumadocs-ui/layouts/docs/page';
+import { DocsBody, DocsPage, MarkdownCopyButton } from 'fumadocs-ui/layouts/docs/page';
 import { useMDXComponents } from '@/components/mdx';
 import { ViewOptionsPopover } from '@/components/page-actions';
 import { type DocsManifest, getManifestKey, type LoaderData } from '@/lib/docs-manifest';
@@ -183,6 +177,14 @@ const clientLoader = browserCollections.docs.createClientLoader({
     { toc, frontmatter, default: MDX },
     { hideFooter, markdownUrl, path }: { hideFooter?: boolean; markdownUrl: string; path: string },
   ) {
+    const pageActions = (
+      <PageActions
+        className="mt-4 flex flex-row items-center gap-2 border-t pt-4"
+        githubUrl={getDocGithubPath(path)}
+        markdownUrl={markdownUrl}
+      />
+    );
+
     if (frontmatter.full) {
       return (
         <DocsPage
@@ -198,13 +200,12 @@ const clientLoader = browserCollections.docs.createClientLoader({
     }
 
     return (
-      <DocsPage toc={toc}>
-        <DocsTitle>{frontmatter.title}</DocsTitle>
-        <DocsDescription>{frontmatter.description}</DocsDescription>
-        <div className="flex flex-row items-center gap-2 border-b -mt-4 pb-6">
-          <MarkdownCopyButton markdownUrl={markdownUrl} />
-          <ViewOptionsPopover markdownUrl={markdownUrl} githubUrl={getDocGithubPath(path)} />
-        </div>
+      <DocsPage
+        toc={toc}
+        breadcrumb={{ enabled: false }}
+        tableOfContent={{ footer: pageActions }}
+        tableOfContentPopover={{ footer: pageActions }}
+      >
         <DocsBody>
           <MDX components={useMDXComponents()} />
         </DocsBody>
@@ -219,9 +220,7 @@ function Page() {
 
   if (data.type === 'openapi') {
     content = (
-      <DocsPage full tableOfContent={{ enabled: false }}>
-        <DocsTitle>{data.title}</DocsTitle>
-        <DocsDescription>{data.description}</DocsDescription>
+      <DocsPage full tableOfContent={{ enabled: false }} breadcrumb={{ enabled: false }}>
         <DocsBody>
           <ClientAPIPage {...data.props} />
         </DocsBody>
@@ -253,6 +252,23 @@ function Page() {
       <IndexSidebarState isIndex={data.isIndex} />
       <Suspense>{content}</Suspense>
     </DocsLayout>
+  );
+}
+
+function PageActions({
+  className,
+  githubUrl,
+  markdownUrl,
+}: {
+  className?: string;
+  githubUrl: string;
+  markdownUrl: string;
+}) {
+  return (
+    <div className={className}>
+      <MarkdownCopyButton markdownUrl={markdownUrl} />
+      <ViewOptionsPopover markdownUrl={markdownUrl} githubUrl={githubUrl} />
+    </div>
   );
 }
 
