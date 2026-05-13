@@ -106,10 +106,10 @@ $ cd /data/coolify/proxy
 Adding certificates slightly varies for Caddy and Traefik proxy so choose the correct one from the below section
 
 
-<Callout type="info">
+<Tabs items={['Traefik', 'Caddy']}>
 
+<Tab value="Traefik">
 
-== Traefik
 Create the `certs` directory:
 ```bash
 $ mkdir certs
@@ -149,7 +149,10 @@ $ nano shadowarcanist.key
 ```
 Save and exit.
 
-== Caddy
+</Tab>
+
+<Tab value="Caddy">
+
 Create the `caddy/data/certs` directory:
 ```bash
 $ mkdir -p caddy/data/certs
@@ -189,8 +192,9 @@ $ nano shadowarcanist.key
 ```
 Save and exit.
 
+</Tab>
 
-</Callout>
+</Tabs>
 
 
 Now the origin certificate is installed on your server.
