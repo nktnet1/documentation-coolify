@@ -2,7 +2,7 @@ import { writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { collectServices, root, servicesDir } from './services-data.mjs'
 
-const outputFile = path.join(servicesDir, 'all.md')
+const outputFile = path.join(servicesDir, 'all.mdx')
 
 /**
  * Derive alphabetical category order from the current service data.

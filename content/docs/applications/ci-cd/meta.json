@@ -1,0 +1,10 @@
+{
+  "title": "CI/CD",
+  "pages": [
+    "github",
+    "gitlab",
+    "bitbucket",
+    "gitea",
+    "other-providers"
+  ]
+}

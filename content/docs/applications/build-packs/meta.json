@@ -1,0 +1,9 @@
+{
+  "title": "Build Packs",
+  "pages": [
+    "static",
+    "nixpacks",
+    "dockerfile",
+    "docker-compose"
+  ]
+}

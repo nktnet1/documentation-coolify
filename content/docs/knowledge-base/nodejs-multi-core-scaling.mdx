@@ -1,0 +1,207 @@
+---
+title: Node.js Multi-Core Scaling
+description: Scale a Node.js, Bun, or Deno application across all available CPU cores using PM2 cluster mode or SO_REUSEPORT, with Dockerfile and Nixpacks examples for Coolify.
+---
+
+# Node.js Multi-Core Scaling
+
+## The Problem
+
+JavaScript runtimes execute their event loop on a **single thread per process**. One `node app.js` (or `bun`/`deno`) process saturates **one CPU core**, regardless of host capacity — whether it's serving HTTP, processing queues, running cron jobs, or doing CPU-bound work.
+
+This applies to every major JS runtime:
+
+| Runtime | Engine | Single-threaded event loop |
+| --- | --- | --- |
+| Node.js | V8 | Yes |
+| Bun | JavaScriptCore | Yes |
+| Deno | V8 | Yes |
+
+It's a runtime characteristic, not a platform limit — the same constraint applies on bare metal, Docker, Kubernetes, or any PaaS.
+
+
+<Callout type="info" title="Coolify Containers Have No CPU Cap">
+
+By default, Coolify does not limit container CPU, so all host cores are available — you only need to tell your runtime to use them.
+
+</Callout>
+
+
+## The Fix
+
+Run **multiple worker processes** inside the container. Each runtime has its preferred mechanism:
+
+| Runtime | Approach | Code Change | Notes |
+| --- | --- | --- | --- |
+| Node.js | **PM2 cluster mode** | None | Easiest; wraps your existing start command |
+| Node.js | `node:cluster` module | App-level | Built-in, no extra dependency |
+| Bun | `Bun.serve(&#123; reusePort: true &#125;)` | One-line app change | Kernel load-balances via `SO_REUSEPORT` |
+| Deno | `Deno.serve(&#123; reusePort: true &#125;)` | One-line app change | Same kernel mechanism as Bun |
+
+This guide covers **PM2 cluster mode** (Node.js) and **`reusePort`** (Bun, Deno), with examples for the [Dockerfile](/applications/build-packs/dockerfile) and [Nixpacks](/applications/build-packs/nixpacks) build packs.
+
+## Technical Background
+
+- V8's (and JavaScriptCore's) event loop is single-threaded **per process**.
+- libuv's thread pool (4 threads by default in Node) offloads some I/O work, but your JavaScript still runs on a single core.
+- To use more than one core you need either multiple processes inside the container, or a runtime that supports multi-process listeners (Bun and Deno via `reusePort`).
+
+## Dockerfile Example (PM2 Cluster Mode)
+
+Use this when your app is built with the [Dockerfile build pack](/applications/build-packs/dockerfile).
+
+```dockerfile
+FROM node:lts-alpine
+
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci --omit=dev && npm install -g pm2
+
+COPY . .
+
+EXPOSE 3000
+CMD ["pm2-runtime", "-i", "max", "dist/index.js"]
+```
+
+Key points:
+
+- `pm2-runtime -i max` forks one worker per available CPU core and keeps PM2 in the foreground (required because Docker's PID 1 must not exit).
+- Replace `dist/index.js` with your actual entry file.
+- Expose the port your app listens on (`3000` here) in your platform's networking settings — in Coolify, this is the **Ports Exposes** field.
+
+## Nixpacks Example
+
+Use this when your app is built with the [Nixpacks build pack](/applications/build-packs/nixpacks).
+
+### Option A — Set `NIXPACKS_START_CMD` as an Environment Variable
+
+Set the following environment variable on your application (in Coolify: open your application → **Environment Variables**):
+
+```
+NIXPACKS_START_CMD=pm2-runtime -i max dist/index.js
+```
+
+Then add `pm2` to the `dependencies` section of `package.json` so Nixpacks installs it during the build.
+
+### Option B — `nixpacks.toml` in the Repo Root
+
+```toml
+[phases.setup]
+nixPkgs = ["nodejs", "pm2"]
+
+[start]
+cmd = "pm2-runtime -i max dist/index.js"
+```
+
+This keeps the multi-core configuration in version control and works across local and remote builds.
+
+## Bun Alternative (One-Line Multi-Core)
+
+Bun's HTTP server can bind the same port across multiple processes using `SO_REUSEPORT`. Run N Bun processes and the kernel load-balances incoming connections between them.
+
+### App Code
+
+```js
+Bun.serve({
+  port: 3000,
+  reusePort: true,
+  fetch(req) {
+    return new Response("Hello from Bun");
+  },
+});
+```
+
+### Dockerfile
+
+```dockerfile
+FROM oven/bun:alpine
+
+WORKDIR /app
+COPY package.json bun.lock ./
+RUN bun install --production
+
+COPY . .
+
+EXPOSE 3000
+# Spawn one Bun process per available core.
+CMD ["sh", "-c", "for i in $(seq 1 $(nproc)); do bun run server.js & done; wait"]
+```
+
+### Nixpacks (`nixpacks.toml`)
+
+```toml
+[phases.setup]
+nixPkgs = ["bun"]
+
+[start]
+cmd = "sh -c 'for i in $(seq 1 $(nproc)); do bun run server.js & done; wait'"
+```
+
+Notes:
+
+- `reusePort: true` requires Linux kernel ≥ 3.9 (all modern distros).
+- Each Bun process is independent — there's no primary/worker IPC, so use Redis or a database for shared state.
+- Simpler than PM2 but has no built-in auto-restart per worker; pair with Docker's `restart: unless-stopped` (Coolify's default) for crash recovery of the parent shell.
+
+## Deno Alternative (One-Line Multi-Core)
+
+Deno's `Deno.serve` accepts the same `reusePort` flag, so you can spawn N processes that all bind the same port and let the kernel distribute connections.
+
+### App Code
+
+```ts
+Deno.serve({ port: 3000, reusePort: true }, (_req) => {
+  return new Response("Hello from Deno");
+});
+```
+
+### Dockerfile
+
+```dockerfile
+FROM denoland/deno:alpine
+
+WORKDIR /app
+COPY . .
+RUN deno cache server.ts
+
+EXPOSE 3000
+# Spawn one Deno process per available core.
+CMD ["sh", "-c", "for i in $(seq 1 $(nproc)); do deno run --allow-net server.ts & done; wait"]
+```
+
+### Nixpacks (`nixpacks.toml`)
+
+```toml
+[phases.setup]
+nixPkgs = ["deno"]
+
+[start]
+cmd = "sh -c 'for i in $(seq 1 $(nproc)); do deno run --allow-net server.ts & done; wait'"
+```
+
+Same caveats as Bun apply: no IPC between processes, no built-in per-worker restart.
+
+## Caveats
+
+
+<Callout type="warn" title="In-Process State Does Not Scale">
+
+Workers do **not** share in-process memory. Sessions, in-memory caches, rate-limit counters, and WebSocket connection maps must move to Redis or another external store.
+
+</Callout>
+
+
+- **WebSockets:** connections are split across workers. Use sticky sessions at the proxy layer, or move pub/sub to Redis so any worker can deliver messages.
+- **Graceful shutdown:** honor `SIGTERM` in each worker. PM2 does this automatically.
+- **Memory:** scales roughly linearly — N workers ≈ N × single-process RSS. Size the server accordingly.
+- **Log output:** PM2 merges logs across workers; with Bun's `reusePort` approach each process writes independently, which may interleave. Prefer structured JSON logs.
+
+## Verifying Multi-Core Use
+
+After deploying, SSH to the host running the container and inspect the processes:
+
+```bash
+docker exec -it <container> top
+```
+
+You should see multiple `node`, `bun`, or `deno` processes. Hit the app under load (for example with `autocannon -c 200 http://<host>:3000/`) and confirm that `htop`/`top` shows load spread across all host cores, not pegged on one.

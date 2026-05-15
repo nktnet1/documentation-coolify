@@ -1,0 +1,15 @@
+{
+  "title": "Databases",
+  "pages": [
+    "ssl",
+    "backups",
+    "mysql",
+    "mariadb",
+    "postgresql",
+    "mongodb",
+    "redis",
+    "dragonfly",
+    "keydb",
+    "clickhouse"
+  ]
+}

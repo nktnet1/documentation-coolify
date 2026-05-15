@@ -4,13 +4,13 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 export const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
-export const servicesDir = path.join(root, 'docs/services')
-export const imagesDir = path.join(root, 'docs/public/images/services')
+export const servicesDir = path.join(root, 'content/docs/services')
+export const imagesDir = path.join(root, 'public/images/services')
 
 const ignoredServiceFiles = new Set([
-  'all.md',
-  'introduction.md',
-  'overview.md',
+  'all.mdx',
+  'introduction.mdx',
+  'overview.mdx',
 ])
 
 const imageExtensions = new Set(['.svg', '.png', '.webp', '.jpg', '.jpeg'])
@@ -215,11 +215,11 @@ export async function collectServices() {
   const services = []
 
   for (const file of serviceFiles.sort()) {
-    if (!file.endsWith('.md') || ignoredServiceFiles.has(file)) {
+    if (!file.endsWith('.mdx') || ignoredServiceFiles.has(file)) {
       continue
     }
 
-    const slug = file.replace(/\.md$/, '')
+    const slug = file.replace(/\.mdx$/, '')
     const markdown = await readFile(path.join(servicesDir, file), 'utf8')
     const frontmatter = parseFrontmatter(markdown, file)
     const title = frontmatter.title || slug
