@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - v4.x
+      - main
 
 env:
   GITHUB_REGISTRY: ghcr.io
