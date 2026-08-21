@@ -1,28 +1,29 @@
 ---
-title: "Add"
-description: "Add a private key"
+title: "Update"
+description: "Update a project"
 ---
 
-# Add
+# Update
 
-Add a private key
+Update a project
 
 ## Usage
 
 ```sh
-coolify private-key add <key_name> <private_key_or_file>
+coolify project update <uuid>
 ```
 
 ## Options
 
 | Option | Type | Required | Default | Description |
 | :--- | :--- | :---: | :--- | :--- |
-| `--description` | `string` | No | — | Private key description |
+| `--description` | `string` | No | — | Project description |
+| `--name` | `string` | No | — | Project name |
 
 ## Get current help
 
 ```sh
-coolify private-key add --help
+coolify project update --help
 ```
 
 The installed CLI help reflects the exact options available in your CLI version.

@@ -1,28 +1,28 @@
 ---
-title: "Add"
-description: "Add a private key"
+title: "Delete"
+description: "Delete a project"
 ---
 
-# Add
+# Delete
 
-Add a private key
+Delete a project
 
 ## Usage
 
 ```sh
-coolify private-key add <key_name> <private_key_or_file>
+coolify project delete <uuid>
 ```
 
 ## Options
 
 | Option | Type | Required | Default | Description |
 | :--- | :--- | :---: | :--- | :--- |
-| `--description` | `string` | No | — | Private key description |
+| `--force (-f)` | `boolean` | No | `false` | Skip confirmation prompt |
 
 ## Get current help
 
 ```sh
-coolify private-key add --help
+coolify project delete --help
 ```
 
 The installed CLI help reflects the exact options available in your CLI version.
